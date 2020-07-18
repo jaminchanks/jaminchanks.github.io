@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <meta charset="utf-8">
+    
+    <title>OpenGL ES2 For Android 3.颜色混合和图像变换 | 七味和弦</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="阳光总在风雨后">
+<meta property="og:type" content="article">
+<meta property="og:title" content="OpenGL ES2 For Android 3.颜色混合和图像变换">
+<meta property="og:url" content="jaminchanks.github.io.git/2018/01/18/OpenGL/OpenGL_ES2_For_Android笔记3/index.html">
+<meta property="og:site_name" content="七味和弦">
+<meta property="og:description" content="阳光总在风雨后">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://p3ueh8nrl.bkt.clouddn.com/cover/opengl.png">
+<meta property="og:updated_time" content="2018-02-08T18:04:34.651Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="OpenGL ES2 For Android 3.颜色混合和图像变换">
+<meta name="twitter:description" content="阳光总在风雨后">
+<meta name="twitter:image" content="http://p3ueh8nrl.bkt.clouddn.com/cover/opengl.png">
+    
+
+    
+
+    
+        <link rel="icon" href="/css/images/logo.png" />
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">七味和弦</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/.">首页</a>
+                
+                    <a class="main-nav-link" href="/archives">归档</a>
+                
+                    <a class="main-nav-link" href="/categories">分类</a>
+                
+                    <a class="main-nav-link" href="/tags">标签</a>
+                
+                    <a class="main-nav-link" href="/about">关于</a>
+                
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="/css/images/avatar.png" />
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/.">首页</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">归档</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">分类</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">标签</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">关于</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+                
+
+<aside id="profile">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="/css/images/avatar.png" />
+            <h2 id="name">咸鱼不思议</h2>
+            <h3 id="title">那年夏天水产有限公司</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>guangzhou, China</span>
+            <a id="follow" target="_blank" href="https://github.com/jaminchanks">关注我</a>
+        </div>
+        <div class="article-info profile-block">
+            <div class="article-info-block">
+                19
+                <span>文章</span>
+            </div>
+            <div class="article-info-block">
+                0
+                <span>标签</span>
+            </div>
+        </div>
+        
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    
+                    <td>
+                        <a href="https://github.com/jaminchanks" target="_blank" title="github" class=tooltip>
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</aside>
+
+            
+            <section id="main"><article id="post-OpenGL/OpenGL_ES2_For_Android笔记3" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+            OpenGL ES2 For Android 3.颜色混合和图像变换
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2018/01/18/OpenGL/OpenGL_ES2_For_Android笔记3/">
+            <time datetime="2018-01-17T18:02:16.239Z" itemprop="datePublished">2018-01-18</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Android-OpenGL/">Android OpenGL</a>
+    </div>
+
+                        
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p><strong>阳光总在风雨后</strong><br><a id="more"></a></p>
+<h3 id="多彩的三角形"><a href="#多彩的三角形" class="headerlink" title="多彩的三角形"></a>多彩的三角形</h3><p>　　我们在上一章节介绍了vertex shader和fragment shader。接下来讲讲fragment shader中的着色机制。定义一个三角形, 其顶点数据及shader代码如下：<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">private</span> <span class="keyword">val</span> verticesData = floatArrayOf(</div><div class="line">        <span class="number">-1</span>f, <span class="number">-1</span>f,</div><div class="line">        <span class="number">1</span>f, <span class="number">-1</span>f,</div><div class="line">        <span class="number">0</span>f, <span class="number">1</span>f</div><div class="line">)</div><div class="line"></div><div class="line"><span class="keyword">private</span> <span class="keyword">val</span> colorData = floatArrayOf(</div><div class="line">        <span class="number">1</span>f, <span class="number">1</span>f, <span class="number">0</span>f, <span class="number">1</span>f,</div><div class="line">        <span class="number">0</span>f, <span class="number">1</span>f, <span class="number">1</span>f, <span class="number">1</span>f,</div><div class="line">        <span class="number">1</span>f, <span class="number">0</span>f, <span class="number">1</span>f, <span class="number">1</span>f</div><div class="line">)</div><div class="line"></div><div class="line"><span class="keyword">private</span> <span class="keyword">val</span> vertexShaderCode = <span class="string">"""</span></div><div class="line"><span class="string">    attribute vec4 a_Position;</span></div><div class="line"><span class="string">    attribute vec4 a_Color;</span></div><div class="line"><span class="string">    varying vec4 v_Color;</span></div><div class="line"><span class="string">    void main() &#123;</span></div><div class="line"><span class="string">      gl_Position = a_Position;</span></div><div class="line"><span class="string">        v_Color = a_Color;</span></div><div class="line"><span class="string">    &#125;</span></div><div class="line"><span class="string">    """</span></div><div class="line"></div><div class="line"><span class="keyword">private</span> <span class="keyword">val</span> fragmentShaderCode = <span class="string">"""</span></div><div class="line"><span class="string">    precision mediump float;</span></div><div class="line"><span class="string">    varying vec4 v_Color;</span></div><div class="line"><span class="string">    void main() &#123;</span></div><div class="line"><span class="string">        gl_FragColor = v_Color;</span></div><div class="line"><span class="string">    &#125;</span></div><div class="line"><span class="string">    """</span></div></pre></td></tr></table></figure></p>
+<p><code>vaying</code>变量用于vertex shader和fragment shader之间传递数据。<br>读取顶点颜色数据的方式与读取顶点的方式一致:</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">......</div><div class="line">colorDataBuff = ByteBuffer</div><div class="line">    .allocateDirect(colorData.size * <span class="number">4</span>)</div><div class="line">    .order(ByteOrder.nativeOrder())</div><div class="line">    .asFloatBuffer()</div><div class="line">colorDataBuff?.put(colorData)</div></pre></td></tr></table></figure>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">......</div><div class="line">colorDataBuff?.position(<span class="number">0</span>)</div><div class="line">GLES20.glVertexAttribPointer(aColorLocation, <span class="number">4</span>, GLES20.GL_FLOAT, <span class="literal">false</span>, <span class="number">0</span>, colorDataBuff)</div><div class="line">GLES20.glEnableVertexAttribArray(aColorLocation)</div></pre></td></tr></table></figure>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onDrawFrame</span><span class="params">(gl: <span class="type">GL10</span>?)</span></span> &#123;</div><div class="line">    GLES20.glClear(GLES20.GL_COLOR_BUFFER_BIT)</div><div class="line">    GLES20.glDrawArrays(GLES20.GL_TRIANGLES, <span class="number">0</span>, <span class="number">3</span>)</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>最终运行结果:<br><img src="http://p3ueh8nrl.bkt.clouddn.com/opengl/es4ndroid_3_4.png" alt="运行结果" width="200"></p>
+<p>同理可以画出一个矩形。<br><img src="http://p3ueh8nrl.bkt.clouddn.com/opengl/es4ndroid_3_5.png" alt="运行结果" width="200"><br>　　这里画出的矩形中间有个顶点。使用的颜色是白色。这里有个小技巧，定义顶点是这么定义的：<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">private</span> <span class="keyword">val</span> verticesData = floatArrayOf(</div><div class="line">        <span class="number">0</span>f, <span class="number">0</span>f,</div><div class="line">        <span class="number">-0.5</span>f, <span class="number">-0.5</span>f,</div><div class="line">        <span class="number">0.5</span>f, <span class="number">-0.5</span>f,</div><div class="line">        <span class="number">0.5</span>f, <span class="number">0.5</span>f,</div><div class="line">        <span class="number">-0.5</span>f, <span class="number">0.5</span>f,</div><div class="line">        <span class="number">-0.5</span>f, <span class="number">-0.5</span>f</div><div class="line">        )</div><div class="line">......</div></pre></td></tr></table></figure></p>
+<p>绘制的时候代码是这样子的：<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">GLES20.glDrawArrays(GLES20.GL_TRIANGLE_FAN, <span class="number">0</span>, <span class="number">6</span>)</div></pre></td></tr></table></figure></p>
+<p>　　注意这里使用的<code>GLES20.GL_TRIANGLE_FAN</code>, 表示在绘制的时候会以第一个点为中心，以此来绘制三角形。这样的好处是避免了定义太多重复的顶点。</p>
+<p><img src="http://p3ueh8nrl.bkt.clouddn.com/opengl/es4ndroid_3_1.png" alt="绘制顶点顺序"></p>
+<h3 id="正射投影-Orthographic-projectio"><a href="#正射投影-Orthographic-projectio" class="headerlink" title="正射投影(Orthographic projectio)"></a>正射投影(Orthographic projectio)</h3><p>　　在开发Android App时，有个问题绕不开的，就是关于屏幕的旋转问题的处理，当然，你可以简单粗暴的把手机屏幕的朝向固定为竖屏或横屏模式，但如果我们要兼容手机的横屏和竖屏情况下的UI绘制，就要下一点功夫了。<br>当我们将刚才绘制矩形的App旋转到横屏时，矩形的形状发生了改变。<br><img src="http://p3ueh8nrl.bkt.clouddn.com/opengl/es4ndroid_3_6.png" alt="运行结果" width="360"><br>　　对于我们一个在归一化设备坐标系中定义的正方形：<br><img src="http://p3ueh8nrl.bkt.clouddn.com/opengl/es4ndroid_3_8.png" alt="归一坐标"><br>在竖屏和横屏状态下被映射到设备屏幕时，正方形的形状就会被拉伸：<br><img src="http://p3ueh8nrl.bkt.clouddn.com/opengl/es4ndroid_3_10.png" alt="屏幕切换" width="480"><br>　　为了解决这个问题，使正方形在被绘制到屏幕时还是正方形，我们调整设备的坐标空间。其中一种方式就是将设备较小的一边width保留归一化范围为[-1, 1], 另外较长的一个方向取值则映射为[ -(height/width)， height/width]。<br><img src="http://p3ueh8nrl.bkt.clouddn.com/opengl/es4ndroid_3_11.png" alt="横屏"><br>　　以上这种将物体的原始形状映射到屏幕设备的方式叫做<strong>正射投影</strong>。<br>　　正射投影也称为平行投影，这种投影是一个矩形长方体的平行管道. 它最大的特点是, <strong><em>无论物体距离相机多远投影后的物体大小尺寸不变.</em></strong></p>
+<p><img src="http://p3ueh8nrl.bkt.clouddn.com/opengl/es4ndroid_3_7.png" alt="正射投影"><br>android OpenGL中与正射投影相关的函数有：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">orthoM(<span class="keyword">float</span>[] m, <span class="keyword">int</span> mOffset, <span class="keyword">float</span> left,<span class="keyword">float</span> right, <span class="keyword">float</span> bottom, <span class="keyword">float</span> top,<span class="keyword">float</span> near,<span class="keyword">float</span> far)</div></pre></td></tr></table></figure></p>
+<p>　　<code>orthoM()</code>函数的几个参数分别对应于变换矩阵，读取矩阵数据的偏移起始位置，左右上下近远的空间限制值，最后两个参数形成了我们上面图片的可视空间，超出该空间的物体将不可见。<br>将矩阵乘积于向量以达到对向量进行变化的作用。正射投影变换矩阵的具体计算方式为：<br><img src="http://p3ueh8nrl.bkt.clouddn.com/opengl/es4ndroid_3_13.png" alt="正射投影矩阵" width="360"><br>　　修改我们的vertex shader代码如下：<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">private</span> <span class="keyword">val</span> vertexShaderCode = <span class="string">"""</span></div><div class="line"><span class="string">    uniform mat4 u_Matrix;</span></div><div class="line"><span class="string">    attribute vec4 a_Position;</span></div><div class="line"><span class="string">    attribute vec4 a_Color;</span></div><div class="line"><span class="string">    varying vec4 v_Color;</span></div><div class="line"><span class="string">    void main() &#123;</span></div><div class="line"><span class="string">      gl_Position = u_Matrix * a_Position;</span></div><div class="line"><span class="string">        gl_PointSize = 30.0;</span></div><div class="line"><span class="string">        v_Color = a_Color;</span></div><div class="line"><span class="string">    &#125;</span></div><div class="line"><span class="string">    """</span></div></pre></td></tr></table></figure></p>
+<p><code>uniform</code>变量用于外部程序向shader传递数据，且数据在shader中无法被改变。<br>继续修改代码：<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onSurfaceChanged</span><span class="params">(gl: <span class="type">GL10</span>?, width: <span class="type">Int</span>, height: <span class="type">Int</span>)</span></span> &#123;</div><div class="line">    ......</div><div class="line">    <span class="keyword">val</span> aspectRatio = <span class="keyword">if</span> (width &gt; height) &#123;</div><div class="line">        width.toFloat() / height.toFloat()</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        height.toFloat() / width.toFloat()</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">if</span> (width &gt; height) &#123;</div><div class="line">        Matrix.orthoM(projectionMatrix, <span class="number">0</span>, -aspectRatio, aspectRatio, <span class="number">-1</span>f,<span class="number">1</span>f, <span class="number">1</span>f, <span class="number">10</span>f)</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        Matrix.orthoM(projectionMatrix, <span class="number">0</span>, <span class="number">-1</span>f, <span class="number">1</span>f, -aspectRatio, aspectRatio, <span class="number">1</span>f, <span class="number">10</span>f)</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"> <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onSurfaceCreated</span><span class="params">(gl: <span class="type">GL10</span>?, config: <span class="type">EGLConfig</span>?)</span></span> &#123;</div><div class="line">    ......</div><div class="line">    uMatrixLocation = GLES20.glGetUniformLocation(program, <span class="string">"u_Matrix"</span>)</div><div class="line">    ......</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onDrawFrame</span><span class="params">(gl: <span class="type">GL10</span>?)</span></span> &#123;</div><div class="line">	......</div><div class="line">    GLES20.glUniformMatrix4fv(uMatrixLocation, <span class="number">1</span>, <span class="literal">false</span>, projectionMatrix, <span class="number">0</span>)</div><div class="line">    ......</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>最后运行结果：<br><img src="http://p3ueh8nrl.bkt.clouddn.com/opengl/es4ndroid_3_14.png" alt="真正的正方形" width="240"></p>
+<h3 id="透视投影（PerspectiveProjection）"><a href="#透视投影（PerspectiveProjection）" class="headerlink" title="透视投影（PerspectiveProjection）"></a>透视投影（PerspectiveProjection）</h3><p>　　除了正射投影之外，还有一种投影称之为<strong><em>透视投影</em></strong>。透视投影和正射投影的区别在于，当摄像机的位置离物体越近，物体的投影区域越大，离得越远，投影越小。<br><img src="http://p3ueh8nrl.bkt.clouddn.com/opengl/es4ndroid_3_15.png" alt="透视投影"><br>在<code>onSurfaceChanged()</code> 方法最后添加两句代码，对物体进行透视投影变换，并在z轴上平移一定的位置使其处于可视空间内：<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Matrix.perspectiveM(projectionMatrix, <span class="number">0</span>, <span class="number">60</span>f, <span class="number">1</span> /aspectRatio, <span class="number">1</span>f, <span class="number">10</span>f)</div><div class="line"></div><div class="line">Matrix.translateM(projectionMatrix, <span class="number">0</span>, <span class="number">0</span>f, <span class="number">0</span>f, <span class="number">-7</span>f)</div></pre></td></tr></table></figure></p>
+<p>　　按照约定，以及一些历史原因，OpenGL使用的是右手坐标系，也就是说根据你的手指朝向，大拇指为x轴方向，往右为正，其余手指竖直指向为y轴正方向，弯曲则指向z轴的正方向，也就是面对着你的方向。所以越往后，z的值越小。<br><img src="http://p3ueh8nrl.bkt.clouddn.com/opengl/es4ndroid_3_17.png" alt="OpenGL坐标系" width="240"></p>
+<p>　　接着随意更改代码中z轴上的偏移量在(-far, -near)范围内，也就是(-10f, -1f)内,观察屏幕上的图像显示大小。可以发现z的值越小，投影的大小也越小。<br><img src="http://p3ueh8nrl.bkt.clouddn.com/opengl/es4ndroid_3_16.png" alt="z=-8f时的效果" width="240"></p>
+<p>画了三个章节的图，下一章节我们从外部来导入图片到OpenGL中。</p>
+<h5 id="Tips"><a href="#Tips" class="headerlink" title="Tips:"></a>Tips:</h5><p>　　通过引入顶点的第四个坐标点w, 组成齐次坐标系（x, y, z, w），可以实现绘制三维物体的效果。<br>常见的变化矩阵的方法有位移，旋转和放大缩小等操作。<br>具体的计算方式为：<br><img src="http://p3ueh8nrl.bkt.clouddn.com/opengl/es4ndroid_3_12.png" alt="平移矩阵" width="180"><br>沿x轴，y轴，z轴旋转的矩阵计算方式：<br><img src="http://p3ueh8nrl.bkt.clouddn.com/opengl/es4ndroid_3_18.png" alt="旋转矩阵"></p>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="jaminchanks.github.io.git/2018/01/18/OpenGL/OpenGL_ES2_For_Android笔记3/" data-id="ckcryfbya000sret3o62vvcez" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="jaminchanks.github.io.git/2018/01/18/OpenGL/OpenGL_ES2_For_Android笔记3/#comments" class="article-comment-link">评论</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2018/01/18/OpenGL/OpenGL_ES2_For_Android笔记4/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">上一篇</strong>
+            <div class="article-nav-title">
+                
+                    OpenGL ES2 For Android 4.添加纹理
+                
+            </div>
+        </a>
+    
+    
+        <a href="/2018/01/18/OpenGL/OpenGL_ES2_For_Android笔记2/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">OpenGL ES2 For Android 2.OpenGL绘制流程</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    
+        <section id="comments">
+    <div id="lv-container" data-id="city" data-uid=MTAyMC8zMzg3NC8xMDQyNw==></div>
+</section>
+    
+
+</section>
+            
+                
+<aside id="sidebar">
+   
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/06/28/Git/git_我可以反悔吗/" class="title"></a></p>
+                            <p class="item-date"><time datetime="2018-06-28T13:57:36.094Z" itemprop="datePublished">2018-06-28</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Git/">Git</a></p>
+                            <p class="item-title"><a href="/2018/05/31/Git/git_笔记1/" class="title">Git 深入学习笔记</a></p>
+                            <p class="item-date"><time datetime="2018-05-31T15:24:25.980Z" itemprop="datePublished">2018-05-31</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Java/">Java</a></p>
+                            <p class="item-title"><a href="/2018/05/21/Java/Java动态代理/" class="title">Java不高级特性:动态代理</a></p>
+                            <p class="item-date"><time datetime="2018-05-21T15:44:51.291Z" itemprop="datePublished">2018-05-21</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Kotlin/">Kotlin</a></p>
+                            <p class="item-title"><a href="/2018/05/12/Kotlin/Koltin的byLazy实现原理/" class="title">从原理分析和区分lateinit var、by lazy</a></p>
+                            <p class="item-date"><time datetime="2018-05-12T07:12:08.120Z" itemprop="datePublished">2018-05-12</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Java/">Java</a></p>
+                            <p class="item-title"><a href="/2018/04/30/Java/堆还是栈/" class="title">Java对象内存分配，堆还是栈? 这是个问题</a></p>
+                            <p class="item-date"><time datetime="2018-04-30T03:31:28.526Z" itemprop="datePublished">2018-04-30</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Android-OpenGL/">Android OpenGL</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Kotlin/">Kotlin</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Others/">Others</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Read/">Read</a><span class="category-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">6</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+
+            
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2020 七味和弦<br>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
+        </div>
+    </div>
+
+<!-- Baidu Analytics -->
+<script>
+	var _hmt = _hmt || [];
+	(function() {
+  		var hm = document.createElement("script");
+  		hm.src = "https://hm.baidu.com/hm.js?d9bf4984532d263b0e54cbff6129d0fc";
+  		var s = document.getElementsByTagName("script")[0]; 
+  		s.parentNode.insertBefore(hm, s);
+	})();
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-113625597-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-113625597-1');
+</script>
+
+</footer>
+
+        
+    
+    
+    <!-- 来必力City版安装代码 -->
+    <script type="text/javascript">
+     (function(d, s) {
+         var j, e = d.getElementsByTagName(s)[0];
+
+         if (typeof LivereTower === 'function') { return; }
+
+         j = d.createElement(s);
+         j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+         j.async = true;
+
+         e.parentNode.insertBefore(j, e);
+     })(document, 'script');
+    </script>
+  <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+  <!-- City版安装代码已完成 -->
+
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

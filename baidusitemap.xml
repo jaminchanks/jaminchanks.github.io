@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+
+    
+  <url>
+    <loc>jaminchanks.github.io.git/2018/02/04/Others/%E6%B5%8B%E8%AF%95%E4%B8%93%E7%94%A8/</loc>
+    <lastmod>2020-07-18T17:45:58.198Z</lastmod>
+    <data>
+        <display>
+        <title>测试专用</title>
+        <pubTime>2018-02-04T13:09:42.472Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="Others" url="jaminchanks.github.io.git/categories/Others/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>jaminchanks.github.io.git/%E6%A8%A1%E6%9D%BF.html</loc>
+    <lastmod>2020-07-18T17:31:26.221Z</lastmod>
+    <data>
+        <display>
+        <title>Hello World123</title>
+        <pubTime>2020-07-18T17:31:26.224Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>jaminchanks.github.io.git/2018/06/28/Git/git_%E6%88%91%E5%8F%AF%E4%BB%A5%E5%8F%8D%E6%82%94%E5%90%97/</loc>
+    <lastmod>2018-06-28T13:57:36.094Z</lastmod>
+    <data>
+        <display>
+        <title></title>
+        <pubTime>2018-06-28T13:57:36.094Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>jaminchanks.github.io.git/2018/05/31/Git/git_%E7%AC%94%E8%AE%B01/</loc>
+    <lastmod>2018-05-31T18:32:53.786Z</lastmod>
+    <data>
+        <display>
+        <title>Git 深入学习笔记</title>
+        <pubTime>2018-05-31T15:24:25.980Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="Git" url="jaminchanks.github.io.git/categories/Git/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>jaminchanks.github.io.git/2018/05/21/Java/Java%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86/</loc>
+    <lastmod>2018-05-22T17:50:11.033Z</lastmod>
+    <data>
+        <display>
+        <title>Java不高级特性:动态代理</title>
+        <pubTime>2018-05-21T15:44:51.291Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="Java" url="jaminchanks.github.io.git/categories/Java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>jaminchanks.github.io.git/2018/05/12/Kotlin/Koltin%E7%9A%84byLazy%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/</loc>
+    <lastmod>2018-05-22T17:14:01.233Z</lastmod>
+    <data>
+        <display>
+        <title>从原理分析和区分lateinit var、by lazy</title>
+        <pubTime>2018-05-12T07:12:08.120Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="Kotlin" url="jaminchanks.github.io.git/categories/Kotlin/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>jaminchanks.github.io.git/2018/04/24/Read/%E7%AE%97%E6%B3%95%E7%9A%84%E5%AE%9E%E9%99%85%E7%94%A8%E5%A4%84/</loc>
+    <lastmod>2018-05-12T16:32:34.508Z</lastmod>
+    <data>
+        <display>
+        <title>数据结构复习笔记(待补充)</title>
+        <pubTime>2018-04-24T14:58:14.464Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="Read" url="jaminchanks.github.io.git/categories/Read/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>jaminchanks.github.io.git/2018/04/30/Java/%E5%A0%86%E8%BF%98%E6%98%AF%E6%A0%88/</loc>
+    <lastmod>2018-04-30T16:40:12.658Z</lastmod>
+    <data>
+        <display>
+        <title>Java对象内存分配，堆还是栈? 这是个问题</title>
+        <pubTime>2018-04-30T03:31:28.526Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="Java" url="jaminchanks.github.io.git/categories/Java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>jaminchanks.github.io.git/2018/04/15/Java/JVM%E5%8E%9F%E7%90%861/</loc>
+    <lastmod>2018-04-30T14:03:18.425Z</lastmod>
+    <data>
+        <display>
+        <title>《深入理解Java虚拟机》学习笔记1</title>
+        <pubTime>2018-04-15T15:11:51.930Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="Java" url="jaminchanks.github.io.git/categories/Java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>jaminchanks.github.io.git/2018/04/16/Java/JVM%E5%8E%9F%E7%90%862/</loc>
+    <lastmod>2018-04-30T13:03:49.777Z</lastmod>
+    <data>
+        <display>
+        <title>《深入理解Java虚拟机》学习笔记2</title>
+        <pubTime>2018-04-16T15:23:39.354Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="Java" url="jaminchanks.github.io.git/categories/Java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>jaminchanks.github.io.git/2018/04/07/Java/Java%E5%AD%97%E8%8A%82%E7%A0%811/</loc>
+    <lastmod>2018-04-16T15:28:48.662Z</lastmod>
+    <data>
+        <display>
+        <title>看懂Java字节码</title>
+        <pubTime>2018-04-07T07:14:10.399Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="Java" url="jaminchanks.github.io.git/categories/Java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>jaminchanks.github.io.git/2018/03/02/Android/Flutter%E5%88%9D%E8%AF%95/</loc>
+    <lastmod>2018-03-13T15:10:13.569Z</lastmod>
+    <data>
+        <display>
+        <title>Flutter初试</title>
+        <pubTime>2018-03-01T16:19:47.470Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="Android" url="jaminchanks.github.io.git/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>jaminchanks.github.io.git/2018/02/09/Android/AnnotationProcessor%E6%B3%A8%E8%A7%A3%E5%A4%84%E7%90%86%E5%99%A8/</loc>
+    <lastmod>2018-02-24T13:50:18.863Z</lastmod>
+    <data>
+        <display>
+        <title>使用Android注解处理器，解放劳动生产力</title>
+        <pubTime>2018-02-08T17:56:15.901Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="Android" url="jaminchanks.github.io.git/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>jaminchanks.github.io.git/2018/02/04/Others/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/</loc>
+    <lastmod>2018-02-11T19:23:34.066Z</lastmod>
+    <data>
+        <display>
+        <title>个人博客搭建记录</title>
+        <pubTime>2018-02-04T13:09:42.472Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="Others" url="jaminchanks.github.io.git/categories/Others/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>jaminchanks.github.io.git/2018/01/18/OpenGL/OpenGL_ES2_For_Android%E7%AC%94%E8%AE%B04/</loc>
+    <lastmod>2018-02-10T10:54:00.684Z</lastmod>
+    <data>
+        <display>
+        <title>OpenGL ES2 For Android 4.添加纹理</title>
+        <pubTime>2018-01-18T13:53:29.453Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="Android OpenGL" url="jaminchanks.github.io.git/categories/Android-OpenGL/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>jaminchanks.github.io.git/2018/01/18/OpenGL/GLSL%E5%9F%BA%E7%A1%80/</loc>
+    <lastmod>2018-02-08T18:04:35.063Z</lastmod>
+    <data>
+        <display>
+        <title>GLSL基础</title>
+        <pubTime>2018-01-17T18:02:16.236Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="Android OpenGL" url="jaminchanks.github.io.git/categories/Android-OpenGL/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>jaminchanks.github.io.git/2018/01/18/OpenGL/OpenGL_ES2_For_Android%E7%AC%94%E8%AE%B01/</loc>
+    <lastmod>2018-02-08T18:04:34.671Z</lastmod>
+    <data>
+        <display>
+        <title>OpenGL ES2 For Android 1.超简单入门</title>
+        <pubTime>2018-01-17T18:02:16.237Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="Android OpenGL" url="jaminchanks.github.io.git/categories/Android-OpenGL/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>jaminchanks.github.io.git/2018/01/18/OpenGL/OpenGL_ES2_For_Android%E7%AC%94%E8%AE%B02/</loc>
+    <lastmod>2018-02-08T18:04:34.666Z</lastmod>
+    <data>
+        <display>
+        <title>OpenGL ES2 For Android 2.OpenGL绘制流程</title>
+        <pubTime>2018-01-17T18:02:16.238Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="Android OpenGL" url="jaminchanks.github.io.git/categories/Android-OpenGL/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>jaminchanks.github.io.git/2018/01/18/OpenGL/OpenGL_ES2_For_Android%E7%AC%94%E8%AE%B03/</loc>
+    <lastmod>2018-02-08T18:04:34.651Z</lastmod>
+    <data>
+        <display>
+        <title>OpenGL ES2 For Android 3.颜色混合和图像变换</title>
+        <pubTime>2018-01-17T18:02:16.239Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="Android OpenGL" url="jaminchanks.github.io.git/categories/Android-OpenGL/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>jaminchanks.github.io.git/2018/01/18/Android/Android%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2018-02-07T16:48:57.046Z</lastmod>
+    <data>
+        <display>
+        <title>Android复习笔记</title>
+        <pubTime>2018-01-17T18:02:16.233Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="Android" url="jaminchanks.github.io.git/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+    
+</urlset>

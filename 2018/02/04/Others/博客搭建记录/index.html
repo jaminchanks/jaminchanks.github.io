@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <meta charset="utf-8">
+    
+    <title>个人博客搭建记录 | 七味和弦</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="生命在于折腾">
+<meta property="og:type" content="article">
+<meta property="og:title" content="个人博客搭建记录">
+<meta property="og:url" content="jaminchanks.github.io.git/2018/02/04/Others/博客搭建记录/index.html">
+<meta property="og:site_name" content="七味和弦">
+<meta property="og:description" content="生命在于折腾">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://p3ueh8nrl.bkt.clouddn.com/cover/cat_and_fish.png">
+<meta property="og:updated_time" content="2018-02-11T19:23:34.066Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="个人博客搭建记录">
+<meta name="twitter:description" content="生命在于折腾">
+<meta name="twitter:image" content="http://p3ueh8nrl.bkt.clouddn.com/cover/cat_and_fish.png">
+    
+
+    
+
+    
+        <link rel="icon" href="/css/images/logo.png" />
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">七味和弦</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/.">首页</a>
+                
+                    <a class="main-nav-link" href="/archives">归档</a>
+                
+                    <a class="main-nav-link" href="/categories">分类</a>
+                
+                    <a class="main-nav-link" href="/tags">标签</a>
+                
+                    <a class="main-nav-link" href="/about">关于</a>
+                
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="/css/images/avatar.png" />
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/.">首页</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">归档</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">分类</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">标签</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">关于</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+                
+
+<aside id="profile">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="/css/images/avatar.png" />
+            <h2 id="name">咸鱼不思议</h2>
+            <h3 id="title">那年夏天水产有限公司</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>guangzhou, China</span>
+            <a id="follow" target="_blank" href="https://github.com/jaminchanks">关注我</a>
+        </div>
+        <div class="article-info profile-block">
+            <div class="article-info-block">
+                19
+                <span>文章</span>
+            </div>
+            <div class="article-info-block">
+                0
+                <span>标签</span>
+            </div>
+        </div>
+        
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    
+                    <td>
+                        <a href="https://github.com/jaminchanks" target="_blank" title="github" class=tooltip>
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</aside>
+
+            
+            <section id="main"><article id="post-Others/博客搭建记录" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+            个人博客搭建记录
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2018/02/04/Others/博客搭建记录/">
+            <time datetime="2018-02-04T13:09:42.472Z" itemprop="datePublished">2018-02-04</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Others/">Others</a>
+    </div>
+
+                        
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p><strong>生命在于折腾</strong></p>
+<a id="more"></a>
+<p>最近好冷~~~哆嗦着手我写下了这篇文章。<br>关于如何搭建的目前这个博客，先简单介绍一下：</p>
+<ul>
+<li>这个博客是用<a href="https://hexo.io/zh-cn/index.html" target="_blank" rel="external">Hexo</a>搭建的</li>
+<li>评论系统使用<a href="https://livere.com/" target="_blank" rel="external">来必力</a></li>
+<li>主题使用的是<a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="external">icarus</a></li>
+<li>另外本着折腾到底的目的，图床用到的是一个国外的<a href="https://cloudinary.com" target="_blank" rel="external">网站</a></li>
+<li>平时用markdown编写文章，编辑器使用的是<a href="https://atom.io/" target="_blank" rel="external">Atom</a>, 一个21世纪程序员专用的hackable的编辑器</li>
+</ul>
+<hr>
+<h2 id="搭建Hexo"><a href="#搭建Hexo" class="headerlink" title="搭建Hexo"></a>搭建Hexo</h2><p>hexo是啥？<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="external">官网在此</a>  </p>
+<blockquote>
+<p>一个快速、简洁且高效的博客框架</p>
+</blockquote>
+<p>官网有中文版的文档…… 这让一切都变得更简单了。</p>
+<p>按官网说的，先把两个重要的工具有给安装了。</p>
+<ul>
+<li><strong><a href="http://nodejs.org/" target="_blank" rel="external">nodejs</a></strong></li>
+<li><strong><a href="https://git-scm.com/" target="_blank" rel="external">git</a></strong></li>
+</ul>
+<p>接下来就到你想放置博客文件的路径下执行以下命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">npm install hexo-cli -g</div><div class="line">hexo init blog</div><div class="line">cd blog</div><div class="line">npm install</div><div class="line">hexo server</div></pre></td></tr></table></figure></p>
+<p>先说下在这里可能遇到的问题，那就是<code>npm</code>死活连不上。嗯，也许给他设置个国内的镜像源，比如淘宝的。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm set registry https://registry.npm.taobao.org</div></pre></td></tr></table></figure></p>
+<p>安装完毕，会出现以下提示：</p>
+<p><img src="http://p3ueh8nrl.bkt.clouddn.com/others/hexo_1.png" alt="安装成功"></p>
+<p>打开浏览器就可以看见一个搭建成功的hexo博客了。</p>
+<p><img src="http://p3ueh8nrl.bkt.clouddn.com/others/hexo_server_1.png" alt="运行结果"></p>
+<p>这里顺便说一个可能出现的问题，就是打开浏览器后页面一直在加载就是出不来，可能是端口冲突了。改一下运行的端口，<code>-p</code>用于指定运行的端口，比如7583<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo server -p 7583</div></pre></td></tr></table></figure></p>
+<h3 id="编写文章"><a href="#编写文章" class="headerlink" title="编写文章"></a>编写文章</h3><p>在运行的结果中看到里面内置了一篇<code>Hello Word</code>的文章。文章在本地的对应地址是<code>..\blog\source\_posts</code>。<br>在该地址新建一个测试的文件夹<code>test1.md</code>，写入以下内容：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"># Test!!!</div></pre></td></tr></table></figure></p>
+<p>刷新一下浏览器，对应的文章就能显示在浏览器上了。<br><img src="http://p3ueh8nrl.bkt.clouddn.com/others/hexo_server_2.png" alt=" ">  </p>
+<hr>
+<h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><p>项目单单只是在本地跑起来是不够了。下一步骤是将他部署到github上。<br>在github上新建一个仓库，这里要注意，仓库的命名方式为<code>&lt;你的账号&gt;.github.io</code>,比如我的账号为<code>jaminchanks</code>，对应的仓库名就为<code>jaminchanks.github.io</code>。<br><img src="http://p3ueh8nrl.bkt.clouddn.com/others/hexo_github_1.png" alt=" "></p>
+<h4 id="部署方法1"><a href="#部署方法1" class="headerlink" title="部署方法1"></a>部署方法1</h4><p>方法一是交给hexo去部署，新建完远程仓库后，打开blog文件夹下的_config.yml,修改以下代码<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="attr">deploy:</span></div><div class="line"><span class="attr">  type:</span> <span class="string">git</span></div><div class="line"><span class="attr">  repo:</span> <span class="attr">https://github.com/jaminchanks/jaminchanks.github.io.git</span></div><div class="line"><span class="attr">  branch:</span> <span class="string">master</span></div></pre></td></tr></table></figure></p>
+<p>指定远程仓库的相关信息。<br>之后运行代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">npm install hexo-deployer-git --save</div><div class="line">hexo g</div><div class="line">hexo d</div></pre></td></tr></table></figure></p>
+<p>就可以将本地的文件都部署到github上了。同时，在浏览器上访问<a href="http://jaminchanks.github.io" target="_blank" rel="external">http://jaminchanks.github.io</a>就可以访问到自己的博客了。</p>
+<h4 id="部署方法2"><a href="#部署方法2" class="headerlink" title="部署方法2"></a>部署方法2</h4><p>另一种部署的方法是，将每次<code>hexo g</code>生成的文件复制到指定文件并手动提交到github上。<br>新建远程仓库完成后,到<code>blog</code>目录下，运行以下命令将本地仓库与远程仓库关联。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">mkdir -p .deploye/jaminchanks.github.io</div><div class="line">cd .deploye/jaminchanks.github.io</div><div class="line"></div><div class="line">git init </div><div class="line">git remote add origin https://github.com/jaminchanks/jaminchanks.github.io</div></pre></td></tr></table></figure></p>
+<p>回到<code>blog</code>目录下，执行以下代码就可以将博客部署到github上了。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">hexo g</div><div class="line">cp -R public/* .deploy/jaminchanks.github.io/</div><div class="line">cd .deploy/jaminchanks.github.io</div><div class="line">git add .</div><div class="line">git commit -m “update”</div><div class="line">git push origin master</div></pre></td></tr></table></figure>
+<p>将以上代码保存到文件<code>deploy.sh</code>中，以后就可以一键部署了。</p>
+<h2 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h2><p>Hexo的<a href="https://hexo.io/themes/" target="_blank" rel="external">主题</a>可以在官网找到。可选样式还算挺多的，下载下来后还可以自己定义。</p>
+<h2 id="评论系统"><a href="#评论系统" class="headerlink" title="评论系统"></a>评论系统</h2><p>一开始使用的评论系统是gitment，但是后来，我看到了有一个来自棒子国的第三方评论系统<a href="https://livere.com/" target="_blank" rel="external">来必力</a>，觉得也挺不错的，所以就换成来必力了。</p>
+<h2 id="图片服务器"><a href="#图片服务器" class="headerlink" title="图片服务器"></a>图片服务器</h2><p>图片服务器之前尝试过<a href="https://cloudinary.com/，" target="_blank" rel="external">https://cloudinary.com/，</a> 有免费套餐，跟七牛差不多，但是还不够稳定，最后还是使用了七牛。</p>
+<h4 id="Atom最容易遇到的问题"><a href="#Atom最容易遇到的问题" class="headerlink" title="Atom最容易遇到的问题"></a>Atom最容易遇到的问题</h4><p>Atom使用答疑怎么取消末尾空白行自动剔除？<br>– 禁用自带 whitespace 插件即可。<br>怎么将TAB从空格改为真TAB？<br>– 设置-&gt;Tab Mode 从 Soft 改为 Hard，同时将长度设置为4<br>我喜欢查看 空格和 TAB，还有换行符，让他们显示出来？<br>– Settings-&gt;Editor-&gt;Show Invisibles<br>如何取消括号补全？<br>– 设置-&gt;Packages-&gt;禁用 Bracket 插件即可。<br>我从 sublime 过来，如何增加文档缩略图 minimap？<br>– 设置-&gt;Install-&gt;安装 MiniMap 即可<br>如何启用Vim模式？<br>– 设置-&gt;Install-&gt;VimMode<br>如何禁止按回车实现自动补全（有时想换行但是变成使用补全了）？<br>– 设置-&gt;Packages-&gt;Autocomplete Plus-&gt;将Tab+Enter改为Tab<br>(Atom内容来自<a href="https://www.zhihu.com/question/22867204/answer/90728790" target="_blank" rel="external">知乎</a>)</p>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="jaminchanks.github.io.git/2018/02/04/Others/博客搭建记录/" data-id="ckcryfbyd000xret3dmo7koxb" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="jaminchanks.github.io.git/2018/02/04/Others/博客搭建记录/#comments" class="article-comment-link">评论</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2018/02/04/Others/测试专用/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">上一篇</strong>
+            <div class="article-nav-title">
+                
+                    测试专用
+                
+            </div>
+        </a>
+    
+    
+        <a href="/2018/01/18/OpenGL/OpenGL_ES2_For_Android笔记4/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">OpenGL ES2 For Android 4.添加纹理</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    
+        <section id="comments">
+    <div id="lv-container" data-id="city" data-uid=MTAyMC8zMzg3NC8xMDQyNw==></div>
+</section>
+    
+
+</section>
+            
+                
+<aside id="sidebar">
+   
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/06/28/Git/git_我可以反悔吗/" class="title"></a></p>
+                            <p class="item-date"><time datetime="2018-06-28T13:57:36.094Z" itemprop="datePublished">2018-06-28</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Git/">Git</a></p>
+                            <p class="item-title"><a href="/2018/05/31/Git/git_笔记1/" class="title">Git 深入学习笔记</a></p>
+                            <p class="item-date"><time datetime="2018-05-31T15:24:25.980Z" itemprop="datePublished">2018-05-31</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Java/">Java</a></p>
+                            <p class="item-title"><a href="/2018/05/21/Java/Java动态代理/" class="title">Java不高级特性:动态代理</a></p>
+                            <p class="item-date"><time datetime="2018-05-21T15:44:51.291Z" itemprop="datePublished">2018-05-21</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Kotlin/">Kotlin</a></p>
+                            <p class="item-title"><a href="/2018/05/12/Kotlin/Koltin的byLazy实现原理/" class="title">从原理分析和区分lateinit var、by lazy</a></p>
+                            <p class="item-date"><time datetime="2018-05-12T07:12:08.120Z" itemprop="datePublished">2018-05-12</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Java/">Java</a></p>
+                            <p class="item-title"><a href="/2018/04/30/Java/堆还是栈/" class="title">Java对象内存分配，堆还是栈? 这是个问题</a></p>
+                            <p class="item-date"><time datetime="2018-04-30T03:31:28.526Z" itemprop="datePublished">2018-04-30</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Android-OpenGL/">Android OpenGL</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Kotlin/">Kotlin</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Others/">Others</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Read/">Read</a><span class="category-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">6</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+
+            
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2020 七味和弦<br>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
+        </div>
+    </div>
+
+<!-- Baidu Analytics -->
+<script>
+	var _hmt = _hmt || [];
+	(function() {
+  		var hm = document.createElement("script");
+  		hm.src = "https://hm.baidu.com/hm.js?d9bf4984532d263b0e54cbff6129d0fc";
+  		var s = document.getElementsByTagName("script")[0]; 
+  		s.parentNode.insertBefore(hm, s);
+	})();
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-113625597-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-113625597-1');
+</script>
+
+</footer>
+
+        
+    
+    
+    <!-- 来必力City版安装代码 -->
+    <script type="text/javascript">
+     (function(d, s) {
+         var j, e = d.getElementsByTagName(s)[0];
+
+         if (typeof LivereTower === 'function') { return; }
+
+         j = d.createElement(s);
+         j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+         j.async = true;
+
+         e.parentNode.insertBefore(j, e);
+     })(document, 'script');
+    </script>
+  <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+  <!-- City版安装代码已完成 -->
+
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <meta charset="utf-8">
+    
+    <title>Android复习笔记 | 七味和弦</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="1. Activity">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android复习笔记">
+<meta property="og:url" content="jaminchanks.github.io.git/2018/01/18/Android/Android复习笔记/index.html">
+<meta property="og:site_name" content="七味和弦">
+<meta property="og:description" content="1. Activity">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="jaminchanks.github.io.git/2018/01/18/Android/Android复习笔记/p3sgge6jw.bkt.clouddn.com/android.png">
+<meta property="og:updated_time" content="2018-02-07T16:48:57.046Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android复习笔记">
+<meta name="twitter:description" content="1. Activity">
+<meta name="twitter:image" content="jaminchanks.github.io.git/2018/01/18/Android/Android复习笔记/p3sgge6jw.bkt.clouddn.com/android.png">
+    
+
+    
+
+    
+        <link rel="icon" href="/css/images/logo.png" />
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">七味和弦</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/.">首页</a>
+                
+                    <a class="main-nav-link" href="/archives">归档</a>
+                
+                    <a class="main-nav-link" href="/categories">分类</a>
+                
+                    <a class="main-nav-link" href="/tags">标签</a>
+                
+                    <a class="main-nav-link" href="/about">关于</a>
+                
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="/css/images/avatar.png" />
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/.">首页</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">归档</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">分类</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">标签</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">关于</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+                
+
+<aside id="profile">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="/css/images/avatar.png" />
+            <h2 id="name">咸鱼不思议</h2>
+            <h3 id="title">那年夏天水产有限公司</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>guangzhou, China</span>
+            <a id="follow" target="_blank" href="https://github.com/jaminchanks">关注我</a>
+        </div>
+        <div class="article-info profile-block">
+            <div class="article-info-block">
+                19
+                <span>文章</span>
+            </div>
+            <div class="article-info-block">
+                0
+                <span>标签</span>
+            </div>
+        </div>
+        
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    
+                    <td>
+                        <a href="https://github.com/jaminchanks" target="_blank" title="github" class=tooltip>
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</aside>
+
+            
+            <section id="main"><article id="post-Android/Android复习笔记" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+            Android复习笔记
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2018/01/18/Android/Android复习笔记/">
+            <time datetime="2018-01-17T18:02:16.233Z" itemprop="datePublished">2018-01-18</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Android/">Android</a>
+    </div>
+
+                        
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h1 id="1-Activity"><a href="#1-Activity" class="headerlink" title="1. Activity"></a>1. Activity</h1><a id="more"></a>
+<h4 id="1-Activity的四种状态"><a href="#1-Activity的四种状态" class="headerlink" title="1. Activity的四种状态"></a>1. Activity的四种状态</h4><ul>
+<li>running</li>
+<li>pauseed</li>
+<li>stopped</li>
+<li>killed</li>
+</ul>
+<h4 id="2-Activity的生命周期"><a href="#2-Activity的生命周期" class="headerlink" title="2. Activity的生命周期"></a>2. Activity的生命周期</h4><ul>
+<li>onCreate()</li>
+<li>onStart()</li>
+<li>onResume()</li>
+<li>onPause()</li>
+<li>onStop()</li>
+<li>onDestroy()</li>
+<li>onRestart()</li>
+</ul>
+<h4 id="3-进程的优先级"><a href="#3-进程的优先级" class="headerlink" title="3. 进程的优先级"></a>3. 进程的优先级</h4><ul>
+<li>空进程：空进程是不包含任何活跃组件的进程。在系统资源紧张时会被首先清除。</li>
+<li>前台进程：前台进程是Android系统中最重要的进程，是与用户正在交互的进程。*</li>
+<li>服务进程：一个包含已启动服务的进程就是服务进程，服务没有用户界面，不与用户直接交互，但能够在后台长期运行，提供用户所关心的重要功能。</li>
+<li>可见进程：可见进程指部分程序界面能够被用户看见，却不在前台与用户交互。</li>
+<li>后台进程： 如果一个进程不包含任何已经启动的服务，而且没有用户可见的Activity，则这个进程就是后台进程。</li>
+</ul>
+<p>以上进程的回收顺序从先到后分别是：空进程，后台进程，服务进程，可见进程，前台进程。</p>
+<h4 id="4-Activity的启动模式"><a href="#4-Activity的启动模式" class="headerlink" title="4. Activity的启动模式"></a>4. Activity的启动模式</h4><ul>
+<li>Standard:每次新建Activity实例。</li>
+<li>SingleTop：若栈顶为所需实例，不新建，否则新建。</li>
+<li>SingleTask：若栈中已存在实例，将所需Activity置于栈顶，清除该Activity之上的其他Activity。</li>
+<li>SingleInstance：将Activity置于新建的任务栈中，供需要的App共享使用</li>
+</ul>
+<h4 id="5-Scheme跳转协议"><a href="#5-Scheme跳转协议" class="headerlink" title="5. Scheme跳转协议"></a>5. Scheme跳转协议</h4><p>Android中的scheme是一种页面内跳转协议，通过定义自己的scheme协议，可以跳转到app中的各个页面</p>
+<ul>
+<li>服务器可以定制化告诉app跳转哪个页面</li>
+<li>App可以通过跳转到另一个App页面</li>
+<li>可以通过H5页面跳转页面</li>
+</ul>
+<hr>
+<h1 id="2-Fragment"><a href="#2-Fragment" class="headerlink" title="2. Fragment"></a>2. Fragment</h1><p>Fragment比Activity更节省内存，其切换模式也更加舒适，使用频率不低于四大组件，且有自己的生命周期，而且必须依附于Activity。</p>
+<h4 id="1-Activity创建Fragment的方式"><a href="#1-Activity创建Fragment的方式" class="headerlink" title="1. Activity创建Fragment的方式"></a>1. Activity创建Fragment的方式</h4><ul>
+<li>静态创建（xml中绑定fragment）</li>
+<li>动态创建（代码中通过fragment事务管理器添加动态创建的fragment）</li>
+</ul>
+<h4 id="2-FragmentPageAdapter和FragmentPageStateAdapter的区别"><a href="#2-FragmentPageAdapter和FragmentPageStateAdapter的区别" class="headerlink" title="2. FragmentPageAdapter和FragmentPageStateAdapter的区别"></a>2. FragmentPageAdapter和FragmentPageStateAdapter的区别</h4><ul>
+<li>FragmentPageAdapter在每次切换页面的的时候，是将Fragment进行分离，适合页面较少的Fragment使用以保存一些内存，对系统内存不会多大影响</li>
+<li>FragmentPageStateAdapter在每次切换页面的时候，是将Fragment进行回收，适合页面较多的Fragment使用，这样就不会消耗更多的内存</li>
+</ul>
+<h4 id="3-fragment的生命周期"><a href="#3-fragment的生命周期" class="headerlink" title="3. fragment的生命周期"></a>3. fragment的生命周期</h4><ul>
+<li>onAttach()</li>
+<li>onCreate()</li>
+<li>onCreateView()</li>
+<li>onActivityCreated()</li>
+<li>onStart()</li>
+<li>onResume()</li>
+<li>onPause()</li>
+<li>onStop()</li>
+<li>onDestroyView()</li>
+<li>onDestroy()</li>
+<li>onDetach()</li>
+</ul>
+<h4 id="4-Fragment的通信"><a href="#4-Fragment的通信" class="headerlink" title="4. Fragment的通信"></a>4. Fragment的通信</h4><ul>
+<li>Fragment调用Activity中的方法：getActivity</li>
+<li>Activity调用Fragment中的方法：接口回调</li>
+<li>Fragment调用Fragment中的方法：FragmentManager. findFragmentById</li>
+</ul>
+<h4 id="5-Fragment的replace、add、remove方法"><a href="#5-Fragment的replace、add、remove方法" class="headerlink" title="5. Fragment的replace、add、remove方法"></a>5. Fragment的replace、add、remove方法</h4><ul>
+<li>replace：替代Fragment的栈顶页面</li>
+<li>add：添加Fragment到栈顶页面</li>
+<li>remove：移除Fragment栈顶页面</li>
+</ul>
+<hr>
+<h1 id="3-Service"><a href="#3-Service" class="headerlink" title="3. Service"></a>3. Service</h1><p>Service是四大组件之一，它可以在后台执行长时间运行操作而没有用户界面的应用组件</p>
+<h4 id="1-Service和Thread的区别"><a href="#1-Service和Thread的区别" class="headerlink" title="1. Service和Thread的区别"></a>1. Service和Thread的区别</h4><ul>
+<li>Service是安卓中系统的组件，<strong>它运行在独立进程的主线程中，不可以执行耗时操作。T</strong>hread是程序执行的最小单元，分配CPU的基本单位，可以开启子线程执行耗时操作。</li>
+<li>Service在不同Activity中可以获取自身实例，可以方便的对Service进行操作。Thread在不同的Activity中难以获取自身实例，如果Activity被销毁，Thread实例就很难再获取得到。</li>
+</ul>
+<h4 id="2-Service启动方式"><a href="#2-Service启动方式" class="headerlink" title="2. Service启动方式"></a>2. Service启动方式</h4><ul>
+<li>startService</li>
+<li>bindService（通过bindService方式可以在Activity中获取到Sevice的实例）</li>
+</ul>
+<h4 id="3-Service的生命周期"><a href="#3-Service的生命周期" class="headerlink" title="3. Service的生命周期"></a>3. Service的生命周期</h4><ul>
+<li>startService<ul>
+<li>onCreate()</li>
+<li>onStartCommand()</li>
+<li>onDestroy()</li>
+</ul>
+</li>
+<li>bindService<ul>
+<li>onCreate()</li>
+<li>onBind()</li>
+<li>onUnBind()</li>
+<li>onDestroy()</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="4-Broadcast-Receiver"><a href="#4-Broadcast-Receiver" class="headerlink" title="4. Broadcast Receiver"></a>4. Broadcast Receiver</h1><p>Broadcast是四大组件之一，是一种广泛运用在应用程序之间传输信息的机制，通过发送Intent来传送我们的数据. </p>
+<h5 id="1-使用场景"><a href="#1-使用场景" class="headerlink" title="1. 使用场景"></a>1. 使用场景</h5><ul>
+<li>同一App具有多个进程的不同组件之间的消息通信</li>
+<li>不同App之间的组件之间的消息通信</li>
+</ul>
+<h4 id="2-Broadcast-Receiver的种类"><a href="#2-Broadcast-Receiver的种类" class="headerlink" title="2. Broadcast Receiver的种类"></a>2. Broadcast Receiver的种类</h4><ul>
+<li>普通广播：异步执行，效率高，无法被截断，所有的接收者同时接收到广播信息。</li>
+<li>有序广播：同步执行，效率低，可以被截断，同一时刻只能有一个广播接收者接收到信息，该接收者处理完毕自己的逻辑之后该广播才能继续传递，所以这是的广播接收者是有顺序的。优先级高的广播接收者优先收到广播信息。此时广播是被截断的。</li>
+<li>本地广播：只能在本地应用内部传递。通过localBroadcastManager类在注册和发送广播，通过localReceiver类来接收广播。</li>
+<li>Sticky广播（粘性广播）：由于在Android5. 0 &amp; API 21中已经失效，可忽略。</li>
+</ul>
+<h4 id="3-Broadcast-Receiver的实现"><a href="#3-Broadcast-Receiver的实现" class="headerlink" title="3. Broadcast Receiver的实现"></a>3. Broadcast Receiver的实现</h4><ul>
+<li>静态注册：注册后一直运行，尽管Activity、进程、App被杀死还是可以接收到广播</li>
+<li>动态注册：跟随Activity的生命周期</li>
+</ul>
+<h4 id="4-Broadcast-Receiver实现机制-《android开发艺术探索》有具体说明"><a href="#4-Broadcast-Receiver实现机制-《android开发艺术探索》有具体说明" class="headerlink" title="4. Broadcast Receiver实现机制  《android开发艺术探索》有具体说明 "></a>4. Broadcast Receiver实现机制  <font color="red" size="2">《android开发艺术探索》有具体说明 </font></h4><ul>
+<li>自定义广播类继承BroadcastReceiver，复写onReceiver()</li>
+<li>通过Binder机制向AMS进行注册广播</li>
+<li>广播发送者通过Binder机制向AMS发送广播</li>
+<li>AMS查找符合相应条件的广播发送到BroadcastReceiver相应的循环队列中</li>
+<li>消息队列执行拿到广播，回调BroadcastReceiver的onReceiver()</li>
+</ul>
+<h4 id="5-LocalBroadcastManager特点"><a href="#5-LocalBroadcastManager特点" class="headerlink" title="5. LocalBroadcastManager特点"></a>5. LocalBroadcastManager特点</h4><ul>
+<li>本地广播只能在自身App内传播，不必担心泄漏隐私数据</li>
+<li>本地广播不允许其他App对你的App发送该广播，不必担心安全漏洞被利用</li>
+<li>本地广播比全局广播更高效</li>
+<li>以上三点都是源于其内部是用Handler实现的</li>
+</ul>
+<hr>
+<h1 id="4-WebView"><a href="#4-WebView" class="headerlink" title="4. WebView"></a>4. WebView</h1><h4 id="1-WebView安全漏洞"><a href="#1-WebView安全漏洞" class="headerlink" title="1. WebView安全漏洞"></a>1. WebView安全漏洞</h4><ul>
+<li>API16之前存在远程代码执行安全漏洞，该漏洞源于程序没有正确限制使用WebView.addJavascriptInterface方法，远程攻击者可通过使用Java反射机制利用该漏洞执行任意Java对象的方法。在Android4.2以上的，google作了修正，通过在Java的远程方法上面声明一个@JavascriptInterface。</li>
+</ul>
+<h4 id="2-WebView销毁步骤"><a href="#2-WebView销毁步骤" class="headerlink" title="2. WebView销毁步骤 *"></a>2. WebView销毁步骤 <font color="red">*</font></h4><ul>
+<li>WebView在其他容器上时（如：LinearLayout），当销毁Activity时，需要在onDestroy()中先移除容器上的WebView，然后再将WebView.destroy()，这样就不会导致内存泄漏。</li>
+</ul>
+<h4 id="3-WebView的jsbridge"><a href="#3-WebView的jsbridge" class="headerlink" title="3. WebView的jsbridge"></a>3. WebView的jsbridge</h4><ul>
+<li>客户端和服务端之间可以通过Javascript来互相调用各自的方法</li>
+</ul>
+<h4 id="4-WebViewClient的onPageFinished"><a href="#4-WebViewClient的onPageFinished" class="headerlink" title="4. WebViewClient的onPageFinished"></a>4. WebViewClient的onPageFinished</h4><ul>
+<li>WebViewClient的onPageFinished在每次完成页面的时候调用，但是遇到未加载完成的页面跳转其他页面时，就会一直调用，使用WebChromeClient. onProgressChanged可以替代。</li>
+</ul>
+<h4 id="5-WebView后台耗电"><a href="#5-WebView后台耗电" class="headerlink" title="5. WebView后台耗电"></a>5. WebView后台耗电</h4><ul>
+<li>在WebView加载页面的时候，会自动开启线程去加载，如果不很好的关闭这些线程，就会导致电量消耗加大，可以采用暴力的方法，直接在onDestroy方法中System.exit(0)结束当前正在运行中的java虚拟机。</li>
+</ul>
+<h4 id="6-WebView硬件加速"><a href="#6-WebView硬件加速" class="headerlink" title="6. WebView硬件加速"></a>6. WebView硬件加速</h4><ul>
+<li>Android3.0引入硬件加速，默认会开启，WebView在硬件加速的情况下滑动更加平滑，性能更加好，但是会出现白块或者页面闪烁的副作用，建议WebView暂时关闭硬件加速</li>
+</ul>
+<h4 id="7-WebView内存泄漏"><a href="#7-WebView内存泄漏" class="headerlink" title="7. WebView内存泄漏 *"></a>7. WebView内存泄漏 <font color="red">*</font></h4><p>由于WebView是依附于Activity的，Activity的生命周期和WebView启动的线程的生命周期是不一致的，这会导致WebView一直持有对这个Activity的引用而无法释放，解决方案如下:</p>
+<ul>
+<li>独立进程，简单暴力，不过可能涉及到进程间通信（推荐）。<font color="grey">(在Webview所在的Activity的xml声明中指定 android:process=”:xxx”， 但是这里要注意跨进程通信的问题)</font></li>
+<li>动态添加WebView，对传入WebView中使用的Context使用弱引用。</li>
+</ul>
+<hr>
+<h1 id="5-Binder"><a href="#5-Binder" class="headerlink" title="5. Binder"></a>5. Binder</h1><font color="grey"> 通过Parcelable而实现的跨进程间通信方式 </font>
+
+<h4 id="1-Linux内核的基本知识"><a href="#1-Linux内核的基本知识" class="headerlink" title="1. Linux内核的基本知识"></a>1. Linux内核的基本知识</h4><ul>
+<li>进程隔离/虚拟地址空间：进程间是不可以共享数据的，相当于被隔离，每个进程被分配到不同的虚拟地址中</li>
+<li>系统调用：Linux内核对应用有访问权限，用户只能在应用层通过系统调用，调用内核的某些程序</li>
+<li>binder驱动：它负责各个用户的进程，通过binder通信内核来进行交互的模块</li>
+</ul>
+<h4 id="2-为什么使用Binder"><a href="#2-为什么使用Binder" class="headerlink" title="2. 为什么使用Binder"></a>2. 为什么使用Binder</h4><ul>
+<li>性能上，相比传统的Socket更加高效</li>
+<li>安全性高，支持协议双方互相校验</li>
+</ul>
+<h4 id="3-AIDL"><a href="#3-AIDL" class="headerlink" title="3. AIDL"></a>3. AIDL</h4><ul>
+<li>客户端通过aidl文件的Stub.asInterface()方法，拿到Proxy代理类</li>
+<li>通过调用Proxy代理类的方法，将参数进行封包后，调用底层的transact()方法</li>
+<li>transact()方法会回调onTransact()方法，进行参数的解封</li>
+<li>在onTransact()方法中调用服务端对应的方法，并将结果返回</li>
+</ul>
+<hr>
+<h1 id="6-Handler"><a href="#6-Handler" class="headerlink" title="6. Handler"></a>6. Handler</h1><h4 id="1-Handler是什么"><a href="#1-Handler是什么" class="headerlink" title="1. Handler是什么"></a>1. Handler是什么</h4><ul>
+<li>Handler通过发送和处理Message和Runnable对象来关联相对应线程的MessageQueue</li>
+</ul>
+<h4 id="2-Handler使用方法"><a href="#2-Handler使用方法" class="headerlink" title="2. Handler使用方法"></a>2. Handler使用方法</h4><ul>
+<li>post(runnable)</li>
+<li>sendMessage(message)</li>
+</ul>
+<h4 id="3-Handler工作原理"><a href="#3-Handler工作原理" class="headerlink" title="3. Handler工作原理"></a>3. Handler工作原理</h4><ul>
+<li>Android进阶——Android消息机制之Looper、Handler、MessageQueen</li>
+<li><a href="http://blog.csdn.net/qq_30379689/article/details/53394061" target="_blank" rel="external">http://blog.csdn.net/qq_30379689/article/details/53394061</a></li>
+</ul>
+<h4 id="4-Handler引起的内存泄漏"><a href="#4-Handler引起的内存泄漏" class="headerlink" title="4. Handler引起的内存泄漏"></a>4. Handler引起的内存泄漏</h4><ul>
+<li>原因：非静态内部类持有外部类的匿名引用，导致Activity无法释放</li>
+<li>解决： <ul>
+<li>Handler内部持有外部Activity的弱引用</li>
+<li>Handler改为静态内部类</li>
+<li>Handler.removeCallback()</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="7-AsyncTask"><a href="#7-AsyncTask" class="headerlink" title="7.AsyncTask"></a>7.AsyncTask</h1><h4 id="1-AsyncTask是什么"><a href="#1-AsyncTask是什么" class="headerlink" title="1. AsyncTask是什么"></a>1. AsyncTask是什么</h4><p>AyncTask本质上是一个封装了线程池和Handler的异步框架</p>
+<h4 id="2-用法（略）"><a href="#2-用法（略）" class="headerlink" title="2. 用法（略）"></a>2. 用法（略）</h4><h4 id="3-AyncTask源码分析"><a href="#3-AyncTask源码分析" class="headerlink" title="3. AyncTask源码分析"></a>3. AyncTask源码分析</h4><h4 id="4-AsyncTask引起的内存泄漏"><a href="#4-AsyncTask引起的内存泄漏" class="headerlink" title="4. AsyncTask引起的内存泄漏"></a>4. AsyncTask引起的内存泄漏</h4><ul>
+<li>原因：非静态内部类持有外部类的匿名引用，导致Activity无法释放</li>
+<li>解决：<ul>
+<li>AsyncTask内部持有外部Activity的弱引用</li>
+<li>AsyncTask改为静态内部类</li>
+<li>AsyncTask.cancel()</li>
+</ul>
+</li>
+</ul>
+<h4 id="5-AsyncTask的生命周期"><a href="#5-AsyncTask的生命周期" class="headerlink" title="5. AsyncTask的生命周期"></a>5. AsyncTask的生命周期</h4><p>在Activity销毁之前，取消AsyncTask的运行，一次来保证程序的稳定</p>
+<h4 id="6-AsyncTask结果丢失"><a href="#6-AsyncTask结果丢失" class="headerlink" title="6. AsyncTask结果丢失"></a>6. AsyncTask结果丢失</h4><p>由于屏幕旋转、Activity在内存紧张时被收回等情况下，Activity会被重新创建，此时，旧的AsyncTask持有酒的Activity引用，这个时候会导致AsyncTask的onPostExecute()对UI更新无效</p>
+<h4 id="7-AsyncTask并行-串行"><a href="#7-AsyncTask并行-串行" class="headerlink" title="7. AsyncTask并行/串行"></a>7. AsyncTask并行/串行</h4><ul>
+<li>AsyncTask在Android2.3之前默认采用并行执行任务，AsyncTask在Android2.3之后默认采用串行执行任务</li>
+<li>如果需要在Android2.3之后采用并行执行任务，可以调用AsyncTask的executeOnExecutor()</li>
+</ul>
+<hr>
+<h1 id="8-HandlerThread面试题"><a href="#8-HandlerThread面试题" class="headerlink" title="8.HandlerThread面试题"></a>8.HandlerThread面试题</h1><h4 id="1-HandlerThread产生背景"><a href="#1-HandlerThread产生背景" class="headerlink" title="1. HandlerThread产生背景"></a>1. HandlerThread产生背景</h4><p>当系统有多个耗时任务需要执行时，每个任务都会开启一个新线程去执行耗时任务，这样会导致系统多次创建和销毁线程，从而影响性能，为了解决这一问题，Google提供了HandlerThread，HandlerThread在线程中创建一个Looper循环器，让Looper轮询消息队列，当有耗时任务进入队列时，则不需要开启新线程，在原有的线程中执行耗时任务即可，否则线程阻塞</p>
+<h4 id="2-HandlerThread的特点"><a href="#2-HandlerThread的特点" class="headerlink" title="2. HandlerThread的特点"></a>2. HandlerThread的特点</h4><ul>
+<li>HandlerThread本质上是一个线程，继承自Thread</li>
+<li>HandlerThread有自己的Looper对象，可以进行Looper循环，可以创建Handler</li>
+<li>HandlerThread可以在Handler的handlerMessage中执行异步方法</li>
+<li>HandlerThread优点是异步不会阻塞，减少对性能的消耗 <font color="red"> ??? </font></li>
+<li>HandlerThread缺点是不能同时继续进行多任务处理，需要等待进行处理，处理效率较低</li>
+<li>HandlerThread与线程池不同，HandlerThread是一个串行队列，背后只有一个线程</li>
+</ul>
+<hr>
+<h1 id="9-IntentService"><a href="#9-IntentService" class="headerlink" title="9. IntentService"></a>9. IntentService</h1><h4 id="1-IntentService是什么"><a href="#1-IntentService是什么" class="headerlink" title="1. IntentService是什么"></a>1. IntentService是什么</h4><p>IntentService是继承自Service并处理异步请求的一个类，其内部采用HandlerThread和Handler实现的，在IntentService<br>内有一个工作线程来处理耗时操作，其优先级比普通Service高。当任务完成后，IntentService会自动停止，而不需要手动调用stopSelf()。另外，可以多次启动IntentService，每个耗时操作都会以工作队列的方式在IntentService中的onHandlerIntent()回调方法中执行，并且每次只会执行一个工作线程。</p>
+<h4 id="2-IntentService的使用方法"><a href="#2-IntentService的使用方法" class="headerlink" title="2. IntentService的使用方法"></a>2. IntentService的使用方法</h4><ul>
+<li>创建Service继承自IntentService</li>
+<li>复写构造方法和onHandlerIntent()方法</li>
+<li>在onHandlerIntent()中执行耗时操作</li>
+</ul>
+<hr>
+<h1 id="10-视图工作机制面试题"><a href="#10-视图工作机制面试题" class="headerlink" title="10. 视图工作机制面试题"></a>10. 视图工作机制面试题</h1><font color="red">《Android开发艺术探索》第三章</font>
+
+<h4 id="1-Android进阶——Android视图工作机制之measure、layout、draw"><a href="#1-Android进阶——Android视图工作机制之measure、layout、draw" class="headerlink" title="1. Android进阶——Android视图工作机制之measure、layout、draw"></a>1. Android进阶——Android视图工作机制之measure、layout、draw</h4><p><a href="http://blog.csdn.net/qq_30379689/article/details/54588736" target="_blank" rel="external">http://blog.csdn.net/qq_30379689/article/details/54588736</a></p>
+<h4 id="2-Android事件分发机制之dispatchTouchEvent、onInterceptTouchEvent、onTouchEvent"><a href="#2-Android事件分发机制之dispatchTouchEvent、onInterceptTouchEvent、onTouchEvent" class="headerlink" title="2. Android事件分发机制之dispatchTouchEvent、onInterceptTouchEvent、onTouchEvent"></a>2. Android事件分发机制之dispatchTouchEvent、onInterceptTouchEvent、onTouchEvent</h4><p><a href="http://blog.csdn.net/qq_30379689/article/details/53967177" target="_blank" rel="external">http://blog.csdn.net/qq_30379689/article/details/53967177</a></p>
+<h4 id="3-Android视图工作机制中的重绘"><a href="#3-Android视图工作机制中的重绘" class="headerlink" title="3. Android视图工作机制中的重绘"></a>3. Android视图工作机制中的重绘</h4><p>(1) invalidate()和requestLayout()  </p>
+<ul>
+<li>invalidate()和requestLayout()，常用于View重绘和更新，其主要区别如下</li>
+<li>invalidate方法只会执行onDraw方法<br>requestLayout方法只会执行onMeasure方法和onLayout方法，并不会执行onDraw方法。<br>所以当我们进行View更新时，若仅View的显示内容发生改变且新显示内容不影响View的大小、位置，则只需调用invalidate方法；若View宽高、位置发生改变且显示内容不变，只需调用requestLayout方法；若两者均发生改变，则需调用两者，按照View的绘制流程，推荐先调用requestLayout方法再调用invalidate方法</li>
+</ul>
+<p>(2) invalidate()和postInvalidate()  </p>
+<ul>
+<li>invalidate方法用于UI线程中重新绘制视图</li>
+<li>postInvalidate方法用于非UI线程中重新绘制视图，省去使用handler</li>
+</ul>
+<h4 id="4-事件分发"><a href="#4-事件分发" class="headerlink" title="4. 事件分发"></a>4. 事件分发</h4><p><strong>dispatchTouchEvent() 、onInterceptTouchEvent()和onTouchEvent()</strong><br>当点击事件发生时，首先Activity将TouchEvent传递给Window，再从Window传递给顶层View。TouchEvent会最先到达最顶层 view 的 dispatchTouchEvent ，然后由 dispatchTouchEvent 方法进行分发，如果dispatchTouchEvent返回true/false ，则将事件消耗，并且不再分发也不处理。如果dispatchTouchEvent交给super.dispatchTouchEvent(ev)去处理 ，则由这个 view 的 interceptTouchEvent 方法来决定是否要拦截这个事件，如果 interceptTouchEvent 返回 true ，也就是拦截掉了，则交给它的 onTouchEvent 来处理，如果 interceptTouchEvent 返回 false ，那么就传递给子 view ，由子 view 的 dispatchTouchEvent 再来开始这个事件的分发。如果事件传递到某一层的子 view 的 onTouchEvent 上了，这个方法返回了 false ，那么这个事件会从这个 view 往上传递，都是 onTouchEvent 来接收。而如果传递到最上面的 onTouchEvent 也返回 false 的话，这个事件就会“消失”，而且接收不到下一次事件。</p>
+<hr>
+<h1 id="11-ANR问题"><a href="#11-ANR问题" class="headerlink" title="11. ANR问题"></a>11. ANR问题</h1><p>Application Not Responding,页面无响应的对话框</p>
+<h4 id="1-发生ANR的条件"><a href="#1-发生ANR的条件" class="headerlink" title="1. 发生ANR的条件"></a>1. 发生ANR的条件</h4><p>应用程序的响应性是由ActivityManager和WindowManager系统服务监视的，当ANR发生条件满足时，就会弹出ANR的对话框</p>
+<ul>
+<li>Activity超过5s无响应</li>
+<li>BroadcastReceiver超过10s无响应</li>
+<li>Service超过20s无响应</li>
+</ul>
+<h4 id="2-造成ANR的主要原因"><a href="#2-造成ANR的主要原因" class="headerlink" title="2. 造成ANR的主要原因"></a>2. 造成ANR的主要原因</h4><p>主线程被IO操作阻塞</p>
+<ul>
+<li>Activity的所有生命周期都是执行在主线程中的</li>
+<li>Service默认执行在主线程中</li>
+<li>BroadcastReceiver的回调onReceive()执行在主线程中</li>
+<li>AsyncTask的回调除了doInBackground，其他都是执行在主线程中</li>
+<li>没有使用子线程Looper的Handler的handlerMessage，post(Runnable)都是执行在主线程中</li>
+</ul>
+<h4 id="3-如何解决ANR"><a href="#3-如何解决ANR" class="headerlink" title="3. 如何解决ANR"></a>3. 如何解决ANR</h4><ul>
+<li>在非UI线程中异步处理耗时IO操作</li>
+<li>使用Thread或者HandlerThread提供优先级</li>
+<li>使用Handler处理工作线程的耗时操作</li>
+<li>AsyncTask的onCreate和onResume回调尽量避免耗时操作</li>
+</ul>
+<hr>
+<h1 id="12-OOM"><a href="#12-OOM" class="headerlink" title="12. OOM"></a>12. OOM</h1><p>OOM指Out of memory（内存溢出），当前占用内存加上我们申请的内存资源超过了Dalvik虚拟机的最大内存限制就会抛出Out of memory异常</p>
+<h4 id="1-OOM相关概念"><a href="#1-OOM相关概念" class="headerlink" title="1. OOM相关概念"></a>1. OOM相关概念</h4><ul>
+<li>内存溢出：指程序在申请内存时，没有足够的空间供其使用</li>
+<li>内存泄漏：指程序分配出去的内存不再使用，无法进行回收</li>
+<li>内存抖动：指程序出现短时间内大量创建对象，并回收对象的现象</li>
+</ul>
+<h4 id="2-解决OOM"><a href="#2-解决OOM" class="headerlink" title="2. 解决OOM"></a>2. 解决OOM</h4><ul>
+<li>Bitmap<ul>
+<li>对图片进行压缩</li>
+<li>加载缩略图</li>
+<li>在滚动时不加载图片</li>
+<li>回收Bitmap</li>
+<li>使用inBitmap属性(复用内存块)</li>
+<li>捕获异常</li>
+</ul>
+</li>
+<li>其他<ul>
+<li>listview重用convertView、使用Lru</li>
+<li>避免onDraw方法执行对象的创建</li>
+<li>谨慎使用多线程</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="13-Bitmap"><a href="#13-Bitmap" class="headerlink" title="13. Bitmap"></a>13. Bitmap</h1><h4 id="1-recycle"><a href="#1-recycle" class="headerlink" title="1. recycle"></a>1. recycle</h4><ul>
+<li>在安卓3.0以前Bitmap是存放在堆中的，我们只要回收堆内存即可</li>
+<li>在安卓3.0以后Bitmap是存放在内存中的，我们需要回收native层和Java层的内存</li>
+<li>官方建议我们3.0以后使用recycle方法进行回收，该方法也可以不主动调用，因为垃圾回收器会自动收集不可用的Bitmap对象进行回收</li>
+<li>recycle方法会判断Bitmap在不可用的情况下，将发送指令到垃圾回收器，让其回收native层和Java层的内存，则Bitmap进入dead状态</li>
+<li>recycle方法是不可逆的，如果再次调用getPixels()等方法，则获取不到想要的结果</li>
+</ul>
+<h4 id="2-三级缓存"><a href="#2-三级缓存" class="headerlink" title="2. 三级缓存"></a>2. 三级缓存</h4><ul>
+<li>网络缓存</li>
+<li>本地缓存</li>
+<li>内存缓存</li>
+</ul>
+<hr>
+<h1 id="14-UI卡顿原理"><a href="#14-UI卡顿原理" class="headerlink" title="14. UI卡顿原理"></a>14. UI卡顿原理</h1><p> View的绘制帧数保持60fps是最佳，这要求每帧的绘制时间不超过16ms（1000/60），如果安卓不能在16ms内完成界面的渲染，那么就会出现卡顿现象</p>
+<h4 id="1-UI卡顿的原因分析"><a href="#1-UI卡顿的原因分析" class="headerlink" title="1. UI卡顿的原因分析"></a>1. UI卡顿的原因分析</h4><ul>
+<li>在UI线程中做轻微的耗时操作，导致UI线程卡顿</li>
+<li>布局Layout过于复杂，无法在16ms内完成渲染</li>
+<li>在同一时间动画执行的次数过多，导致CPU和GPU负载过重</li>
+<li>overDraw,导致像素在同一帧的时间内被绘制多次，使CPU和GPU负载过重</li>
+<li>View频繁的触发measure、layout，导致measure、layout累计耗时过多和整个View频繁的重新渲染</li>
+<li>频繁的处罚GC操作导致线程暂停，会使得安卓系统在16ms内无法完成绘制</li>
+<li>冗余资源及逻辑等导致加载和执行缓慢</li>
+<li>ANR</li>
+</ul>
+<h4 id="2-UI卡顿的优化"><a href="#2-UI卡顿的优化" class="headerlink" title="2. UI卡顿的优化"></a>2. UI卡顿的优化</h4><ul>
+<li><p>布局优化</p>
+<ul>
+<li>使用include、ViewStub、merge</li>
+<li>不要出现过于嵌套和冗余的布局</li>
+<li>使用自定义View取代复杂的View</li>
+</ul>
+</li>
+<li><p>ListView的优化</p>
+<ul>
+<li>复用convertView</li>
+<li>滑动不加载</li>
+</ul>
+</li>
+<li><p>背景和图片优化</p>
+<ul>
+<li>缩略图</li>
+<li>图片压缩</li>
+</ul>
+</li>
+<li><p>避免ANR</p>
+<ul>
+<li>不要在UI线程中做耗时操作 </li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="15-内存泄漏"><a href="#15-内存泄漏" class="headerlink" title="15. 内存泄漏"></a>15. 内存泄漏</h1><h4 id="1-Java内存泄漏引起的主要原因"><a href="#1-Java内存泄漏引起的主要原因" class="headerlink" title="1. Java内存泄漏引起的主要原因"></a>1. Java内存泄漏引起的主要原因</h4><p>长生命周期的对象持有短生命周期对象的引用就很可能发生内存泄漏</p>
+<h4 id="2-Java内存分配策略"><a href="#2-Java内存分配策略" class="headerlink" title="2. Java内存分配策略"></a>2. Java内存分配策略</h4><ul>
+<li>静态存储区：又称方法区，主要存储全局变量和静态变量，在整个程序运行期间都存在</li>
+<li>栈区：方法体的局部变量会在栈区创建空间，并在方法执行结束后会自动释放变量的空间和内存</li>
+<li>堆区：保存动态产生的数据，如：new出来的对象和数组，在不使用的时候由Java回收器自动回收</li>
+</ul>
+<h4 id="3-Android解决内存泄漏的例子"><a href="#3-Android解决内存泄漏的例子" class="headerlink" title="3. Android解决内存泄漏的例子"></a>3. Android解决内存泄漏的例子</h4><ul>
+<li>单例造成的内存泄漏：在单例中，使用context.getApplicationContext()作为单例的context</li>
+<li>匿名内部类造成的内存泄漏：由于非静态内部类持有匿名外部类的引用，必须将内部类设置为static</li>
+<li>Handler造成的内存泄漏：使用static的Handler内部类，同时在实现内部类中持有Context的弱引用</li>
+<li>避免使用static变量：由于static变量会跟Activity生命周期一致，当Activity退出后台被后台回收时，static变量是不安全，所以也要管理好static变量的生命周期</li>
+<li>资源未关闭造成的内存泄漏：比如Socket、Broadcast、Cursor、Bitmap、ListView等，使用完后要关闭</li>
+<li>AsyncTask造成的内存泄漏：由于非静态内部类持有匿名内部类的引用而造成内存泄漏，可以通过AsyncTask内部持有外部Activity的弱引用同时改为静态内部类或在onDestroy()中执行AsyncTask.cancel()进行修复</li>
+</ul>
+<hr>
+<h1 id="16-内存管理面试题"><a href="#16-内存管理面试题" class="headerlink" title="16. 内存管理面试题"></a>16. 内存管理面试题</h1><h4 id="1-Android内存管理机制"><a href="#1-Android内存管理机制" class="headerlink" title="1. Android内存管理机制"></a>1. Android内存管理机制</h4><ul>
+<li>分配机制</li>
+<li>管理机制</li>
+</ul>
+<h4 id="2-内存管理机制的特点"><a href="#2-内存管理机制的特点" class="headerlink" title="2. 内存管理机制的特点"></a>2. 内存管理机制的特点</h4><ul>
+<li>更少的占用内存</li>
+<li>在合适的时候，合理的释放系统资源</li>
+<li>在系统内存紧张的时候，能释放掉大部分不重要的资源</li>
+<li>能合理的在特殊生命周期中，保存或还原重要数据</li>
+</ul>
+<h4 id="3-内存优化方法"><a href="#3-内存优化方法" class="headerlink" title="3. 内存优化方法"></a>3. 内存优化方法</h4><ul>
+<li>Service完成任务后应停止它，或用IntentService（因为可以自动停止服务）代替Service</li>
+<li>在UI不可见的时候，释放其UI资源</li>
+<li>在系统内存紧张的时候，尽可能多的释放非重要资源</li>
+<li>避免滥用Bitmap导致内存浪费</li>
+<li>避免使用依赖注入框架</li>
+<li>使用针对内存优化过的数据容器</li>
+<li>使用ZIP对齐的APK</li>
+<li>使用多进程</li>
+</ul>
+<hr>
+<h1 id="17-冷启动和热启动面试题"><a href="#17-冷启动和热启动面试题" class="headerlink" title="17. 冷启动和热启动面试题"></a>17. 冷启动和热启动面试题</h1><h4 id="1-什么是冷启动和热启动"><a href="#1-什么是冷启动和热启动" class="headerlink" title="1. 什么是冷启动和热启动"></a>1. 什么是冷启动和热启动</h4><ul>
+<li>冷启动：在启动应用前，系统中没有该应用的任何进程信息</li>
+<li>热启动：在启动应用时，在已有的进程上启动应用（用户使用返回键退出应用，然后马上又重新启动应用）</li>
+</ul>
+<h4 id="2-冷启动和热启动的区别"><a href="#2-冷启动和热启动的区别" class="headerlink" title="2. 冷启动和热启动的区别"></a>2. 冷启动和热启动的区别</h4><ul>
+<li>冷启动：创建Application后再创建和初始化MainActivity</li>
+<li>热启动：创建和初始化MainActivity即可</li>
+</ul>
+<h4 id="3-冷启动时间的计算"><a href="#3-冷启动时间的计算" class="headerlink" title="3. 冷启动时间的计算"></a>3. 冷启动时间的计算</h4><ul>
+<li>这个时间值从应用启动（创建进程）开始计算，到完成视图的第一次绘制为止</li>
+</ul>
+<h4 id="4-冷启动流程"><a href="#4-冷启动流程" class="headerlink" title="4. 冷启动流程"></a>4. 冷启动流程</h4><ul>
+<li>Zygote进程中fork创建出一个新的进程</li>
+<li>创建和初始化Application类、创建MainActivity</li>
+<li>inflate布局、当onCreate/onStart/onResume方法都走完</li>
+<li>contentView的measure/layout/draw显示在界面上<br>总结：Application构造方法-&gt;attachBaseContext()-&gt;onCreate()-&gt;Activity构造方法-&gt;onCreate()-&gt;配置主题中背景等属性-&gt;onStart()-&gt;onResume()-&gt;测量布局绘制显示在界面上</li>
+</ul>
+<h4 id="5-冷启动优化"><a href="#5-冷启动优化" class="headerlink" title="5. 冷启动优化"></a>5. 冷启动优化</h4><ul>
+<li>减少第一个界面onCreate()方法的工作量</li>
+<li>不要让Application参与业务的操作</li>
+<li>不要在Application进行耗时操作</li>
+<li>不要以静态变量的方式在Application中保存数据</li>
+<li>减少布局的复杂性和深度</li>
+<li>不要在mainThread中加载资源</li>
+<li>通过懒加载方式初始化第三方SDK</li>
+</ul>
+<hr>
+<h1 id="18-其他优化面试题"><a href="#18-其他优化面试题" class="headerlink" title="18. 其他优化面试题"></a>18. 其他优化面试题</h1><h4 id="1-Android不用静态变量存储数据"><a href="#1-Android不用静态变量存储数据" class="headerlink" title="1. Android不用静态变量存储数据"></a>1. Android不用静态变量存储数据</h4><ul>
+<li>静态变量等数据由于进程已经被杀死而被初始化</li>
+<li>使用其他数据传输方式：文件/sp/contentProvider</li>
+</ul>
+<h4 id="2-SharePreference安全问题"><a href="#2-SharePreference安全问题" class="headerlink" title="2. SharePreference安全问题"></a>2. SharePreference安全问题</h4><ul>
+<li>不能跨进程同步</li>
+<li>文件不宜过大</li>
+</ul>
+<h4 id="3-内存对象序列化"><a href="#3-内存对象序列化" class="headerlink" title="3. 内存对象序列化"></a>3. 内存对象序列化</h4><ul>
+<li>Serializeble：是java的序列化方式，Serializeble在序列化的时候会产生大量的临时对象，从而引起频繁的GC</li>
+<li>Parcelable：是Android的序列化方式，且性能比Serializeble高，Parcelable不能使用在要将数据存储在硬盘上的情况</li>
+</ul>
+<h4 id="4-避免在UI线程中做繁重的操作"><a href="#4-避免在UI线程中做繁重的操作" class="headerlink" title="4. 避免在UI线程中做繁重的操作"></a>4. 避免在UI线程中做繁重的操作</h4><hr>
+<h1 id="19-热更新面试题"><a href="#19-热更新面试题" class="headerlink" title="19. 热更新面试题"></a>19. 热更新面试题</h1><h4 id="1-热更新主要流程"><a href="#1-热更新主要流程" class="headerlink" title="1. 热更新主要流程"></a>1. 热更新主要流程</h4><ul>
+<li>线上检查到Crash</li>
+<li>拉出Bugfix分支修复Crash问题</li>
+<li>jenkins构建和补丁生成</li>
+<li>app通过推送或主动拉取补丁文件</li>
+<li>将Bugfix代码合到master上</li>
+</ul>
+<h4 id="2-热更新主流框架"><a href="#2-热更新主流框架" class="headerlink" title="2. 热更新主流框架"></a>2. 热更新主流框架</h4><ul>
+<li>Dexposed</li>
+<li>AndFix</li>
+<li>Nuwa</li>
+<li>Tinker</li>
+</ul>
+<h4 id="3-热更新的原理"><a href="#3-热更新的原理" class="headerlink" title="3. 热更新的原理"></a>3. 热更新的原理</h4><ul>
+<li>在ClassLoader创建一个dexElements数组</li>
+<li>将修复好的dex文件存放在dexElements数组的最前面</li>
+<li>ClassLoader会遍历dexElements数组，找到最前面的dex文件优先加载</li>
+</ul>
+<hr>
+<h1 id="20-进程保活面试题"><a href="#20-进程保活面试题" class="headerlink" title="20. 进程保活面试题"></a>20. 进程保活面试题</h1><h4 id="1-进程的优先级"><a href="#1-进程的优先级" class="headerlink" title="1. 进程的优先级"></a>1. 进程的优先级</h4><ul>
+<li>空进程</li>
+<li>后台进程</li>
+<li>服务进程</li>
+<li>可见进程</li>
+<li>前台进程</li>
+</ul>
+<h4 id="2-Android进程回收策略"><a href="#2-Android进程回收策略" class="headerlink" title="2. Android进程回收策略"></a>2. Android进程回收策略</h4><ul>
+<li>Low memory Killer（定时执行）：通过一些比较复杂的评分机制，对进程进行打分，然后将分数高的进程判定为bad进程，杀死并释放内存</li>
+<li>OOM_ODJ：判别进程的优先级</li>
+</ul>
+<h4 id="3-Android保活方案"><a href="#3-Android保活方案" class="headerlink" title="3. Android保活方案"></a>3. Android保活方案</h4><ul>
+<li>利用系统广播拉活</li>
+<li>利用系统Service机制拉活</li>
+<li>利用Native进程拉活</li>
+<li>利用JobScheduler机制拉活</li>
+<li>利用账号同步机制拉活</li>
+</ul>
+<p><a href="http://mp.weixin.qq.com/s/qTdzS_TkiyvreG0FaXHJYw" target="_blank" rel="external">原文链接</a></p>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="jaminchanks.github.io.git/2018/01/18/Android/Android复习笔记/" data-id="ckcryfbxv0005ret3ua3iv7as" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="jaminchanks.github.io.git/2018/01/18/Android/Android复习笔记/#comments" class="article-comment-link">评论</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2018/01/18/OpenGL/GLSL基础/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">上一篇</strong>
+            <div class="article-nav-title">
+                
+                    GLSL基础
+                
+            </div>
+        </a>
+    
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    
+        <section id="comments">
+    <div id="lv-container" data-id="city" data-uid=MTAyMC8zMzg3NC8xMDQyNw==></div>
+</section>
+    
+
+</section>
+            
+                
+<aside id="sidebar">
+   
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/06/28/Git/git_我可以反悔吗/" class="title"></a></p>
+                            <p class="item-date"><time datetime="2018-06-28T13:57:36.094Z" itemprop="datePublished">2018-06-28</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Git/">Git</a></p>
+                            <p class="item-title"><a href="/2018/05/31/Git/git_笔记1/" class="title">Git 深入学习笔记</a></p>
+                            <p class="item-date"><time datetime="2018-05-31T15:24:25.980Z" itemprop="datePublished">2018-05-31</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Java/">Java</a></p>
+                            <p class="item-title"><a href="/2018/05/21/Java/Java动态代理/" class="title">Java不高级特性:动态代理</a></p>
+                            <p class="item-date"><time datetime="2018-05-21T15:44:51.291Z" itemprop="datePublished">2018-05-21</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Kotlin/">Kotlin</a></p>
+                            <p class="item-title"><a href="/2018/05/12/Kotlin/Koltin的byLazy实现原理/" class="title">从原理分析和区分lateinit var、by lazy</a></p>
+                            <p class="item-date"><time datetime="2018-05-12T07:12:08.120Z" itemprop="datePublished">2018-05-12</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Java/">Java</a></p>
+                            <p class="item-title"><a href="/2018/04/30/Java/堆还是栈/" class="title">Java对象内存分配，堆还是栈? 这是个问题</a></p>
+                            <p class="item-date"><time datetime="2018-04-30T03:31:28.526Z" itemprop="datePublished">2018-04-30</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Android-OpenGL/">Android OpenGL</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Kotlin/">Kotlin</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Others/">Others</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Read/">Read</a><span class="category-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">6</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+
+            
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2020 七味和弦<br>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
+        </div>
+    </div>
+
+<!-- Baidu Analytics -->
+<script>
+	var _hmt = _hmt || [];
+	(function() {
+  		var hm = document.createElement("script");
+  		hm.src = "https://hm.baidu.com/hm.js?d9bf4984532d263b0e54cbff6129d0fc";
+  		var s = document.getElementsByTagName("script")[0]; 
+  		s.parentNode.insertBefore(hm, s);
+	})();
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-113625597-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-113625597-1');
+</script>
+
+</footer>
+
+        
+    
+    
+    <!-- 来必力City版安装代码 -->
+    <script type="text/javascript">
+     (function(d, s) {
+         var j, e = d.getElementsByTagName(s)[0];
+
+         if (typeof LivereTower === 'function') { return; }
+
+         j = d.createElement(s);
+         j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+         j.async = true;
+
+         e.parentNode.insertBefore(j, e);
+     })(document, 'script');
+    </script>
+  <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+  <!-- City版安装代码已完成 -->
+
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
