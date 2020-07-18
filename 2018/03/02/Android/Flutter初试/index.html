@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <meta charset="utf-8">
+    
+    <title>Flutter初试 | 咸鱼不思议</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="Flutter是谷歌推出的一款跨平台移动开发解决方法。使用dart语言进行开发。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Flutter初试">
+<meta property="og:url" content="http://www.unfishable.com/2018/03/02/Android/Flutter初试/index.html">
+<meta property="og:site_name" content="咸鱼不思议">
+<meta property="og:description" content="Flutter是谷歌推出的一款跨平台移动开发解决方法。使用dart语言进行开发。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://p3ueh8nrl.bkt.clouddn.com/cover/android.png">
+<meta property="og:updated_time" content="2018-03-13T15:10:13.568Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Flutter初试">
+<meta name="twitter:description" content="Flutter是谷歌推出的一款跨平台移动开发解决方法。使用dart语言进行开发。">
+<meta name="twitter:image" content="http://p3ueh8nrl.bkt.clouddn.com/cover/android.png">
+    
+
+    
+
+    
+        <link rel="icon" href="/css/images/logo.png" />
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">咸鱼不思议</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/.">首页</a>
+                
+                    <a class="main-nav-link" href="/archives">归档</a>
+                
+                    <a class="main-nav-link" href="/categories">分类</a>
+                
+                    <a class="main-nav-link" href="/tags">标签</a>
+                
+                    <a class="main-nav-link" href="/about">关于</a>
+                
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="/css/images/avatar.png" />
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/.">首页</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">归档</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">分类</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">标签</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">关于</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+                
+
+<aside id="profile">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="/css/images/avatar.png" />
+            <h2 id="name">咸鱼不思议</h2>
+            <h3 id="title">那年夏天水产有限公司</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>guangzhou, China</span>
+            <a id="follow" target="_blank" href="https://github.com/jaminchanks">关注我</a>
+        </div>
+        <div class="article-info profile-block">
+            <div class="article-info-block">
+                17
+                <span>文章</span>
+            </div>
+            <div class="article-info-block">
+                0
+                <span>标签</span>
+            </div>
+        </div>
+        
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    
+                    <td>
+                        <a href="https://github.com/jaminchanks" target="_blank" title="github" class=tooltip>
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</aside>
+
+            
+            <section id="main"><article id="post-Android/Flutter初试" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+            Flutter初试
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2018/03/02/Android/Flutter初试/">
+            <time datetime="2018-03-01T16:19:47.469Z" itemprop="datePublished">2018-03-02</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Android/">Android</a>
+    </div>
+
+                        
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>Flutter是谷歌推出的一款跨平台移动开发解决方法。使用dart语言进行开发。<br><a id="more"></a><br>在<a href="https://flutter.io" target="_blank" rel="external">Flutter官网</a>有关于如何构建一个Flutter应用的教程。</p>
+<h2 id="下载与配置"><a href="#下载与配置" class="headerlink" title="下载与配置"></a>下载与配置</h2><p><strong>1.</strong> 首先在官网下载所需要的开发工具：<a href="https://flutter.io/setup-windows/" target="_blank" rel="external">https://flutter.io/setup-windows/</a></p>
+<p><strong>2.</strong> 利用git工具下载Flutter SDK<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git clone -b beta https://github.com/flutter/flutter.git</div></pre></td></tr></table></figure></p>
+<p>将Flutter SDK的路径<code>flutter\bin</code>添加到环境变量<code>path</code>中  </p>
+<p><strong>3.</strong> win + R，输入cmd，调出终端窗口，执行以下命令，检查配置环境：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">flutter doctor</div></pre></td></tr></table></figure></p>
+<p>输出结果大致如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">[√] Flutter (Channel beta, v0.1.5, on Microsoft Windows [Version 10.0.16299.125], locale zh-CN)</div><div class="line">[√] Android toolchain - develop for Android devices (Android SDK 27.0.3)</div><div class="line">[√] Android Studio (version 3.0)</div><div class="line">[!] IntelliJ IDEA Ultimate Edition (version 2017.3)</div><div class="line">    X Flutter plugin not installed; this adds Flutter specific functionality.</div><div class="line">    X Dart plugin not installed; this adds Dart specific functionality.</div><div class="line">[√] Connected devices (1 available)</div><div class="line"></div><div class="line">! Doctor found issues in 1 category.</div></pre></td></tr></table></figure></p>
+<p>根据输出判断环境是否配置成功。<br><strong> *  由于我大清自有国情所在，所以下载与配置略有不同</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">export</span> PUB_HOSTED_URL=https://pub.flutter-io.cn</div><div class="line"><span class="built_in">export</span> FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn</div><div class="line">git <span class="built_in">clone</span> -b dev https://github.com/flutter/flutter.git</div><div class="line"><span class="built_in">export</span> PATH=<span class="string">"<span class="variable">$PWD</span>/flutter/bin:<span class="variable">$PATH</span>"</span></div><div class="line"><span class="built_in">cd</span> ./flutter</div><div class="line">flutter doctor</div></pre></td></tr></table></figure></p>
+<p>在windows上需要设置环境变量<code>PUB_HOSTED_URL</code>和<code>FLUTTER_STORAGE_BASE_URL</code>，才能进行后续操作</p>
+<p><strong>4.</strong> 配置编辑器<br>这里推荐使用Android Studio.<br>在Android Studio中下载插件:<br>点击 <strong>File&gt;Settings&gt;Plugins</strong>，<strong>Browse repositories…</strong> 搜索<code>Flutter</code>插件并进行安装，当提示需要安装<code>Dart</code>插件时点击确认。然后重启Android Studio。</p>
+<h2 id="新建工程"><a href="#新建工程" class="headerlink" title="新建工程"></a>新建工程</h2><p>安装插件之后，选择 <strong>File&gt;New Flutter Project&gt;Flutter application</strong> 即可创建一个Flutter工程。<br>对于我们新建的项目工程，生成的flutter代码位置在<code>lib/main.dart</code>中<br>项目在Android Studio中的配置和运行和Android的基本类似。 </p>
+<h2 id="热加载（hot-reload）"><a href="#热加载（hot-reload）" class="headerlink" title="热加载（hot reload）"></a>热加载（hot reload）</h2><p>按ctrl+s保存代码或者点击工具栏的闪电符号按钮，即可在模拟器中看到效果,</p>
+<p><img src="http://p3ueh8nrl.bkt.clouddn.com/android/flutter_hello_world.png" alt="运行结果" width="240"></p>
+<h2 id="第一个app"><a href="#第一个app" class="headerlink" title="第一个app"></a>第一个app</h2><p>新建项目会主动生成文件main.dart.</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> <span class="string">'package:flutter/material.dart'</span>;</div><div class="line"></div><div class="line"><span class="keyword">void</span> main() =&gt; runApp(<span class="keyword">new</span> MyApp());</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyApp</span> <span class="keyword">extends</span> <span class="title">StatelessWidget</span> </span>&#123;</div><div class="line">  <span class="meta">@override</span></div><div class="line">  Widget build(BuildContext context) &#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> MaterialApp(</div><div class="line">      title: <span class="string">'Welcome to Flutter'</span>,</div><div class="line">      home: <span class="keyword">new</span> Scaffold(</div><div class="line">        appBar: <span class="keyword">new</span> AppBar(</div><div class="line">          title: <span class="keyword">new</span> Text(<span class="string">'Welcome to Flutter'</span>),</div><div class="line">        ),</div><div class="line">        body: <span class="keyword">new</span> Center(</div><div class="line">          child: <span class="keyword">new</span> Text(<span class="string">'Hello World'</span>),</div><div class="line">        ),</div><div class="line">      ),</div><div class="line">    );</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>main函数后的 <code>=&gt;</code> 符号表示单语句函数</li>
+<li>app 继承了类<code>StatelessWidget</code>，使得app本身就是一个<code>widget</code>,在flutter中，大多数事物都是<code>widget</code>,包括对齐(alignment), 间距(padding)和布局(layout)</li>
+<li>主题组件采用了<code>MaterialApp</code>, 来自<code>&#39;package:flutter/material.dart&#39;</code>,提供了appBar,title和body属性</li>
+<li>widget的主要作用就是执行<code>build()</code>方法，在该方法中展示组件，以及更下一级组件</li>
+<li>该例子中的组件树包含一个Text的子组件，并将其显示在屏幕中间。</li>
+</ul>
+<h2 id="主要概念"><a href="#主要概念" class="headerlink" title="主要概念"></a>主要概念</h2><ul>
+<li>Stateless widgets<br>Stateless widgets 是状态不可变的，属性固定</li>
+<li>Stateful widgets<br>Stateful widgets 属性在生命周期中是可变的<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3>在<code>pubspec.yaml</code>中添加依赖库<code>english_words</code><figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="attr">dependencies:</span></div><div class="line"><span class="attr">  flutter:</span></div><div class="line"><span class="attr">    sdk:</span> <span class="string">flutter</span></div><div class="line"></div><div class="line"><span class="attr">  cupertino_icons:</span> <span class="string">^0.1.0</span></div><div class="line"><span class="attr">  english_words:</span> <span class="string">^3.1.0</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>点击<code>Packages get</code><br>在<code>lib/main.dart</code>中使用依赖库<br><figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> <span class="string">'package:flutter/material.dart'</span>;</div><div class="line"><span class="keyword">import</span> <span class="string">'package:english_words/english_words.dart'</span>;</div></pre></td></tr></table></figure></p>
+<p>修改<code>main.dart</code>中的代码如下：<br><figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> <span class="string">'package:flutter/material.dart'</span>;</div><div class="line"><span class="keyword">import</span> <span class="string">'package:english_words/english_words.dart'</span>;</div><div class="line"></div><div class="line"><span class="keyword">void</span> main() =&gt; runApp(<span class="keyword">new</span> MyApp());</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyApp</span> <span class="keyword">extends</span> <span class="title">StatelessWidget</span> </span>&#123;</div><div class="line">  <span class="meta">@override</span></div><div class="line">  Widget build(BuildContext context) &#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> MaterialApp(</div><div class="line">      title: <span class="string">'Welcome to Flutter'</span>,</div><div class="line">      home: <span class="keyword">new</span> Scaffold(</div><div class="line">        appBar: <span class="keyword">new</span> AppBar(</div><div class="line">          title: <span class="keyword">new</span> Text(<span class="string">'Welcome to Flutter'</span>),</div><div class="line">        ),</div><div class="line">        body: <span class="keyword">new</span> Center(</div><div class="line"><span class="comment">//          child: new Text('Hello World'),</span></div><div class="line">          child: <span class="keyword">new</span> RandomWords(), <span class="comment">//首字母大写驼峰命名</span></div><div class="line">        ),</div><div class="line">      ),</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">RandomWords</span> <span class="keyword">extends</span> <span class="title">StatefulWidget</span> </span>&#123;</div><div class="line">  <span class="meta">@override</span></div><div class="line">  State&lt;StatefulWidget&gt; createState() &#123;</div><div class="line">   <span class="keyword">return</span> <span class="keyword">new</span> RandomWordsState();</div><div class="line">  &#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">RandomWordsState</span> <span class="keyword">extends</span> <span class="title">State</span>&lt;<span class="title">StatefulWidget</span>&gt; </span>&#123;</div><div class="line">  <span class="meta">@override</span></div><div class="line">  Widget build(BuildContext context) &#123;</div><div class="line">      <span class="keyword">final</span> wordPairs = <span class="keyword">new</span> WordPair.random();</div><div class="line">      <span class="keyword">return</span> <span class="keyword">new</span> Text(wordPairs.asPascalCase);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>点击运行项目</p>
+<p><img src="http://p3ueh8nrl.bkt.clouddn.com/android/flutter_random_words.png" alt="运行结果" width="240"><br>Text显示的随机的英文单词</p>
+<h2 id="创建列表"><a href="#创建列表" class="headerlink" title="创建列表"></a>创建列表</h2><figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> <span class="string">'package:flutter/material.dart'</span>;</div><div class="line"><span class="keyword">import</span> <span class="string">'package:english_words/english_words.dart'</span>;</div><div class="line"></div><div class="line"><span class="keyword">void</span> main() =&gt; runApp(<span class="keyword">new</span> MyApp());</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyApp</span> <span class="keyword">extends</span> <span class="title">StatelessWidget</span> </span>&#123;</div><div class="line">  <span class="meta">@override</span></div><div class="line">  Widget build(BuildContext context) &#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> MaterialApp(</div><div class="line">      title: <span class="string">'Welcome to Flutter'</span>,</div><div class="line">      home: <span class="keyword">new</span> RandomWords(),</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">......</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">RandomWordsState</span> <span class="keyword">extends</span> <span class="title">State</span>&lt;<span class="title">StatefulWidget</span>&gt; </span>&#123;</div><div class="line">  <span class="keyword">final</span> _suggestions = &lt;WordPair&gt;[];</div><div class="line"></div><div class="line">  <span class="keyword">final</span> _biggerFont = <span class="keyword">const</span> TextStyle(fontSize: <span class="number">18.0</span>);</div><div class="line"></div><div class="line">  <span class="meta">@override</span></div><div class="line">  Widget build(BuildContext context) &#123;</div><div class="line">      <span class="keyword">return</span> <span class="keyword">new</span> Scaffold(</div><div class="line">        appBar: <span class="keyword">new</span> AppBar(</div><div class="line">          title: <span class="keyword">new</span> Text(<span class="string">'Starup Name Generator'</span>),</div><div class="line">        ),</div><div class="line">        body: _buildSuggestions(),</div><div class="line">      );</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  Widget _buildSuggestions() &#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> ListView.builder(</div><div class="line">      padding: <span class="keyword">const</span> EdgeInsets.all(<span class="number">16.0</span>),</div><div class="line">      itemBuilder: (context, i) &#123;</div><div class="line">        <span class="keyword">if</span>(i.isOdd) <span class="keyword">return</span> <span class="keyword">new</span> Divider();</div><div class="line"></div><div class="line">        <span class="comment">/// i ~/ 2 :将i/2并将整型结果返回</span></div><div class="line">        <span class="keyword">final</span> index = i ~/ <span class="number">2</span>;</div><div class="line">        <span class="keyword">if</span>(index &gt;= _suggestions.length) &#123;</div><div class="line">          _suggestions.addAll(generateWordPairs().take(<span class="number">10</span>));</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> _buildRow(_suggestions[index]);</div><div class="line">      &#125;,</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  Widget _buildRow(WordPair pair) &#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> ListTile(</div><div class="line">      title: <span class="keyword">new</span> Text(</div><div class="line">        pair.asPascalCase,</div><div class="line">        style: _biggerFont,</div><div class="line">      ),</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><code>Scaffold</code>是<code>Material</code>库提供的UI框架(脚手架)，提供包括appbar, title, 和body等属性<br>通过定义<code>ListView.builder</code>创建一个listView，listView的<code>itemBuilder</code>是必须的，负责每个列表项的内容<br><code>ListTile</code>是一个固定高度的列表子项控件，包含文字和尾部图标，后续会用到</p>
+<p><img src="http://p3ueh8nrl.bkt.clouddn.com/android/flutter_listview.png" alt="列表" width="240"></p>
+<h2 id="添加交互"><a href="#添加交互" class="headerlink" title="添加交互"></a>添加交互</h2><p>修改代码如下：<br><figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">RandomWordsState</span> <span class="keyword">extends</span> <span class="title">State</span>&lt;<span class="title">StatefulWidget</span>&gt; </span>&#123;</div><div class="line">  <span class="keyword">final</span> _suggestions = &lt;WordPair&gt;[];</div><div class="line">  <span class="keyword">final</span> _saved = <span class="keyword">new</span> <span class="built_in">Set</span>&lt;WordPair&gt;();</div><div class="line">  <span class="comment">///定义字体样式</span></div><div class="line">  <span class="keyword">final</span> _biggerFont = <span class="keyword">const</span> TextStyle(fontSize: <span class="number">18.0</span>);</div><div class="line">  ......</div><div class="line"></div><div class="line">  Widget _buildRow(WordPair pair) &#123;</div><div class="line">    <span class="keyword">final</span> alreadySaved = _saved.contains(pair);</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> ListTile(</div><div class="line">      title: <span class="keyword">new</span> Text(</div><div class="line">        pair.asPascalCase,</div><div class="line">        style: _biggerFont,</div><div class="line">      ),</div><div class="line"></div><div class="line">      <span class="comment">///尾部</span></div><div class="line">      trailing: <span class="keyword">new</span> Icon(</div><div class="line">        alreadySaved ? Icons.favorite : Icons.favorite_border,</div><div class="line">        color: alreadySaved ? Colors.red : <span class="keyword">null</span>,</div><div class="line">      ),</div><div class="line"></div><div class="line">      <span class="comment">///点击事件处理</span></div><div class="line">      onTap: () &#123;</div><div class="line">        setState(() &#123;</div><div class="line">          <span class="keyword">if</span> (alreadySaved) &#123;</div><div class="line">            _saved.remove(pair);</div><div class="line">          &#125; <span class="keyword">else</span> &#123;</div><div class="line">            _saved.add(pair);</div><div class="line">          &#125;</div><div class="line">        &#125;);</div><div class="line">      &#125;,</div><div class="line">    );</div><div class="line">  &#125;</div></pre></td></tr></table></figure></p>
+<p>通过点击事件处理函数<code>onTap</code>将点击项进行收藏和取消，从而改变红心的颜色。<br><code>setState</code>通知UI进行刷新</p>
+<p><img src="http://p3ueh8nrl.bkt.clouddn.com/android/flutter_listview_favour.png" alt="交互" width="240"></p>
+<h2 id="界面跳转"><a href="#界面跳转" class="headerlink" title="界面跳转"></a>界面跳转</h2><figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">RandomWordsState</span> <span class="keyword">extends</span> <span class="title">State</span>&lt;<span class="title">StatefulWidget</span>&gt; </span>&#123;</div><div class="line">  <span class="keyword">final</span> _suggestions = &lt;WordPair&gt;[];</div><div class="line">  <span class="keyword">final</span> _saved = <span class="keyword">new</span> <span class="built_in">Set</span>&lt;WordPair&gt;();</div><div class="line">  <span class="comment">///定义字体样式</span></div><div class="line">  <span class="keyword">final</span> _biggerFont = <span class="keyword">const</span> TextStyle(fontSize: <span class="number">18.0</span>);</div><div class="line"></div><div class="line">  <span class="meta">@override</span></div><div class="line">  Widget build(BuildContext context) &#123;</div><div class="line">      <span class="keyword">return</span> <span class="keyword">new</span> Scaffold(</div><div class="line">          appBar: <span class="keyword">new</span> AppBar(</div><div class="line">          title: <span class="keyword">new</span> Text(<span class="string">'Starup Name Generator'</span>),</div><div class="line">          actions: &lt;Widget&gt;[</div><div class="line">            <span class="keyword">new</span> IconButton(icon: <span class="keyword">new</span> Icon(Icons.list), onPressed: _pushSaved)</div><div class="line">          ],</div><div class="line">        ),</div><div class="line">        body: _buildSuggestions(),</div><div class="line">      );</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="keyword">void</span> _pushSaved() &#123;</div><div class="line">    Navigator.of(context).push(</div><div class="line">      <span class="keyword">new</span> MaterialPageRoute(</div><div class="line">        builder: (context) &#123;</div><div class="line">          <span class="keyword">final</span> tiles = _saved.map(</div><div class="line">                (pair) &#123;</div><div class="line">              <span class="keyword">return</span> <span class="keyword">new</span> ListTile(</div><div class="line">                title: <span class="keyword">new</span> Text(</div><div class="line">                  pair.asPascalCase,</div><div class="line">                  style: _biggerFont,</div><div class="line">                ),</div><div class="line">              );</div><div class="line">            &#125;,</div><div class="line">          );</div><div class="line">          <span class="keyword">final</span> divided = ListTile.divideTiles(</div><div class="line">            context: context,</div><div class="line">            tiles: tiles,</div><div class="line">          ).toList();</div><div class="line"></div><div class="line">          <span class="keyword">return</span> <span class="keyword">new</span> Scaffold(</div><div class="line">            appBar: <span class="keyword">new</span> AppBar(</div><div class="line">              title: <span class="keyword">new</span> Text(<span class="string">'Saved Suggestions'</span>),</div><div class="line">            ),</div><div class="line">            body: <span class="keyword">new</span> ListView(children: divided),</div><div class="line">          );</div><div class="line">        &#125;,</div><div class="line">      ),</div><div class="line">    );</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<p><code>actions</code>用于添加toolbar的菜单，方法<code>_pushSaved()</code>里调用了方法<code>Navigator.of(context).push(Route)</code>用于页面跳转。</p>
+<p><img src="http://p3ueh8nrl.bkt.clouddn.com/android/flutter_navigation.gif" alt="页面跳转" width="240"></p>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://www.unfishable.com/2018/03/02/Android/Flutter初试/" data-id="cjhhys25300071kaweqr2kq0a" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://www.unfishable.com/2018/03/02/Android/Flutter初试/#comments" class="article-comment-link">评论</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2018/04/07/Java/Java字节码1/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">上一篇</strong>
+            <div class="article-nav-title">
+                
+                    看懂Java字节码
+                
+            </div>
+        </a>
+    
+    
+        <a href="/2018/02/09/Android/AnnotationProcessor注解处理器/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">使用Android注解处理器，解放劳动生产力</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    
+        <section id="comments">
+    <div id="lv-container" data-id="city" data-uid=MTAyMC8zMzg3NC8xMDQyNw==></div>
+</section>
+    
+
+</section>
+            
+                
+<aside id="sidebar">
+   
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Git/">Git</a></p>
+                            <p class="item-title"><a href="/2018/05/31/Git/git_笔记1/" class="title">Git 深入学习笔记</a></p>
+                            <p class="item-date"><time datetime="2018-05-31T15:24:25.980Z" itemprop="datePublished">2018-05-31</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Java/">Java</a></p>
+                            <p class="item-title"><a href="/2018/05/21/Java/Java动态代理/" class="title">Java不高级特性:动态代理</a></p>
+                            <p class="item-date"><time datetime="2018-05-21T15:44:51.291Z" itemprop="datePublished">2018-05-21</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Kotlin/">Kotlin</a></p>
+                            <p class="item-title"><a href="/2018/05/12/Kotlin/Koltin的byLazy实现原理/" class="title">从原理分析和区分lateinit var、by lazy</a></p>
+                            <p class="item-date"><time datetime="2018-05-12T07:12:08.119Z" itemprop="datePublished">2018-05-12</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Java/">Java</a></p>
+                            <p class="item-title"><a href="/2018/04/30/Java/堆还是栈/" class="title">Java对象内存分配，堆还是栈? 这是个问题</a></p>
+                            <p class="item-date"><time datetime="2018-04-30T03:31:28.525Z" itemprop="datePublished">2018-04-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Read/">Read</a></p>
+                            <p class="item-title"><a href="/2018/04/24/Read/算法的实际用处/" class="title">数据结构复习笔记(待补充)</a></p>
+                            <p class="item-date"><time datetime="2018-04-24T14:58:14.463Z" itemprop="datePublished">2018-04-24</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Android-OpenGL/">Android OpenGL</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Kotlin/">Kotlin</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Others/">Others</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Read/">Read</a><span class="category-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">6</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+
+            
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2018 咸鱼不思议<br>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
+        </div>
+    </div>
+
+<!-- Baidu Analytics -->
+<script>
+	var _hmt = _hmt || [];
+	(function() {
+  		var hm = document.createElement("script");
+  		hm.src = "https://hm.baidu.com/hm.js?d9bf4984532d263b0e54cbff6129d0fc";
+  		var s = document.getElementsByTagName("script")[0]; 
+  		s.parentNode.insertBefore(hm, s);
+	})();
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-113625597-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-113625597-1');
+</script>
+
+</footer>
+
+        
+    
+    
+    <!-- 来必力City版安装代码 -->
+    <script type="text/javascript">
+     (function(d, s) {
+         var j, e = d.getElementsByTagName(s)[0];
+
+         if (typeof LivereTower === 'function') { return; }
+
+         j = d.createElement(s);
+         j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+         j.async = true;
+
+         e.parentNode.insertBefore(j, e);
+     })(document, 'script');
+    </script>
+  <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+  <!-- City版安装代码已完成 -->
+
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

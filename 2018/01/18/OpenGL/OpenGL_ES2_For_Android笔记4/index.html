@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <meta charset="utf-8">
+    
+    <title>OpenGL ES2 For Android 4.添加纹理 | 咸鱼不思议</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="岁月的纹理">
+<meta property="og:type" content="article">
+<meta property="og:title" content="OpenGL ES2 For Android 4.添加纹理">
+<meta property="og:url" content="http://www.unfishable.com/2018/01/18/OpenGL/OpenGL_ES2_For_Android笔记4/index.html">
+<meta property="og:site_name" content="咸鱼不思议">
+<meta property="og:description" content="岁月的纹理">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://p3ueh8nrl.bkt.clouddn.com/cover/opengl.png">
+<meta property="og:updated_time" content="2018-02-10T10:54:00.684Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="OpenGL ES2 For Android 4.添加纹理">
+<meta name="twitter:description" content="岁月的纹理">
+<meta name="twitter:image" content="http://p3ueh8nrl.bkt.clouddn.com/cover/opengl.png">
+    
+
+    
+
+    
+        <link rel="icon" href="/css/images/logo.png" />
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">咸鱼不思议</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/.">首页</a>
+                
+                    <a class="main-nav-link" href="/archives">归档</a>
+                
+                    <a class="main-nav-link" href="/categories">分类</a>
+                
+                    <a class="main-nav-link" href="/tags">标签</a>
+                
+                    <a class="main-nav-link" href="/about">关于</a>
+                
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="/css/images/avatar.png" />
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/.">首页</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">归档</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">分类</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">标签</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">关于</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+                
+
+<aside id="profile">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="/css/images/avatar.png" />
+            <h2 id="name">咸鱼不思议</h2>
+            <h3 id="title">那年夏天水产有限公司</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>guangzhou, China</span>
+            <a id="follow" target="_blank" href="https://github.com/jaminchanks">关注我</a>
+        </div>
+        <div class="article-info profile-block">
+            <div class="article-info-block">
+                17
+                <span>文章</span>
+            </div>
+            <div class="article-info-block">
+                0
+                <span>标签</span>
+            </div>
+        </div>
+        
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    
+                    <td>
+                        <a href="https://github.com/jaminchanks" target="_blank" title="github" class=tooltip>
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</aside>
+
+            
+            <section id="main"><article id="post-OpenGL/OpenGL_ES2_For_Android笔记4" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+            OpenGL ES2 For Android 4.添加纹理
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2018/01/18/OpenGL/OpenGL_ES2_For_Android笔记4/">
+            <time datetime="2018-01-18T13:53:29.453Z" itemprop="datePublished">2018-01-18</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Android-OpenGL/">Android OpenGL</a>
+    </div>
+
+                        
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p><strong>岁月的纹理</strong><br><a id="more"></a></p>
+<h3 id="纹理"><a href="#纹理" class="headerlink" title="纹理"></a>纹理</h3><p>　　在OpenGL中，纹理（材质）可以理解成图像，图片或者由数学算法生成的矢量图。每个纹理都是由许多个纹理元素组成的，也就是说纹理元素是纹理的基本组成单位，就好像片元是<strong>几何图元</strong>（由顶点光栅化后形成的几何图形）的基本组成单位，像素是屏幕尺寸的基本组成单位一样。<br>　　一般建议将需要加载的图片资源放在<code>/res/drawable-nodpi/</code>目录下。<br>纹理也有属于自己的空间坐标系，以左下为原点，两个方向上的轴分别为<strong>S</strong>，<strong>T</strong>。</p>
+<p><img src="http://p3ueh8nrl.bkt.clouddn.com/opengl/es4ndroid_4_0.png" alt="纹理坐标系"></p>
+<p>　　在OpenGL ES 2.0中，要求纹理每个维度的大小为2的n次方大小，如：128， 256， 512。这样是为了纹理的处理方便。纹理一般也有大小限制，如最大为<code>2048 * 2048</code>;</p>
+<h3 id="纹理过滤"><a href="#纹理过滤" class="headerlink" title="纹理过滤"></a>纹理过滤</h3><p>　　当纹理被加载并最终被映射到渲染表面的图元上时，由于每个纹理元素和片元的映射关系并不一定是一一对应的，可能一个片元对应于多个纹理元素，也可能多个片元去对应于一个纹理元素，也就是说纹理最终要被放大或缩小，因此我们还要处理这种映射关系。<br>　　处理这种映射关系的方法就是用到OpenGL中的纹理过滤器（Texture Filtering ）。首先介绍两种最基本的过滤模式：<strong>最近邻过滤</strong>，<strong>双线性过滤</strong>。</p>
+<h4 id="最近邻过滤（Nearest-Neighbor-Filtering）"><a href="#最近邻过滤（Nearest-Neighbor-Filtering）" class="headerlink" title="最近邻过滤（Nearest-Neighbor Filtering）"></a>最近邻过滤（Nearest-Neighbor Filtering）</h4><p>　　最近邻过滤也就是最近点采样法，对于每个片元，会对最接近它的纹理单元进行采样，并使用该采样结果。对于以下图片：<br><img src="http://p3ueh8nrl.bkt.clouddn.com/opengl/es4ndroid_4_1.png" alt="示例图片" width="160"><br>　　当我们放大纹理时，因为多个片元才对应于一个纹理，所以会看到比较明显的锯齿效果，如下图所示：<br><img src="http://p3ueh8nrl.bkt.clouddn.com/opengl/es4ndroid_4_2.png" alt="最近邻过滤-放大效果" width="160"><br>　　而当我们缩小纹理时，由于一个片元要被塞进更多的纹理元素，最终会出现纹理细节丢失的情况：<br><img src="http://p3ueh8nrl.bkt.clouddn.com/opengl/es4ndroid_4_3.png" alt="最近邻过滤-缩小效果" width="160"></p>
+<h4 id="双线性过滤（Bilinear-Filtering）"><a href="#双线性过滤（Bilinear-Filtering）" class="headerlink" title="双线性过滤（Bilinear Filtering）"></a>双线性过滤（Bilinear Filtering）</h4><p>　　双线性过滤采用双线性算法对纹理单元进行采样，即对每个片元最临近的四个纹理元素进行线性插值算法计算，将计算结果应用于该片元中。这种做法会让显示效果变得更光滑，但当放大比例比较大时，还是可以看出一些锯齿。<br><img src="http://p3ueh8nrl.bkt.clouddn.com/opengl/es4ndroid_4_4.png" alt="双线性过滤-放大效果" width="160"><br>　　虽然双线性过滤对于纹理的放大处理效果还算可以，但是对于纹理缩小的处理表现确不尽人意。最后还是会出现多个纹理被塞进一个片元的情况，所以还是会出现细节丢失。以下为纹理被缩小1/8的效果。<br><img src="http://p3ueh8nrl.bkt.clouddn.com/opengl/es4ndroid_4_5.png" alt="双线性过滤-缩小效果" width="160"></p>
+<h4 id="MIP贴图（Mipmapping）"><a href="#MIP贴图（Mipmapping）" class="headerlink" title="MIP贴图（Mipmapping）"></a>MIP贴图（Mipmapping）</h4><p>　　由于以上两种方式对于缩小纹理的表现实在不佳，我们引入了mipmap。mip取自拉丁语multum in parvo的首字母，意思是“放置很多东西的小空间”。使用mipmap技术可以生成一组不同缩放等级的纹理，每一个级别的纹理都是原先尺寸的纹理按1/4比例缩小的复制品，即每一维度缩小一半。比如我们的原先纹理尺寸为256×256，则mipmap可以生成8个级别的纹理，分别128×128，64×64×32×32，16×16，8×8；4×4，2×2，1×1。生成mipmap组图会占用更多的内存，但是却减少了渲染时的负担，因为缓存区使用的对应等级的纹理，而不是原始纹理。<br>最终纹理被映射到图元时，OpenGL会使用最合适等级的纹理，再对其使用双线性插值处理。<br><img src="http://p3ueh8nrl.bkt.clouddn.com/opengl/es4ndroid_4_6.png" alt="mipmap技术" width="240"><br>相较于双线性过滤，对刚才的纹理缩小1/8，mipmap保留的细节更多。<br><img src="http://p3ueh8nrl.bkt.clouddn.com/opengl/es4ndroid_4_7.png" alt="使用mipmap缩小效果" width="160"></p>
+<h4 id="三线性过滤"><a href="#三线性过滤" class="headerlink" title="三线性过滤"></a>三线性过滤</h4><p>　　当使用mimap贴图后我们使用的是双线性插值处理，那么有可能在渲染场景中进行mipmap的不同等级切换时，会出现明显的跳跃或线条干扰，这时使用三线性过滤可以有助于消除这种影响，三线性过滤采用的是使用8×8进行插值计算映射结果。<br>OpenGL中可用的过滤方式如下：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GL_NEAREST</td>
+<td>最近邻过滤</td>
+</tr>
+<tr>
+<td>GL_NEAREST_MIPMAP_NEAREST</td>
+<td>使用MIP贴图的最近邻过滤</td>
+</tr>
+<tr>
+<td>GL_NEAREST_MIPMAP_LINEAR</td>
+<td>使用MIP贴图级别之间插值的最近邻过滤</td>
+</tr>
+<tr>
+<td>GL_LINEAR</td>
+<td>双线性插值</td>
+</tr>
+<tr>
+<td>GL_LINEAR_MIPMAP_NEAREST</td>
+<td>使用MIP贴图的双线性插值</td>
+</tr>
+<tr>
+<td>GL_LINEAR_MIPMAP_LINEAR</td>
+<td>使用MIP贴图的三线性插值</td>
+</tr>
+</tbody>
+</table>
+<h3 id="加载纹理"><a href="#加载纹理" class="headerlink" title="加载纹理"></a>加载纹理</h3><h4 id="定义顶点和shaders"><a href="#定义顶点和shaders" class="headerlink" title="定义顶点和shaders"></a>定义顶点和shaders</h4><p>顶点坐标要与纹理坐标一一对应，定义数据如下：<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">private</span> <span class="keyword">val</span> verticesData = floatArrayOf(</div><div class="line">            <span class="comment">//X, Y, S, T</span></div><div class="line">            <span class="number">0</span>f,    <span class="number">0</span>f, <span class="number">0.5</span>f, <span class="number">0.5</span>f,</div><div class="line">            <span class="number">-0.5</span>f, <span class="number">-0.5</span>f,   <span class="number">0</span>f, <span class="number">1</span>f,</div><div class="line">            <span class="number">0.5</span>f, <span class="number">-0.5</span>f,   <span class="number">1</span>f, <span class="number">1</span>f,</div><div class="line">            <span class="number">0.5</span>f,  <span class="number">0.5</span>f,   <span class="number">1</span>f, <span class="number">0</span>f,</div><div class="line">            <span class="number">-0.5</span>f,  <span class="number">0.5</span>f,   <span class="number">0</span>f, <span class="number">0</span>f,</div><div class="line">            <span class="number">-0.5</span>f, <span class="number">-0.5</span>f,   <span class="number">0</span>f, <span class="number">1</span>f</div><div class="line">    )</div></pre></td></tr></table></figure></p>
+<p>shader代码：<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">private</span> <span class="keyword">val</span> vertexShaderCode = <span class="string">"""</span></div><div class="line"><span class="string">        uniform mat4 u_Matrix;</span></div><div class="line"><span class="string">        attribute vec4 a_Position;</span></div><div class="line"><span class="string">        attribute vec2 a_TextureCoordinates;</span></div><div class="line"><span class="string">        varying vec2 v_TextureCoordinates;</span></div><div class="line"><span class="string">        void main()</span></div><div class="line"><span class="string">        &#123;</span></div><div class="line"><span class="string">            v_TextureCoordinates = a_TextureCoordinates;</span></div><div class="line"><span class="string">            gl_Position = u_Matrix * a_Position;</span></div><div class="line"><span class="string">        &#125;</span></div><div class="line"><span class="string">        """</span></div><div class="line"></div><div class="line"><span class="keyword">private</span> <span class="keyword">val</span> fragmentShaderCode = <span class="string">"""</span></div><div class="line"><span class="string">        precision mediump float;</span></div><div class="line"><span class="string">        uniform sampler2D u_TextureUnit;</span></div><div class="line"><span class="string">        varying vec2 v_TextureCoordinates;</span></div><div class="line"><span class="string">        void main()</span></div><div class="line"><span class="string">        &#123;</span></div><div class="line"><span class="string">            gl_FragColor = texture2D(u_TextureUnit, v_TextureCoordinates);</span></div><div class="line"><span class="string">        &#125;</span></div><div class="line"><span class="string">        """</span></div></pre></td></tr></table></figure></p>
+<p><code>u_TextureUnit</code>用于指定使用的纹理单元。在需要的情况下，一个片元着色器可以设置多个纹理，一个纹理的位置值就被称为一个纹理单元(Texture Unit)。该值与激活的纹理单元值相同。</p>
+<h4 id="加载纹理-1"><a href="#加载纹理-1" class="headerlink" title="加载纹理"></a>加载纹理</h4><p>在OpenGL中加载纹理的步骤如下：<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">fun</span> <span class="title">loadTexture</span><span class="params">(context: <span class="type">Context</span>, resourceId: <span class="type">Int</span>)</span></span>: <span class="built_in">Int</span> &#123;</div><div class="line">	<span class="comment">//1. 获取纹理句柄</span></div><div class="line">    <span class="keyword">val</span> textureObjectIds = IntArray(<span class="number">1</span>)</div><div class="line">    glGenTextures(<span class="number">1</span>, textureObjectIds, <span class="number">0</span>)</div><div class="line">    <span class="keyword">if</span> (textureObjectIds[<span class="number">0</span>] == <span class="number">0</span>) &#123;</div><div class="line">        Log.e(<span class="string">"loadTexture"</span>, <span class="string">"Could not generate a new OpenGL texture object."</span>)</div><div class="line">        <span class="keyword">return</span> <span class="number">0</span></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">//2. 读取图片资源</span></div><div class="line">    <span class="keyword">val</span> options = BitmapFactory.Options()</div><div class="line">    options.inScaled = <span class="literal">false</span></div><div class="line">    <span class="keyword">val</span> bitmap = BitmapFactory.decodeResource(context.resources, resourceId, options)</div><div class="line">    <span class="keyword">if</span> (bitmap == <span class="literal">null</span>) &#123;</div><div class="line">        Log.e(<span class="string">"loadTexture"</span>, <span class="string">"Resource ID <span class="variable">$resourceId</span> could not be decoded"</span>)</div><div class="line">        glDeleteTextures(<span class="number">1</span>, textureObjectIds, <span class="number">0</span>)</div><div class="line">        <span class="keyword">return</span> <span class="number">0</span></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">//3. 绑定纹理句柄</span></div><div class="line">    glBindTexture(GL_TEXTURE_2D, textureObjectIds[<span class="number">0</span>])</div><div class="line"></div><div class="line">    <span class="comment">//4.设置过滤器，如果不设置，纹理将无法正常显示</span></div><div class="line">    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR)</div><div class="line">    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR)</div><div class="line"></div><div class="line">    <span class="comment">//5. 加载图片到纹理</span></div><div class="line">    GLUtils.texImage2D(GL_TEXTURE_2D, <span class="number">0</span>, bitmap, <span class="number">0</span>)</div><div class="line"></div><div class="line">    <span class="comment">// 6.生成mipmap纹理</span></div><div class="line">    <span class="comment">// 注意，以下代码可能报错: E/IMGSRV(20095): :0: HardwareMipGen:</span></div><div class="line">    <span class="comment">// Failed to generate texture mipmap levels (error=3)</span></div><div class="line">    <span class="comment">// No OpenGL error will be encountered (glGetError() will return</span></div><div class="line">    <span class="comment">// 0).</span></div><div class="line">    <span class="comment">// 如果发生以上错误，请将图片压缩成正方形，最后的显示效果不会有影响，因为纹理坐标最终会映射到图元对应的坐标中</span></div><div class="line">    glGenerateMipmap(GL_TEXTURE_2D)</div><div class="line">    <span class="comment">//7. 释放图片资源</span></div><div class="line">    bitmap.recycle()</div><div class="line"></div><div class="line">    <span class="comment">//8. 解绑纹理</span></div><div class="line">    glBindTexture(GL_TEXTURE_2D, <span class="number">0</span>)</div><div class="line"></div><div class="line">    <span class="keyword">return</span> textureObjectIds[<span class="number">0</span>]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="使用纹理"><a href="#使用纹理" class="headerlink" title="使用纹理"></a>使用纹理</h4><p>使用纹理的步骤如下：<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">val</span> uTextureUnitLocation = glGetUniformLocation(program, <span class="string">"u_TextureUnit"</span>)</div><div class="line"></div><div class="line"><span class="keyword">val</span> textureId = loadTexture(context, R.drawable.avatar)</div><div class="line"><span class="comment">//先激活纹理单元0</span></div><div class="line">glActiveTexture(GL_TEXTURE0)</div><div class="line"><span class="comment">//绑定纹理到纹理单元0</span></div><div class="line">glBindTexture(GL_TEXTURE_2D, textureId) <span class="comment">//texture</span></div><div class="line"><span class="comment">//读取纹理单元0以获取纹理数据</span></div><div class="line">glUniform1i(aTextureUnitLocation, <span class="number">0</span>)</div></pre></td></tr></table></figure></p>
+<p>最终运行效果：<br><img src="http://p3ueh8nrl.bkt.clouddn.com/opengl/es4ndroid_4_8.png" alt="加载纹理" width="240"></p>
+<p>最后奉上项目下载地址: <a href="https://github.com/jaminchanks/OpenGLDemo" target="_blank" rel="external">github代码</a></p>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://www.unfishable.com/2018/01/18/OpenGL/OpenGL_ES2_For_Android笔记4/" data-id="cjhhys25u000n1kawdebubx4o" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://www.unfishable.com/2018/01/18/OpenGL/OpenGL_ES2_For_Android笔记4/#comments" class="article-comment-link">评论</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2018/02/04/Others/博客搭建记录/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">上一篇</strong>
+            <div class="article-nav-title">
+                
+                    个人博客搭建记录
+                
+            </div>
+        </a>
+    
+    
+        <a href="/2018/01/18/OpenGL/OpenGL_ES2_For_Android笔记3/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">OpenGL ES2 For Android 3.颜色混合和图像变换</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    
+        <section id="comments">
+    <div id="lv-container" data-id="city" data-uid=MTAyMC8zMzg3NC8xMDQyNw==></div>
+</section>
+    
+
+</section>
+            
+                
+<aside id="sidebar">
+   
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Git/">Git</a></p>
+                            <p class="item-title"><a href="/2018/05/31/Git/git_笔记1/" class="title">Git 深入学习笔记</a></p>
+                            <p class="item-date"><time datetime="2018-05-31T15:24:25.980Z" itemprop="datePublished">2018-05-31</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Java/">Java</a></p>
+                            <p class="item-title"><a href="/2018/05/21/Java/Java动态代理/" class="title">Java不高级特性:动态代理</a></p>
+                            <p class="item-date"><time datetime="2018-05-21T15:44:51.291Z" itemprop="datePublished">2018-05-21</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Kotlin/">Kotlin</a></p>
+                            <p class="item-title"><a href="/2018/05/12/Kotlin/Koltin的byLazy实现原理/" class="title">从原理分析和区分lateinit var、by lazy</a></p>
+                            <p class="item-date"><time datetime="2018-05-12T07:12:08.119Z" itemprop="datePublished">2018-05-12</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Java/">Java</a></p>
+                            <p class="item-title"><a href="/2018/04/30/Java/堆还是栈/" class="title">Java对象内存分配，堆还是栈? 这是个问题</a></p>
+                            <p class="item-date"><time datetime="2018-04-30T03:31:28.525Z" itemprop="datePublished">2018-04-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Read/">Read</a></p>
+                            <p class="item-title"><a href="/2018/04/24/Read/算法的实际用处/" class="title">数据结构复习笔记(待补充)</a></p>
+                            <p class="item-date"><time datetime="2018-04-24T14:58:14.463Z" itemprop="datePublished">2018-04-24</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Android-OpenGL/">Android OpenGL</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Kotlin/">Kotlin</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Others/">Others</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Read/">Read</a><span class="category-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">6</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+
+            
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2018 咸鱼不思议<br>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
+        </div>
+    </div>
+
+<!-- Baidu Analytics -->
+<script>
+	var _hmt = _hmt || [];
+	(function() {
+  		var hm = document.createElement("script");
+  		hm.src = "https://hm.baidu.com/hm.js?d9bf4984532d263b0e54cbff6129d0fc";
+  		var s = document.getElementsByTagName("script")[0]; 
+  		s.parentNode.insertBefore(hm, s);
+	})();
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-113625597-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-113625597-1');
+</script>
+
+</footer>
+
+        
+    
+    
+    <!-- 来必力City版安装代码 -->
+    <script type="text/javascript">
+     (function(d, s) {
+         var j, e = d.getElementsByTagName(s)[0];
+
+         if (typeof LivereTower === 'function') { return; }
+
+         j = d.createElement(s);
+         j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+         j.async = true;
+
+         e.parentNode.insertBefore(j, e);
+     })(document, 'script');
+    </script>
+  <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+  <!-- City版安装代码已完成 -->
+
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
