@@ -1,244 +1,23 @@
-<!DOCTYPE html>
-<html lang=zh>
-<head>
-    <meta charset="utf-8">
-    
-    <title>Java对象内存分配，堆还是栈? 这是个问题 | 七味和弦</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="在说java的对象分配内存所在位置前，我们先来看看C++的对象分配是怎样的。C++实例化对象的方式有两种：">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Java对象内存分配，堆还是栈? 这是个问题">
-<meta property="og:url" content="jaminchanks.github.io.git/2018/04/30/Java/堆还是栈/index.html">
-<meta property="og:site_name" content="七味和弦">
-<meta property="og:description" content="在说java的对象分配内存所在位置前，我们先来看看C++的对象分配是怎样的。C++实例化对象的方式有两种：">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://p3ueh8nrl.bkt.clouddn.com/cover/java.jpg">
-<meta property="og:updated_time" content="2018-04-30T16:40:12.658Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java对象内存分配，堆还是栈? 这是个问题">
-<meta name="twitter:description" content="在说java的对象分配内存所在位置前，我们先来看看C++的对象分配是怎样的。C++实例化对象的方式有两种：">
-<meta name="twitter:image" content="http://p3ueh8nrl.bkt.clouddn.com/cover/java.jpg">
-    
-
-    
-
-    
-        <link rel="icon" href="/css/images/logo.png" />
-    
-
-    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/libs/open-sans/styles.css">
-    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
-
-    <link rel="stylesheet" href="/css/style.css">
-
-    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
-    
-    
-        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
-    
-    
-        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
-    
-    
-    
-    
-
-
-</head>
-
-<body>
-    <div id="container">
-        <header id="header">
-    <div id="header-main" class="header-inner">
-        <div class="outer">
-            <a href="/" id="logo">
-                <i class="logo"></i>
-                <span class="site-title">七味和弦</span>
-            </a>
-            <nav id="main-nav">
-                
-                    <a class="main-nav-link" href="/.">首页</a>
-                
-                    <a class="main-nav-link" href="/archives">归档</a>
-                
-                    <a class="main-nav-link" href="/categories">分类</a>
-                
-                    <a class="main-nav-link" href="/tags">标签</a>
-                
-                    <a class="main-nav-link" href="/about">关于</a>
-                
-            </nav>
-            
-                
-                <nav id="sub-nav">
-                    <div class="profile" id="profile-nav">
-                        <a id="profile-anchor" href="javascript:;">
-                            <img class="avatar" src="/css/images/avatar.png" />
-                            <i class="fa fa-caret-down"></i>
-                        </a>
-                    </div>
-                </nav>
-            
-            <div id="search-form-wrap">
-
-    <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
-        <button type="submit" class="search-form-submit"></button>
-    </form>
-    <div class="ins-search">
-    <div class="ins-search-mask"></div>
-    <div class="ins-search-container">
-        <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
-            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
-        </div>
-        <div class="ins-section-wrapper">
-            <div class="ins-section-container"></div>
-        </div>
-    </div>
-</div>
-<script>
-(function (window) {
-    var INSIGHT_CONFIG = {
-        TRANSLATION: {
-            POSTS: '文章',
-            PAGES: '页面',
-            CATEGORIES: '分类',
-            TAGS: '标签',
-            UNTITLED: '(未命名)',
-        },
-        ROOT_URL: '/',
-        CONTENT_URL: '/content.json',
-    };
-    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-})(window);
-</script>
-<script src="/js/insight.js"></script>
-
-</div>
-        </div>
-    </div>
-    <div id="main-nav-mobile" class="header-sub header-inner">
-        <table class="menu outer">
-            <tr>
-                
-                    <td><a class="main-nav-link" href="/.">首页</a></td>
-                
-                    <td><a class="main-nav-link" href="/archives">归档</a></td>
-                
-                    <td><a class="main-nav-link" href="/categories">分类</a></td>
-                
-                    <td><a class="main-nav-link" href="/tags">标签</a></td>
-                
-                    <td><a class="main-nav-link" href="/about">关于</a></td>
-                
-                <td>
-                    
-    <div class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
-    </div>
-
-                </td>
-            </tr>
-        </table>
-    </div>
-</header>
-
-        <div class="outer">
-            
-                
-
-<aside id="profile">
-    <div class="inner profile-inner">
-        <div class="base-info profile-block">
-            <img id="avatar" src="/css/images/avatar.png" />
-            <h2 id="name">咸鱼不思议</h2>
-            <h3 id="title">那年夏天水产有限公司</h3>
-            <span id="location"><i class="fa fa-map-marker"></i>guangzhou, China</span>
-            <a id="follow" target="_blank" href="https://github.com/jaminchanks">关注我</a>
-        </div>
-        <div class="article-info profile-block">
-            <div class="article-info-block">
-                19
-                <span>文章</span>
-            </div>
-            <div class="article-info-block">
-                0
-                <span>标签</span>
-            </div>
-        </div>
-        
-        <div class="profile-block social-links">
-            <table>
-                <tr>
-                    
-                    
-                    <td>
-                        <a href="https://github.com/jaminchanks" target="_blank" title="github" class=tooltip>
-                            <i class="fa fa-github"></i>
-                        </a>
-                    </td>
-                    
-                </tr>
-            </table>
-        </div>
-        
-    </div>
-</aside>
-
-            
-            <section id="main"><article id="post-Java/堆还是栈" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 class="article-title" itemprop="name">
-            Java对象内存分配，堆还是栈? 这是个问题
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2018/04/30/Java/堆还是栈/">
-            <time datetime="2018-04-30T03:31:28.526Z" itemprop="datePublished">2018-04-30</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/Java/">Java</a>
-    </div>
-
-                        
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <p>在说java的对象分配内存所在位置前，我们先来看看C++的对象分配是怎样的。<br>C++实例化对象的方式有两种：<br><a id="more"></a></p>
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="generator" content="Hexo 4.2.1"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>Java对象内存分配，堆还是栈? 这是个问题 - 七味和弦</title><meta description="在说java的对象分配内存所在位置前，我们先来看看C++的对象分配是怎样的。C++实例化对象的方式有两种："><meta property="og:type" content="blog"><meta property="og:title" content="Java对象内存分配，堆还是栈? 这是个问题"><meta property="og:url" content="jaminchanks.github.io.git/2018/04/30/Java/%E5%A0%86%E8%BF%98%E6%98%AF%E6%A0%88/"><meta property="og:site_name" content="七味和弦"><meta property="og:description" content="在说java的对象分配内存所在位置前，我们先来看看C++的对象分配是怎样的。C++实例化对象的方式有两种："><meta property="og:locale" content="zh_CN"><meta property="og:image" content="/img/og_image.png"><meta property="article:published_time" content="2018-04-30T03:31:28.526Z"><meta property="article:modified_time" content="2020-07-22T15:10:12.278Z"><meta property="article:author" content="七味和弦"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"jaminchanks.github.io.git/2018/04/30/Java/%E5%A0%86%E8%BF%98%E6%98%AF%E6%A0%88/"},"headline":"七味和弦","image":["/img/og_image.png"],"datePublished":"2018-04-30T03:31:28.526Z","dateModified":"2020-07-22T15:10:12.278Z","author":{"@type":"Person","name":"七味和弦"},"description":"在说java的对象分配内存所在位置前，我们先来看看C++的对象分配是怎样的。C++实例化对象的方式有两种："}</script><link rel="canonical" href="jaminchanks.github.io.git/2018/04/30/Java/%E5%A0%86%E8%BF%98%E6%98%AF%E6%A0%88/"><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/androidstudio.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/favicon.svg" alt="七味和弦" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">主页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about">关于</a></div><div class="navbar-end"><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><time class="level-item" dateTime="2018-04-30T03:31:28.526Z" title="2018-04-30T03:31:28.526Z">2018-04-30</time><span class="level-item"><a class="link-muted" href="/categories/Java/">Java</a></span><span class="level-item">13 分钟 读完 (大约 1976 个字)</span></div></div><h1 class="title is-3 is-size-4-mobile">Java对象内存分配，堆还是栈? 这是个问题</h1><div class="content"><p>在说java的对象分配内存所在位置前，我们先来看看C++的对象分配是怎样的。<br>C++实例化对象的方式有两种：</p>
+<a id="more"></a>
 <ul>
 <li>直接定义对象，对象被分配在方法栈的本地变量栈上，生命周期与方法栈一致，方法退出时对象被自动销毁。</li>
 <li>通过new关键字在堆上分配对象，对象要用户手动销毁。</li>
 </ul>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">ClassA</span> &#123;</span></div><div class="line"><span class="keyword">private</span>:</div><div class="line">    <span class="keyword">int</span> arg;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    explicit ClassA(int a): arg(a) &#123;</div><div class="line">         <span class="built_in">cout</span> &lt;&lt; <span class="string">"ClassA("</span> &lt;&lt; arg &lt;&lt; <span class="string">")"</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    ~ClassA()&#123;</div><div class="line">         <span class="built_in">cout</span> &lt;&lt; <span class="string">"~ClassA("</span> &lt;&lt; arg &lt;&lt; <span class="string">")"</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="function">ClassA <span class="title">ca1</span><span class="params">(<span class="number">1</span>)</span></span>; <span class="comment">//直接定义对象</span></div><div class="line">    ClassA* ca2 = <span class="keyword">new</span> ClassA(<span class="number">2</span>); <span class="comment">//使用new关键字</span></div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>输出结果:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ClassA(1)</div><div class="line">ClassA(2)</div><div class="line">~ClassA(1)</div></pre></td></tr></table></figure></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ClassA</span> &#123;</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="keyword">int</span> arg;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">explicit</span> <span class="title">ClassA</span><span class="params">(<span class="keyword">int</span> a)</span>: <span class="title">arg</span><span class="params">(a)</span> </span>&#123;</span><br><span class="line">         <span class="built_in">cout</span> &lt;&lt; <span class="string">"ClassA("</span> &lt;&lt; arg &lt;&lt; <span class="string">")"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    ~ClassA()&#123;</span><br><span class="line">         <span class="built_in">cout</span> &lt;&lt; <span class="string">"~ClassA("</span> &lt;&lt; arg &lt;&lt; <span class="string">")"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="function">ClassA <span class="title">ca1</span><span class="params">(<span class="number">1</span>)</span></span>; <span class="comment">//直接定义对象</span></span><br><span class="line">    ClassA* ca2 = <span class="keyword">new</span> ClassA(<span class="number">2</span>); <span class="comment">//使用new关键字</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出结果:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ClassA(1)</span><br><span class="line">ClassA(2)</span><br><span class="line">~ClassA(1)</span><br></pre></td></tr></table></figure>
 <p>　　直接定义对象的方式会将对象内存分配在栈上，因此main函数退出后会执行ClassA的虚构函数，该对象被回收。而使用new实例化的对象内存分配在堆上，对象在main函数退出后不会执行虚构函数。</p>
 <p>　　C++中，内存可以被分配到栈上或者堆内存中。<br>　　那么java是否也是这样呢，如果java在必要的时候也是把对象分配到栈上，从而自动销毁对象，那必然能减少一些垃圾回收的开销(java的垃圾回收需要进行标记整理等一系列耗时操作)，同时也能提高执行效率(栈上存储的数据有很大的概率会被虚拟机分配至物理机器的高速寄存器中存储)。虽然，这些细节都是针对JVM而言的，对于开发者而言似乎不太需要关心。<br>然而，我还是好奇。</p>
-<p>写一段不怎么靠谱的代码来观察Java的输出结果:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ClassA</span></span>&#123;</div><div class="line">     <span class="keyword">public</span> <span class="keyword">int</span> arg;</div><div class="line">     <span class="function"><span class="keyword">public</span> <span class="title">ClassA</span><span class="params">(<span class="keyword">int</span> arg)</span> </span>&#123;</div><div class="line">         <span class="keyword">this</span>.arg = arg;</div><div class="line">     &#125;</div><div class="line"></div><div class="line">     <span class="meta">@Override</span></div><div class="line">     <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">finalize</span><span class="params">()</span> <span class="keyword">throws</span> Throwable </span>&#123;</div><div class="line">         System.out.println(<span class="string">"对象即将被销毁: "</span> + <span class="keyword">this</span> + <span class="string">"; arg = "</span> + arg);</div><div class="line">         <span class="keyword">super</span>.finalize();</div><div class="line">     &#125;</div><div class="line"> &#125;</div><div class="line"> </div><div class="line"> </div><div class="line"> <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestCase1</span> </span>&#123;</div><div class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> ClassA <span class="title">getClassA</span><span class="params">(<span class="keyword">int</span> arg)</span> </span>&#123;</div><div class="line">         ClassA a = <span class="keyword">new</span> ClassA(arg);</div><div class="line">         System.out.println(<span class="string">"getA() 方法内:"</span> + a);</div><div class="line">         <span class="keyword">return</span> a;</div><div class="line">     &#125;</div><div class="line"> </div><div class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">foo</span><span class="params">()</span> </span>&#123;</div><div class="line">         ClassA a = <span class="keyword">new</span> ClassA(<span class="number">2</span>);</div><div class="line">         System.out.println(<span class="string">"foo() 方法内:"</span> + a);</div><div class="line">     &#125;</div><div class="line"> </div><div class="line"> </div><div class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">         ClassA classA = getClassA(<span class="number">1</span>);</div><div class="line">         System.out.println(<span class="string">"main() 方法内:"</span> + classA);</div><div class="line"> </div><div class="line">         foo();</div><div class="line">     &#125;</div><div class="line"> </div><div class="line"> &#125;</div></pre></td></tr></table></figure></p>
-<p>输出结果:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">getA() 方法内:com.rhythm7.A@29453f44</div><div class="line">main() 方法内:com.rhythm7.A@29453f44</div><div class="line">foo() 方法内:com.rhythm7.A@5cad8086</div></pre></td></tr></table></figure></p>
-<p>　　执行完getA()方法后，getA()方法内实例化的classA对象实例a被返回并赋值给main方法内的classA (此时使用的是引用传递，所以最后的输出结果是相同的HashCode)。<br>接着执行foo()方法，方法内部实例化一个classA对象，但只是输出其HashCode，没有返回其对象。<br>　　结果是两个对象都没有执行finalize()方法。<br>　　如果我们强制使用<code>System.gc()</code>来通知系统进行垃圾回收，结果如何?<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">    A a = getA(<span class="number">1</span>);</div><div class="line">    System.out.println(<span class="string">"main() 方法内:"</span> + a);</div><div class="line">    foo();</div><div class="line">    System.gc();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>输出结果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">getA() 方法内:com.rhythm7.A@29453f44</div><div class="line">main() 方法内:com.rhythm7.A@29453f44</div><div class="line">foo() 方法内:com.rhythm7.A@5cad8086</div><div class="line">对象即将被销毁: com.rhythm7.A@5cad8086; arg = 2</div></pre></td></tr></table></figure></p>
+<p>写一段不怎么靠谱的代码来观察Java的输出结果:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ClassA</span></span>&#123;</span><br><span class="line">     <span class="keyword">public</span> <span class="keyword">int</span> arg;</span><br><span class="line">     <span class="function"><span class="keyword">public</span> <span class="title">ClassA</span><span class="params">(<span class="keyword">int</span> arg)</span> </span>&#123;</span><br><span class="line">         <span class="keyword">this</span>.arg = arg;</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     <span class="meta">@Override</span></span><br><span class="line">     <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">finalize</span><span class="params">()</span> <span class="keyword">throws</span> Throwable </span>&#123;</span><br><span class="line">         System.out.println(<span class="string">"对象即将被销毁: "</span> + <span class="keyword">this</span> + <span class="string">"; arg = "</span> + arg);</span><br><span class="line">         <span class="keyword">super</span>.finalize();</span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"> <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestCase1</span> </span>&#123;</span><br><span class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> ClassA <span class="title">getClassA</span><span class="params">(<span class="keyword">int</span> arg)</span> </span>&#123;</span><br><span class="line">         ClassA a = <span class="keyword">new</span> ClassA(arg);</span><br><span class="line">         System.out.println(<span class="string">"getA() 方法内:"</span> + a);</span><br><span class="line">         <span class="keyword">return</span> a;</span><br><span class="line">     &#125;</span><br><span class="line"> </span><br><span class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">foo</span><span class="params">()</span> </span>&#123;</span><br><span class="line">         ClassA a = <span class="keyword">new</span> ClassA(<span class="number">2</span>);</span><br><span class="line">         System.out.println(<span class="string">"foo() 方法内:"</span> + a);</span><br><span class="line">     &#125;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">         ClassA classA = getClassA(<span class="number">1</span>);</span><br><span class="line">         System.out.println(<span class="string">"main() 方法内:"</span> + classA);</span><br><span class="line"> </span><br><span class="line">         foo();</span><br><span class="line">     &#125;</span><br><span class="line"> </span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<p>输出结果:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">getA() 方法内:com.rhythm7.A@29453f44</span><br><span class="line">main() 方法内:com.rhythm7.A@29453f44</span><br><span class="line">foo() 方法内:com.rhythm7.A@5cad8086</span><br></pre></td></tr></table></figure>
+<p>　　执行完getA()方法后，getA()方法内实例化的classA对象实例a被返回并赋值给main方法内的classA (此时使用的是引用传递，所以最后的输出结果是相同的HashCode)。<br>接着执行foo()方法，方法内部实例化一个classA对象，但只是输出其HashCode，没有返回其对象。<br>　　结果是两个对象都没有执行finalize()方法。<br>　　如果我们强制使用<code>System.gc()</code>来通知系统进行垃圾回收，结果如何?</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    A a = getA(<span class="number">1</span>);</span><br><span class="line">    System.out.println(<span class="string">"main() 方法内:"</span> + a);</span><br><span class="line">    foo();</span><br><span class="line">    System.gc();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出结果</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">getA() 方法内:com.rhythm7.A@29453f44</span><br><span class="line">main() 方法内:com.rhythm7.A@29453f44</span><br><span class="line">foo() 方法内:com.rhythm7.A@5cad8086</span><br><span class="line">对象即将被销毁: com.rhythm7.A@5cad8086; arg &#x3D; 2</span><br></pre></td></tr></table></figure>
 <p>　　这说明，需要通知垃圾回收器进行进行垃圾回收才能回收方法foo()内实例化的对象。<br>所以，可以肯定foo()内实例化的对象不会跟随foo()方法的出栈而销毁，也就是foo()方法内实例化的局部对象不会是分配在栈上的。</p>
 <p>查阅相关资料，发现JVM的确存在一个 <strong>“逃逸分析”</strong> 的概念。<br>内容大概如下：<br>　　逃逸分析是目前Java虚拟机中比较前沿的优化技术，它并不是直接优化代码的手段，而是为其他优化手段提供依据的分析技术。<br><strong>逃逸分析的主要作用就是分析对象作用域。</strong><br>　　当一个对象在方法中被定义后，它可能被外部方法所引用，例如作为调用参数传递到其他方法中，这种行为就叫做 <strong>方法逃逸</strong>。甚至该对象还可能被外部线程访问到，例如赋值被类变量或可以在其他线程中访问的实例变量，称为 <strong>线程逃逸</strong>。<br>　　通过逃逸分析技术可以判断一个对象不会逃逸到方法或者线程之外。根据这一特点，就可以让这个对象在栈上分配内存，对象所占用的内存空间就可以随帧栈出栈而销毁。在一般应用中，不会逃逸的局部对象所占比例很大，如果能使用栈上分配，那么大量的对象就会随着方法的结束而自动销毁了，垃圾收集系统的压力就会小很多。<br>　　除此之外，逃逸分析的作用还包括 <strong>标量替换</strong> 和 <strong>同步消除</strong> ;<br>　　 <strong>标量替换</strong> 指：若一个对象被证明不会被外部访问，并且这个对象可以被拆解成若干个基本类型的形式，那么当程序真正执行的时候可以不创建这个对象，而是采用直接创建它的若干个被这个方法所使用到的成员变量来代替，将对象拆分后，除了可以让对象的成员变量在栈上分配和读写之外，还可以为后续进一步的优化手段创造条件。<br>　　 <strong>同步消除</strong> 指：若一个变量被证明不会逃逸出线程，那么这个变量的读写就肯定不会出现竞争的情况，那么对这个变量实施的同步措施也就可以消除掉。<br>说了逃逸分析的这些作用，那么Java虚拟机是否有对对象做逃逸分析呢?</p>
 <p>　　<font size="3" color="black" style="font-weight: bold;">答案是否。</font></p>
@@ -248,284 +27,37 @@
 </blockquote>
 <p>　　<strong>所以，忘掉Java栈上分配对象的想法吧，至少在目前的HotSpot中是不存在的。也就是说Java的对象分配只在堆上。</strong></p>
 <p>ps:如果有需要，并且确认对程序运行有益，用户可以使用参数-XX:+DoEscapeAnalysis来手动开启逃逸分析，开启之后可以通过参数-XX:+PrintEscapeAnalysis来查看分析结果。</p>
+</div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2018/05/12/Kotlin/Koltin%E7%9A%84byLazy%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">从原理分析和区分lateinit var、by lazy</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2018/04/24/Read/%E7%AE%97%E6%B3%95%E7%9A%84%E5%AE%9E%E9%99%85%E7%94%A8%E5%A4%84/"><span class="level-item">数据结构复习笔记(待补充)</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div id="lv-container" data-id="city" data-uid="MTAyMC8zMzg3NC8xMDQyNw=="><script>(function(d, s) {
+            var j, e = d.getElementsByTagName(s)[0];
 
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
+            if (typeof LivereTower === 'function') { return; }
 
+            j = d.createElement(s);
+            j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+            j.async = true;
 
-
-</div>
-
-    <a data-url="jaminchanks.github.io.git/2018/04/30/Java/堆还是栈/" data-id="ckcryfby4000gret3dih3y80s" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
+            e.parentNode.insertBefore(j, e);
+        })(document, 'script');</script><noscript>Please activate JavaScript for write a comment in LiveRe</noscript></div></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="/img/avatar.png" alt="七味和弦"></figure><p class="title is-size-4 is-block line-height-inherit">七味和弦</p><p class="is-size-6 is-block">这家伙不懒，但什么都没留下。</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>GuangZhou China</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">17</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">7</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">0</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/jaminchanks" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/jaminchanks"><i class="fab fa-github"></i></a></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile is-marginless" href="/categories/Android/"><span class="level-start"><span class="level-item">Android</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/Android-OpenGL/"><span class="level-start"><span class="level-item">Android OpenGL</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/Git/"><span class="level-start"><span class="level-item">Git</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/Java/"><span class="level-start"><span class="level-item">Java</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/Kotlin/"><span class="level-start"><span class="level-item">Kotlin</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/Others/"><span class="level-start"><span class="level-item">Others</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/Read/"><span class="level-start"><span class="level-item">Read</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></div></div></div><div class="card widget"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content size-small"><p><time dateTime="2018-05-31T15:24:25.980Z">2018-05-31</time></p><p class="title is-6"><a class="link-muted" href="/2018/05/31/Git/git_%E7%AC%94%E8%AE%B01/">Git 深入学习笔记</a></p><p class="is-uppercase"><a class="link-muted" href="/categories/Git/">Git</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2018-05-21T15:44:51.291Z">2018-05-21</time></p><p class="title is-6"><a class="link-muted" href="/2018/05/21/Java/Java%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86/">Java不高级特性:动态代理</a></p><p class="is-uppercase"><a class="link-muted" href="/categories/Java/">Java</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2018-05-12T07:12:08.120Z">2018-05-12</time></p><p class="title is-6"><a class="link-muted" href="/2018/05/12/Kotlin/Koltin%E7%9A%84byLazy%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/">从原理分析和区分lateinit var、by lazy</a></p><p class="is-uppercase"><a class="link-muted" href="/categories/Kotlin/">Kotlin</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2018-04-30T03:31:28.526Z">2018-04-30</time></p><p class="title is-6"><a class="link-muted" href="/2018/04/30/Java/%E5%A0%86%E8%BF%98%E6%98%AF%E6%A0%88/">Java对象内存分配，堆还是栈? 这是个问题</a></p><p class="is-uppercase"><a class="link-muted" href="/categories/Java/">Java</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2018-04-24T14:58:14.464Z">2018-04-24</time></p><p class="title is-6"><a class="link-muted" href="/2018/04/24/Read/%E7%AE%97%E6%B3%95%E7%9A%84%E5%AE%9E%E9%99%85%E7%94%A8%E5%A4%84/">数据结构复习笔记(待补充)</a></p><p class="is-uppercase"><a class="link-muted" href="/categories/Read/">Read</a></p></div></article></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile is-marginless" href="/archives/2018/05/"><span class="level-start"><span class="level-item">五月 2018</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2018/04/"><span class="level-start"><span class="level-item">四月 2018</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2018/03/"><span class="level-start"><span class="level-item">三月 2018</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2018/02/"><span class="level-start"><span class="level-item">二月 2018</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2018/01/"><span class="level-start"><span class="level-item">一月 2018</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li></ul></div></div></div><!--!--></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/favicon.svg" alt="七味和弦" height="28"></a><p class="size-small"><span>&copy; 2020 七味和弦</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+            site: {
+                url: 'jaminchanks.github.io.git',
+                external_link: {"enable":true,"exclude":[]}
+            },
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
                 }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
             }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="jaminchanks.github.io.git/2018/04/30/Java/堆还是栈/#comments" class="article-comment-link">评论</a>
-    
-
-        </footer>
-    </div>
-    
-        
-<nav id="article-nav">
-    
-        <a href="/2018/05/12/Kotlin/Koltin的byLazy实现原理/" id="article-nav-newer" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">上一篇</strong>
-            <div class="article-nav-title">
-                
-                    从原理分析和区分lateinit var、by lazy
-                
-            </div>
-        </a>
-    
-    
-        <a href="/2018/04/24/Read/算法的实际用处/" id="article-nav-older" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">下一篇</strong>
-            <div class="article-nav-title">数据结构复习笔记(待补充)</div>
-        </a>
-    
-</nav>
-
-
-    
-</article>
-
-
-    
-    
-        <section id="comments">
-    <div id="lv-container" data-id="city" data-uid=MTAyMC8zMzg3NC8xMDQyNw==></div>
-</section>
-    
-
-</section>
-            
-                
-<aside id="sidebar">
-   
-        
-    <div class="widget-wrap">
-        <h3 class="widget-title">最新文章</h3>
-        <div class="widget">
-            <ul id="recent-post" class="no-thumbnail">
-                
-                    <li>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/06/28/Git/git_我可以反悔吗/" class="title"></a></p>
-                            <p class="item-date"><time datetime="2018-06-28T13:57:36.094Z" itemprop="datePublished">2018-06-28</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Git/">Git</a></p>
-                            <p class="item-title"><a href="/2018/05/31/Git/git_笔记1/" class="title">Git 深入学习笔记</a></p>
-                            <p class="item-date"><time datetime="2018-05-31T15:24:25.980Z" itemprop="datePublished">2018-05-31</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Java/">Java</a></p>
-                            <p class="item-title"><a href="/2018/05/21/Java/Java动态代理/" class="title">Java不高级特性:动态代理</a></p>
-                            <p class="item-date"><time datetime="2018-05-21T15:44:51.291Z" itemprop="datePublished">2018-05-21</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Kotlin/">Kotlin</a></p>
-                            <p class="item-title"><a href="/2018/05/12/Kotlin/Koltin的byLazy实现原理/" class="title">从原理分析和区分lateinit var、by lazy</a></p>
-                            <p class="item-date"><time datetime="2018-05-12T07:12:08.120Z" itemprop="datePublished">2018-05-12</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Java/">Java</a></p>
-                            <p class="item-title"><a href="/2018/04/30/Java/堆还是栈/" class="title">Java对象内存分配，堆还是栈? 这是个问题</a></p>
-                            <p class="item-date"><time datetime="2018-04-30T03:31:28.526Z" itemprop="datePublished">2018-04-30</time></p>
-                        </div>
-                    </li>
-                
-            </ul>
-        </div>
-    </div>
-
-    
-        
-    <div class="widget-wrap">
-        <h3 class="widget-title">分类</h3>
-        <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Android-OpenGL/">Android OpenGL</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Kotlin/">Kotlin</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Others/">Others</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Read/">Read</a><span class="category-list-count">1</span></li></ul>
-        </div>
-    </div>
-
-    
-        
-    <div class="widget-wrap">
-        <h3 class="widget-title">归档</h3>
-        <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">6</span></li></ul>
-        </div>
-    </div>
-
-    
-        
-    
-    <div id="toTop" class="fa fa-angle-up"></div>
-</aside>
-
-            
-        </div>
-        <footer id="footer">
-    <div class="outer">
-        <div id="footer-info" class="inner">
-            &copy; 2020 七味和弦<br>
-            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
-        </div>
-    </div>
-
-<!-- Baidu Analytics -->
-<script>
-	var _hmt = _hmt || [];
-	(function() {
-  		var hm = document.createElement("script");
-  		hm.src = "https://hm.baidu.com/hm.js?d9bf4984532d263b0e54cbff6129d0fc";
-  		var s = document.getElementsByTagName("script")[0]; 
-  		s.parentNode.insertBefore(hm, s);
-	})();
-</script>
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-113625597-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-113625597-1');
-</script>
-
-</footer>
-
-        
-    
-    
-    <!-- 来必力City版安装代码 -->
-    <script type="text/javascript">
-     (function(d, s) {
-         var j, e = d.getElementsByTagName(s)[0];
-
-         if (typeof LivereTower === 'function') { return; }
-
-         j = d.createElement(s);
-         j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-         j.async = true;
-
-         e.parentNode.insertBefore(j, e);
-     })(document, 'script');
-    </script>
-  <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
-  <!-- City版安装代码已完成 -->
-
-
-
-
-
-    
-        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
-    
-    
-        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
-    
-    
-
-
-
-<!-- Custom Scripts -->
-<script src="/js/main.js"></script>
-
-    </div>
-</body>
-</html>
+        };</script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":145,"height":315},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body></html>

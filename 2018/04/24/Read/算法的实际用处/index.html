@@ -1,234 +1,7 @@
-<!DOCTYPE html>
-<html lang=zh>
-<head>
-    <meta charset="utf-8">
-    
-    <title>数据结构复习笔记(待补充) | 七味和弦</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="如果大脑也能固件升级,而且不贵,该多好…  这个星期，不知不觉看了两本技术书籍。一本《Android Gradle权威指南》,一本《算法图解》。第一本页数200多页，但内容近乎乏善可陈，第二本400多页(电子书)，但图片很多，阅读起来饶有趣味。因为两本书都不是在零基础的情况下阅读的，一开始就本着查漏补缺的态度，但阅读过后还是觉得有必要记录一下读书笔记。 所以主要说说算法图解这本书中的一些东西。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="数据结构复习笔记(待补充)">
-<meta property="og:url" content="jaminchanks.github.io.git/2018/04/24/Read/算法的实际用处/index.html">
-<meta property="og:site_name" content="七味和弦">
-<meta property="og:description" content="如果大脑也能固件升级,而且不贵,该多好…  这个星期，不知不觉看了两本技术书籍。一本《Android Gradle权威指南》,一本《算法图解》。第一本页数200多页，但内容近乎乏善可陈，第二本400多页(电子书)，但图片很多，阅读起来饶有趣味。因为两本书都不是在零基础的情况下阅读的，一开始就本着查漏补缺的态度，但阅读过后还是觉得有必要记录一下读书笔记。 所以主要说说算法图解这本书中的一些东西。">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://p3ueh8nrl.bkt.clouddn.com/cover/java.jpg">
-<meta property="og:updated_time" content="2018-05-12T16:32:34.508Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="数据结构复习笔记(待补充)">
-<meta name="twitter:description" content="如果大脑也能固件升级,而且不贵,该多好…  这个星期，不知不觉看了两本技术书籍。一本《Android Gradle权威指南》,一本《算法图解》。第一本页数200多页，但内容近乎乏善可陈，第二本400多页(电子书)，但图片很多，阅读起来饶有趣味。因为两本书都不是在零基础的情况下阅读的，一开始就本着查漏补缺的态度，但阅读过后还是觉得有必要记录一下读书笔记。 所以主要说说算法图解这本书中的一些东西。">
-<meta name="twitter:image" content="http://p3ueh8nrl.bkt.clouddn.com/cover/java.jpg">
-    
-
-    
-
-    
-        <link rel="icon" href="/css/images/logo.png" />
-    
-
-    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/libs/open-sans/styles.css">
-    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
-
-    <link rel="stylesheet" href="/css/style.css">
-
-    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
-    
-    
-        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
-    
-    
-        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
-    
-    
-    
-    
-
-
-</head>
-
-<body>
-    <div id="container">
-        <header id="header">
-    <div id="header-main" class="header-inner">
-        <div class="outer">
-            <a href="/" id="logo">
-                <i class="logo"></i>
-                <span class="site-title">七味和弦</span>
-            </a>
-            <nav id="main-nav">
-                
-                    <a class="main-nav-link" href="/.">首页</a>
-                
-                    <a class="main-nav-link" href="/archives">归档</a>
-                
-                    <a class="main-nav-link" href="/categories">分类</a>
-                
-                    <a class="main-nav-link" href="/tags">标签</a>
-                
-                    <a class="main-nav-link" href="/about">关于</a>
-                
-            </nav>
-            
-                
-                <nav id="sub-nav">
-                    <div class="profile" id="profile-nav">
-                        <a id="profile-anchor" href="javascript:;">
-                            <img class="avatar" src="/css/images/avatar.png" />
-                            <i class="fa fa-caret-down"></i>
-                        </a>
-                    </div>
-                </nav>
-            
-            <div id="search-form-wrap">
-
-    <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
-        <button type="submit" class="search-form-submit"></button>
-    </form>
-    <div class="ins-search">
-    <div class="ins-search-mask"></div>
-    <div class="ins-search-container">
-        <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
-            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
-        </div>
-        <div class="ins-section-wrapper">
-            <div class="ins-section-container"></div>
-        </div>
-    </div>
-</div>
-<script>
-(function (window) {
-    var INSIGHT_CONFIG = {
-        TRANSLATION: {
-            POSTS: '文章',
-            PAGES: '页面',
-            CATEGORIES: '分类',
-            TAGS: '标签',
-            UNTITLED: '(未命名)',
-        },
-        ROOT_URL: '/',
-        CONTENT_URL: '/content.json',
-    };
-    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-})(window);
-</script>
-<script src="/js/insight.js"></script>
-
-</div>
-        </div>
-    </div>
-    <div id="main-nav-mobile" class="header-sub header-inner">
-        <table class="menu outer">
-            <tr>
-                
-                    <td><a class="main-nav-link" href="/.">首页</a></td>
-                
-                    <td><a class="main-nav-link" href="/archives">归档</a></td>
-                
-                    <td><a class="main-nav-link" href="/categories">分类</a></td>
-                
-                    <td><a class="main-nav-link" href="/tags">标签</a></td>
-                
-                    <td><a class="main-nav-link" href="/about">关于</a></td>
-                
-                <td>
-                    
-    <div class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
-    </div>
-
-                </td>
-            </tr>
-        </table>
-    </div>
-</header>
-
-        <div class="outer">
-            
-                
-
-<aside id="profile">
-    <div class="inner profile-inner">
-        <div class="base-info profile-block">
-            <img id="avatar" src="/css/images/avatar.png" />
-            <h2 id="name">咸鱼不思议</h2>
-            <h3 id="title">那年夏天水产有限公司</h3>
-            <span id="location"><i class="fa fa-map-marker"></i>guangzhou, China</span>
-            <a id="follow" target="_blank" href="https://github.com/jaminchanks">关注我</a>
-        </div>
-        <div class="article-info profile-block">
-            <div class="article-info-block">
-                19
-                <span>文章</span>
-            </div>
-            <div class="article-info-block">
-                0
-                <span>标签</span>
-            </div>
-        </div>
-        
-        <div class="profile-block social-links">
-            <table>
-                <tr>
-                    
-                    
-                    <td>
-                        <a href="https://github.com/jaminchanks" target="_blank" title="github" class=tooltip>
-                            <i class="fa fa-github"></i>
-                        </a>
-                    </td>
-                    
-                </tr>
-            </table>
-        </div>
-        
-    </div>
-</aside>
-
-            
-            <section id="main"><article id="post-Read/算法的实际用处" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 class="article-title" itemprop="name">
-            数据结构复习笔记(待补充)
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2018/04/24/Read/算法的实际用处/">
-            <time datetime="2018-04-24T14:58:14.464Z" itemprop="datePublished">2018-04-24</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/Read/">Read</a>
-    </div>
-
-                        
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <font color="#A2A2A2" size="2"><br>如果大脑也能固件升级,而且不贵,该多好…</font>
-
-<p>这个星期，不知不觉看了两本技术书籍。<br>一本《Android Gradle权威指南》,一本《算法图解》。第一本页数200多页，但内容近乎乏善可陈，第二本400多页(电子书)，但图片很多，阅读起来饶有趣味。<br>因为两本书都不是在零基础的情况下阅读的，一开始就本着查漏补缺的态度，但阅读过后还是觉得有必要记录一下读书笔记。 所以主要说说算法图解这本书中的一些东西。<br><a id="more"></a></p>
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="generator" content="Hexo 4.2.1"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>数据结构复习笔记(待补充) - 七味和弦</title><meta description="如果大脑也能固件升级,而且不贵,该多好… 这个星期，不知不觉看了两本技术书籍。一本《Android Gradle权威指南》,一本《算法图解》。第一本页数200多页，但内容近乎乏善可陈，第二本400多页(电子书)，但图片很多，阅读起来饶有趣味。因为两本书都不是在零基础的情况下阅读的，一开始就本着查漏补缺的态度，但阅读过后还是觉得有必要记录一下读书笔记。 所以主要说说算法图解这本书中的一些东西。"><meta property="og:type" content="blog"><meta property="og:title" content="数据结构复习笔记(待补充)"><meta property="og:url" content="jaminchanks.github.io.git/2018/04/24/Read/%E7%AE%97%E6%B3%95%E7%9A%84%E5%AE%9E%E9%99%85%E7%94%A8%E5%A4%84/"><meta property="og:site_name" content="七味和弦"><meta property="og:description" content="如果大脑也能固件升级,而且不贵,该多好… 这个星期，不知不觉看了两本技术书籍。一本《Android Gradle权威指南》,一本《算法图解》。第一本页数200多页，但内容近乎乏善可陈，第二本400多页(电子书)，但图片很多，阅读起来饶有趣味。因为两本书都不是在零基础的情况下阅读的，一开始就本着查漏补缺的态度，但阅读过后还是觉得有必要记录一下读书笔记。 所以主要说说算法图解这本书中的一些东西。"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="/gallery/read/algorithm_1.png"><meta property="og:image" content="/gallery/read/algorithm_3.png"><meta property="og:image" content="/gallery/read/algorithm_dijkstra.gif"><meta property="article:published_time" content="2018-04-24T14:58:14.464Z"><meta property="article:modified_time" content="2020-07-22T15:23:26.263Z"><meta property="article:author" content="七味和弦"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/gallery/read/algorithm_1.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"jaminchanks.github.io.git/2018/04/24/Read/%E7%AE%97%E6%B3%95%E7%9A%84%E5%AE%9E%E9%99%85%E7%94%A8%E5%A4%84/"},"headline":"七味和弦","image":["/gallery/read/algorithm_1.png","/gallery/read/algorithm_3.png","/gallery/read/algorithm_dijkstra.gif"],"datePublished":"2018-04-24T14:58:14.464Z","dateModified":"2020-07-22T15:23:26.263Z","author":{"@type":"Person","name":"七味和弦"},"description":"如果大脑也能固件升级,而且不贵,该多好… 这个星期，不知不觉看了两本技术书籍。一本《Android Gradle权威指南》,一本《算法图解》。第一本页数200多页，但内容近乎乏善可陈，第二本400多页(电子书)，但图片很多，阅读起来饶有趣味。因为两本书都不是在零基础的情况下阅读的，一开始就本着查漏补缺的态度，但阅读过后还是觉得有必要记录一下读书笔记。 所以主要说说算法图解这本书中的一些东西。"}</script><link rel="canonical" href="jaminchanks.github.io.git/2018/04/24/Read/%E7%AE%97%E6%B3%95%E7%9A%84%E5%AE%9E%E9%99%85%E7%94%A8%E5%A4%84/"><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/androidstudio.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/favicon.svg" alt="七味和弦" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">主页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about">关于</a></div><div class="navbar-end"><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><time class="level-item" dateTime="2018-04-24T14:58:14.464Z" title="2018-04-24T14:58:14.464Z">2018-04-24</time><span class="level-item"><a class="link-muted" href="/categories/Read/">Read</a></span><span class="level-item">14 分钟 读完 (大约 2097 个字)</span></div></div><h1 class="title is-3 is-size-4-mobile">数据结构复习笔记(待补充)</h1><div class="content"><p><font color="#A2A2A2" size="2"><br/>如果大脑也能固件升级,而且不贵,该多好…</font></p>
+<p>这个星期，不知不觉看了两本技术书籍。<br>一本《Android Gradle权威指南》,一本《算法图解》。第一本页数200多页，但内容近乎乏善可陈，第二本400多页(电子书)，但图片很多，阅读起来饶有趣味。<br>因为两本书都不是在零基础的情况下阅读的，一开始就本着查漏补缺的态度，但阅读过后还是觉得有必要记录一下读书笔记。 所以主要说说算法图解这本书中的一些东西。</p>
+<a id="more"></a>
 <h3 id="一、时间复杂度"><a href="#一、时间复杂度" class="headerlink" title="一、时间复杂度"></a>一、时间复杂度</h3><p>常见时间复杂度与其对应的算法：</p>
 <ul>
 <li><strong>O(log n)</strong>: 对数时间，常见的算法包括二分查找</li>
@@ -237,7 +10,17 @@
 <li><strong>O(n ^ 2)</strong>：常见如冒泡排序，选择排序等</li>
 <li><strong>O(n!)</strong>：阶乘时间，常见如 <strong>旅行商问题</strong> 的最优解算法</li>
 </ul>
-<p>简单介绍下旅行商问题:<br><img src="/gallery/read/algorithm_1.png" alt="旅行商问题"><br>　　假如现在有一个旅行商想要前往这5个城市(每两个城市间的往返路线不一定相同)，同时要确保旅程最短并最终返回出发城市。那么就需要考虑前往这些城市的所有可能顺序，比如：<br>　　马林 -&gt; 旧金山 -&gt; 帕洛阿尔托 -&gt; 弗里蒙特 -&gt; 伯克利 -&gt; 马林<br>　　马林 -&gt; 伯克利 -&gt; 弗里蒙特 -&gt; 帕洛阿尔托 -&gt; 旧金山 -&gt; 马林<br>　　帕洛阿尔托 -&gt; 弗里蒙特 -&gt; 伯克利 -&gt; 马林 -&gt; 旧金山 -&gt; 帕洛阿尔托<br>　　等等……<br>　　当前有5个城市，每条可能的路线首尾是相同的，那么就有5! = 120个可能顺序，如果再多加一个城市,则可能的排序会增加至6! = 720种。对于这种旅行商问题的最优解的算法目前还没有，但是可以通过动态规划求得近似的最优解。</p>
+<p>简单介绍下旅行商问题:</p>
+<div align=center>
+<img src="/gallery/read/algorithm_1.png" alt="旅行商问题" />
+</div>
+　　假如现在有一个旅行商想要前往这5个城市(每两个城市间的往返路线不一定相同)，同时要确保旅程最短并最终返回出发城市。那么就需要考虑前往这些城市的所有可能顺序，比如：
+　　马林 -> 旧金山 -> 帕洛阿尔托 -> 弗里蒙特 -> 伯克利 -> 马林
+　　马林 -> 伯克利 -> 弗里蒙特 -> 帕洛阿尔托 -> 旧金山 -> 马林
+　　帕洛阿尔托 -> 弗里蒙特 -> 伯克利 -> 马林 -> 旧金山 -> 帕洛阿尔托
+　　等等......
+　　当前有5个城市，每条可能的路线首尾是相同的，那么就有5! = 120个可能顺序，如果再多加一个城市,则可能的排序会增加至6! = 720种。对于这种旅行商问题的最优解的算法目前还没有，但是可以通过动态规划求得近似的最优解。
+
 <h3 id="二、数组与链表"><a href="#二、数组与链表" class="headerlink" title="二、数组与链表"></a>二、数组与链表</h3><ul>
 <li>数组使用的是连续的内存空间;<br>链表使用的是非连续的内存空间;</li>
 <li>数组支持随机读取，所以读取速度很快，时间复杂度为O(1);<br>链表不支持随机读取，读取时间复杂度为O(n);</li>
@@ -245,21 +28,26 @@
 </ul>
 <h3 id="三、递归"><a href="#三、递归" class="headerlink" title="三、递归"></a>三、递归</h3><ol>
 <li>递归指在函数的定义中调用函数自身的方法。</li>
-<li>递归需要<strong> 基线条件</strong> (终止条件)和<strong> 递归条件</strong> 。</li>
+<li>递归需要** 基线条件** (终止条件)和** 递归条件** 。</li>
 <li>使用递归可能导致函数调用栈太深，从而占用大量内存甚至导致StackOverflow和OutOfMemory。</li>
 <li>递归函数的优化方式有:<br>(1) 使用循环代替递归;<br>(2) 使用尾递归(尾递归会被一些语言的编译器所优化，比如帧栈变量的复用等，但并非所有语言都支持该特性);</li>
 <li>一种常见的递归思想解决的算法，比如<strong>分治法</strong> ：<br>即分而治之，把一个复杂的问题分解成两个或更多个相同或者相似的字问题，直到最后每个子问题都可以通过简单的方式直接求解，再将所有子问题的解合并，合并的结果就是该问题的解。<br>分治法是很多高效算法的基础，如排序算法（快速排序、归并排序）、傅立叶变换（快速傅立叶变换）。</li>
 </ol>
 <h3 id="四、散列函数"><a href="#四、散列函数" class="headerlink" title="四、散列函数"></a>四、散列函数</h3><p>散列函数（Hash function）又称散列算法、哈希函数。<br>散列函数的作用是为任何一种数据创建数字“指纹”(散列值)，从而实现从输入到运算结果的映射。一般而言，数字指纹的大小要比原数据小得多。反过来，通过判断两个数字指纹是否相同，可以判断出两个指纹的原始数据是否相同，但无法还原出原数据。<br>在散列函数中，有可能出现散列碰撞，即不同数据出现相同数字指纹的可能性，但对于一个设计良好的散列函数来说是很少出现散列碰撞的。</p>
-<h4 id="1-避免散列碰撞的主要方式有"><a href="#1-避免散列碰撞的主要方式有" class="headerlink" title="1. 避免散列碰撞的主要方式有:"></a>1. 避免散列碰撞的主要方式有:</h4><p><strong> (1) 较低的填装因子 </strong><br>散列函数的输入和输入对应的是一种映射关系，我们将此理解为一个萝卜一个坑的简单原理。比如我们通过散列函数的计算，将输入存放在散列表中的唯一对应位置。根据散列表总位置数和已有元素个数可计算出填装因子。<br> <img src="/gallery/read/algorithm_3.png" alt="填装因子"></p>
+<h4 id="1-避免散列碰撞的主要方式有"><a href="#1-避免散列碰撞的主要方式有" class="headerlink" title="1. 避免散列碰撞的主要方式有:"></a>1. 避免散列碰撞的主要方式有:</h4><p>** (1) 较低的填装因子 **<br>散列函数的输入和输入对应的是一种映射关系，我们将此理解为一个萝卜一个坑的简单原理。比如我们通过散列函数的计算，将输入存放在散列表中的唯一对应位置。根据散列表总位置数和已有元素个数可计算出填装因子。<br> <div align=center><br> <img src="/gallery/read/algorithm_3.png" alt="填装因子" /><br> </div></p>
 <blockquote>
 <p>填装因子 = 散列表包含的元素个数 / 散列表的位置总数</p>
 </blockquote>
 <p> 填装因子越低，发生散列碰撞的可能性就越低，为了避免碰撞的存在，在填装因子达到一定大小的时候，就需要对整个散列表的位置总数进行扩容。一个不错的经验规则是：一旦填装因子大于<strong>0.7</strong>，就调整散列表的位置总数。</p>
-<p><strong> (2) 良好的散列函数 </strong><br>比如<strong>SHA</strong>系列算法就是不错的散列函数算法，目前SHA-0和SHA-1已被发现存在一些缺陷，因此推荐SHA-2和SHA-3算法。</p>
+<p>** (2) 良好的散列函数 **<br>比如<strong>SHA</strong>系列算法就是不错的散列函数算法，目前SHA-0和SHA-1已被发现存在一些缺陷，因此推荐SHA-2和SHA-3算法。</p>
 <h4 id="2-散列函数的主要应用场景有"><a href="#2-散列函数的主要应用场景有" class="headerlink" title="2. 散列函数的主要应用场景有:"></a>2. 散列函数的主要应用场景有:</h4><p>(1) 通过散列函数可以实现按照关键字快速查找数据(字典)；<br>(2) 比较文件是否相同，散列函数的输出要比原文件的数据小得多；<br>(3) 在数据库中存储非明文数据，然后通过检查散列值的方式对比数据，如密码检验等；<br>(4) SHA是非局部敏感的，这意味着，哪怕修改源输入的一点点内容，输出结果都大不相同，因而无法比较源输入的相似性，比较相似性可以使用 <strong>Simhash算法</strong>。<br>(5) 其他。</p>
 <h3 id="五、树"><a href="#五、树" class="headerlink" title="五、树"></a>五、树</h3><h3 id="六、图"><a href="#六、图" class="headerlink" title="六、图"></a>六、图</h3><h3 id="七、迪杰斯特拉算法-Dijkstra’s-algorithm"><a href="#七、迪杰斯特拉算法-Dijkstra’s-algorithm" class="headerlink" title="七、迪杰斯特拉算法(Dijkstra’s algorithm)"></a>七、迪杰斯特拉算法(Dijkstra’s algorithm)</h3><p>计算非加权图的最短路径可以用广度优先搜索算法。如果要计算加权图(不包含负权重)的最短路径，需要使用迪杰斯特拉算法。<br>迪杰斯特拉算法的主要步骤有：<br><strong>(1)从某个节点出发<br>(2)如果当前节点没有邻居，跳至步骤(5), 或所有邻居节点都执行过步骤(4)，跳到步骤(6), 否则计算前往所有未执行过步骤(4)的邻居的开销<br>(3)如果某个邻居节点先前没有记录，添加开销和所经路径(或先前节点)记录，如果已有记录并发现有从最初起始点到该邻居的更小开销，刷新开销和所经路径(或先前节点)记录<br>(4)按从最初起始点到下个邻居节点所需开销从小到大的顺序，依次以下个邻居节点作为出发点出发， 重复(1)<br>(5)结束当前节点，开始下个节点，重复(1)<br>(6)算法结束</strong></p>
-<p>假如每个顶点代表一个城市，边长代表距离，求从a城市出发，达到其它各个城市的最短距离和最短路径分别是什么。<br><img src="/gallery/read/algorithm_dijkstra.gif" alt="迪杰斯特拉算法"></p>
+<p>假如每个顶点代表一个城市，边长代表距离，求从a城市出发，达到其它各个城市的最短距离和最短路径分别是什么。</p>
+<div align=center>
+<img src="/gallery/read/algorithm_dijkstra.gif" alt="迪杰斯特拉算法" />
+</div>
+
+
 <h3 id="八、贪婪算法"><a href="#八、贪婪算法" class="headerlink" title="八、贪婪算法"></a>八、贪婪算法</h3><h3 id="九、近似算法"><a href="#九、近似算法" class="headerlink" title="九、近似算法"></a>九、近似算法</h3><h3 id="十、动态规划"><a href="#十、动态规划" class="headerlink" title="十、动态规划"></a>十、动态规划</h3><h3 id="十一、线性规划"><a href="#十一、线性规划" class="headerlink" title="十一、线性规划"></a>十一、线性规划</h3><h3 id="十二、K最邻算法"><a href="#十二、K最邻算法" class="headerlink" title="十二、K最邻算法"></a>十二、K最邻算法</h3><h3 id="十三、费曼算法"><a href="#十三、费曼算法" class="headerlink" title="十三、费曼算法"></a>十三、费曼算法</h3><p>费曼算法是以著名物理学家查德-费曼命名的，主要实现步骤如下:</p>
 <blockquote>
 <ol>
@@ -269,284 +57,37 @@
 </ol>
 </blockquote>
 <h3 id="十四、补充"><a href="#十四、补充" class="headerlink" title="十四、补充"></a>十四、补充</h3><p>反向索引<br>傅立叶变换<br>归一化</p>
+</div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2018/04/30/Java/%E5%A0%86%E8%BF%98%E6%98%AF%E6%A0%88/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">Java对象内存分配，堆还是栈? 这是个问题</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2018/04/16/Java/JVM%E5%8E%9F%E7%90%862/"><span class="level-item">《深入理解Java虚拟机》学习笔记2</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div id="lv-container" data-id="city" data-uid="MTAyMC8zMzg3NC8xMDQyNw=="><script>(function(d, s) {
+            var j, e = d.getElementsByTagName(s)[0];
 
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
+            if (typeof LivereTower === 'function') { return; }
 
+            j = d.createElement(s);
+            j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+            j.async = true;
 
-
-</div>
-
-    <a data-url="jaminchanks.github.io.git/2018/04/24/Read/算法的实际用处/" data-id="ckcryfbye0010ret39n16g92i" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
+            e.parentNode.insertBefore(j, e);
+        })(document, 'script');</script><noscript>Please activate JavaScript for write a comment in LiveRe</noscript></div></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="/img/avatar.png" alt="七味和弦"></figure><p class="title is-size-4 is-block line-height-inherit">七味和弦</p><p class="is-size-6 is-block">这家伙不懒，但什么都没留下。</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>GuangZhou China</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">17</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">7</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">0</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/jaminchanks" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/jaminchanks"><i class="fab fa-github"></i></a></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile is-marginless" href="/categories/Android/"><span class="level-start"><span class="level-item">Android</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/Android-OpenGL/"><span class="level-start"><span class="level-item">Android OpenGL</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/Git/"><span class="level-start"><span class="level-item">Git</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/Java/"><span class="level-start"><span class="level-item">Java</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/Kotlin/"><span class="level-start"><span class="level-item">Kotlin</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/Others/"><span class="level-start"><span class="level-item">Others</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/Read/"><span class="level-start"><span class="level-item">Read</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></div></div></div><div class="card widget"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content size-small"><p><time dateTime="2018-05-31T15:24:25.980Z">2018-05-31</time></p><p class="title is-6"><a class="link-muted" href="/2018/05/31/Git/git_%E7%AC%94%E8%AE%B01/">Git 深入学习笔记</a></p><p class="is-uppercase"><a class="link-muted" href="/categories/Git/">Git</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2018-05-21T15:44:51.291Z">2018-05-21</time></p><p class="title is-6"><a class="link-muted" href="/2018/05/21/Java/Java%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86/">Java不高级特性:动态代理</a></p><p class="is-uppercase"><a class="link-muted" href="/categories/Java/">Java</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2018-05-12T07:12:08.120Z">2018-05-12</time></p><p class="title is-6"><a class="link-muted" href="/2018/05/12/Kotlin/Koltin%E7%9A%84byLazy%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/">从原理分析和区分lateinit var、by lazy</a></p><p class="is-uppercase"><a class="link-muted" href="/categories/Kotlin/">Kotlin</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2018-04-30T03:31:28.526Z">2018-04-30</time></p><p class="title is-6"><a class="link-muted" href="/2018/04/30/Java/%E5%A0%86%E8%BF%98%E6%98%AF%E6%A0%88/">Java对象内存分配，堆还是栈? 这是个问题</a></p><p class="is-uppercase"><a class="link-muted" href="/categories/Java/">Java</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2018-04-24T14:58:14.464Z">2018-04-24</time></p><p class="title is-6"><a class="link-muted" href="/2018/04/24/Read/%E7%AE%97%E6%B3%95%E7%9A%84%E5%AE%9E%E9%99%85%E7%94%A8%E5%A4%84/">数据结构复习笔记(待补充)</a></p><p class="is-uppercase"><a class="link-muted" href="/categories/Read/">Read</a></p></div></article></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile is-marginless" href="/archives/2018/05/"><span class="level-start"><span class="level-item">五月 2018</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2018/04/"><span class="level-start"><span class="level-item">四月 2018</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2018/03/"><span class="level-start"><span class="level-item">三月 2018</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2018/02/"><span class="level-start"><span class="level-item">二月 2018</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2018/01/"><span class="level-start"><span class="level-item">一月 2018</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li></ul></div></div></div><!--!--></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/favicon.svg" alt="七味和弦" height="28"></a><p class="size-small"><span>&copy; 2020 七味和弦</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+            site: {
+                url: 'jaminchanks.github.io.git',
+                external_link: {"enable":true,"exclude":[]}
+            },
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
                 }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
             }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="jaminchanks.github.io.git/2018/04/24/Read/算法的实际用处/#comments" class="article-comment-link">评论</a>
-    
-
-        </footer>
-    </div>
-    
-        
-<nav id="article-nav">
-    
-        <a href="/2018/04/30/Java/堆还是栈/" id="article-nav-newer" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">上一篇</strong>
-            <div class="article-nav-title">
-                
-                    Java对象内存分配，堆还是栈? 这是个问题
-                
-            </div>
-        </a>
-    
-    
-        <a href="/2018/04/16/Java/JVM原理2/" id="article-nav-older" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">下一篇</strong>
-            <div class="article-nav-title">《深入理解Java虚拟机》学习笔记2</div>
-        </a>
-    
-</nav>
-
-
-    
-</article>
-
-
-    
-    
-        <section id="comments">
-    <div id="lv-container" data-id="city" data-uid=MTAyMC8zMzg3NC8xMDQyNw==></div>
-</section>
-    
-
-</section>
-            
-                
-<aside id="sidebar">
-   
-        
-    <div class="widget-wrap">
-        <h3 class="widget-title">最新文章</h3>
-        <div class="widget">
-            <ul id="recent-post" class="no-thumbnail">
-                
-                    <li>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/06/28/Git/git_我可以反悔吗/" class="title"></a></p>
-                            <p class="item-date"><time datetime="2018-06-28T13:57:36.094Z" itemprop="datePublished">2018-06-28</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Git/">Git</a></p>
-                            <p class="item-title"><a href="/2018/05/31/Git/git_笔记1/" class="title">Git 深入学习笔记</a></p>
-                            <p class="item-date"><time datetime="2018-05-31T15:24:25.980Z" itemprop="datePublished">2018-05-31</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Java/">Java</a></p>
-                            <p class="item-title"><a href="/2018/05/21/Java/Java动态代理/" class="title">Java不高级特性:动态代理</a></p>
-                            <p class="item-date"><time datetime="2018-05-21T15:44:51.291Z" itemprop="datePublished">2018-05-21</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Kotlin/">Kotlin</a></p>
-                            <p class="item-title"><a href="/2018/05/12/Kotlin/Koltin的byLazy实现原理/" class="title">从原理分析和区分lateinit var、by lazy</a></p>
-                            <p class="item-date"><time datetime="2018-05-12T07:12:08.120Z" itemprop="datePublished">2018-05-12</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Java/">Java</a></p>
-                            <p class="item-title"><a href="/2018/04/30/Java/堆还是栈/" class="title">Java对象内存分配，堆还是栈? 这是个问题</a></p>
-                            <p class="item-date"><time datetime="2018-04-30T03:31:28.526Z" itemprop="datePublished">2018-04-30</time></p>
-                        </div>
-                    </li>
-                
-            </ul>
-        </div>
-    </div>
-
-    
-        
-    <div class="widget-wrap">
-        <h3 class="widget-title">分类</h3>
-        <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Android-OpenGL/">Android OpenGL</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Kotlin/">Kotlin</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Others/">Others</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Read/">Read</a><span class="category-list-count">1</span></li></ul>
-        </div>
-    </div>
-
-    
-        
-    <div class="widget-wrap">
-        <h3 class="widget-title">归档</h3>
-        <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">6</span></li></ul>
-        </div>
-    </div>
-
-    
-        
-    
-    <div id="toTop" class="fa fa-angle-up"></div>
-</aside>
-
-            
-        </div>
-        <footer id="footer">
-    <div class="outer">
-        <div id="footer-info" class="inner">
-            &copy; 2020 七味和弦<br>
-            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
-        </div>
-    </div>
-
-<!-- Baidu Analytics -->
-<script>
-	var _hmt = _hmt || [];
-	(function() {
-  		var hm = document.createElement("script");
-  		hm.src = "https://hm.baidu.com/hm.js?d9bf4984532d263b0e54cbff6129d0fc";
-  		var s = document.getElementsByTagName("script")[0]; 
-  		s.parentNode.insertBefore(hm, s);
-	})();
-</script>
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-113625597-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-113625597-1');
-</script>
-
-</footer>
-
-        
-    
-    
-    <!-- 来必力City版安装代码 -->
-    <script type="text/javascript">
-     (function(d, s) {
-         var j, e = d.getElementsByTagName(s)[0];
-
-         if (typeof LivereTower === 'function') { return; }
-
-         j = d.createElement(s);
-         j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-         j.async = true;
-
-         e.parentNode.insertBefore(j, e);
-     })(document, 'script');
-    </script>
-  <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
-  <!-- City版安装代码已完成 -->
-
-
-
-
-
-    
-        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
-    
-    
-        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
-    
-    
-
-
-
-<!-- Custom Scripts -->
-<script src="/js/main.js"></script>
-
-    </div>
-</body>
-</html>
+        };</script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":145,"height":315},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body></html>

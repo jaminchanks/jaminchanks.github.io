@@ -1,232 +1,5 @@
-<!DOCTYPE html>
-<html lang=zh>
-<head>
-    <meta charset="utf-8">
-    
-    <title>Android复习笔记 | 七味和弦</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="1. Activity">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Android复习笔记">
-<meta property="og:url" content="jaminchanks.github.io.git/2018/01/18/Android/Android复习笔记/index.html">
-<meta property="og:site_name" content="七味和弦">
-<meta property="og:description" content="1. Activity">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="jaminchanks.github.io.git/2018/01/18/Android/Android复习笔记/p3sgge6jw.bkt.clouddn.com/android.png">
-<meta property="og:updated_time" content="2018-02-07T16:48:57.046Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android复习笔记">
-<meta name="twitter:description" content="1. Activity">
-<meta name="twitter:image" content="jaminchanks.github.io.git/2018/01/18/Android/Android复习笔记/p3sgge6jw.bkt.clouddn.com/android.png">
-    
-
-    
-
-    
-        <link rel="icon" href="/css/images/logo.png" />
-    
-
-    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/libs/open-sans/styles.css">
-    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
-
-    <link rel="stylesheet" href="/css/style.css">
-
-    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
-    
-    
-        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
-    
-    
-        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
-    
-    
-    
-    
-
-
-</head>
-
-<body>
-    <div id="container">
-        <header id="header">
-    <div id="header-main" class="header-inner">
-        <div class="outer">
-            <a href="/" id="logo">
-                <i class="logo"></i>
-                <span class="site-title">七味和弦</span>
-            </a>
-            <nav id="main-nav">
-                
-                    <a class="main-nav-link" href="/.">首页</a>
-                
-                    <a class="main-nav-link" href="/archives">归档</a>
-                
-                    <a class="main-nav-link" href="/categories">分类</a>
-                
-                    <a class="main-nav-link" href="/tags">标签</a>
-                
-                    <a class="main-nav-link" href="/about">关于</a>
-                
-            </nav>
-            
-                
-                <nav id="sub-nav">
-                    <div class="profile" id="profile-nav">
-                        <a id="profile-anchor" href="javascript:;">
-                            <img class="avatar" src="/css/images/avatar.png" />
-                            <i class="fa fa-caret-down"></i>
-                        </a>
-                    </div>
-                </nav>
-            
-            <div id="search-form-wrap">
-
-    <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
-        <button type="submit" class="search-form-submit"></button>
-    </form>
-    <div class="ins-search">
-    <div class="ins-search-mask"></div>
-    <div class="ins-search-container">
-        <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
-            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
-        </div>
-        <div class="ins-section-wrapper">
-            <div class="ins-section-container"></div>
-        </div>
-    </div>
-</div>
-<script>
-(function (window) {
-    var INSIGHT_CONFIG = {
-        TRANSLATION: {
-            POSTS: '文章',
-            PAGES: '页面',
-            CATEGORIES: '分类',
-            TAGS: '标签',
-            UNTITLED: '(未命名)',
-        },
-        ROOT_URL: '/',
-        CONTENT_URL: '/content.json',
-    };
-    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-})(window);
-</script>
-<script src="/js/insight.js"></script>
-
-</div>
-        </div>
-    </div>
-    <div id="main-nav-mobile" class="header-sub header-inner">
-        <table class="menu outer">
-            <tr>
-                
-                    <td><a class="main-nav-link" href="/.">首页</a></td>
-                
-                    <td><a class="main-nav-link" href="/archives">归档</a></td>
-                
-                    <td><a class="main-nav-link" href="/categories">分类</a></td>
-                
-                    <td><a class="main-nav-link" href="/tags">标签</a></td>
-                
-                    <td><a class="main-nav-link" href="/about">关于</a></td>
-                
-                <td>
-                    
-    <div class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
-    </div>
-
-                </td>
-            </tr>
-        </table>
-    </div>
-</header>
-
-        <div class="outer">
-            
-                
-
-<aside id="profile">
-    <div class="inner profile-inner">
-        <div class="base-info profile-block">
-            <img id="avatar" src="/css/images/avatar.png" />
-            <h2 id="name">咸鱼不思议</h2>
-            <h3 id="title">那年夏天水产有限公司</h3>
-            <span id="location"><i class="fa fa-map-marker"></i>guangzhou, China</span>
-            <a id="follow" target="_blank" href="https://github.com/jaminchanks">关注我</a>
-        </div>
-        <div class="article-info profile-block">
-            <div class="article-info-block">
-                19
-                <span>文章</span>
-            </div>
-            <div class="article-info-block">
-                0
-                <span>标签</span>
-            </div>
-        </div>
-        
-        <div class="profile-block social-links">
-            <table>
-                <tr>
-                    
-                    
-                    <td>
-                        <a href="https://github.com/jaminchanks" target="_blank" title="github" class=tooltip>
-                            <i class="fa fa-github"></i>
-                        </a>
-                    </td>
-                    
-                </tr>
-            </table>
-        </div>
-        
-    </div>
-</aside>
-
-            
-            <section id="main"><article id="post-Android/Android复习笔记" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 class="article-title" itemprop="name">
-            Android复习笔记
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2018/01/18/Android/Android复习笔记/">
-            <time datetime="2018-01-17T18:02:16.233Z" itemprop="datePublished">2018-01-18</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/Android/">Android</a>
-    </div>
-
-                        
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <h1 id="1-Activity"><a href="#1-Activity" class="headerlink" title="1. Activity"></a>1. Activity</h1><a id="more"></a>
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="generator" content="Hexo 4.2.1"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>Android复习笔记 - 七味和弦</title><meta description="1. Activity"><meta property="og:type" content="blog"><meta property="og:title" content="Android复习笔记"><meta property="og:url" content="jaminchanks.github.io.git/2018/01/18/Android/Android%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/"><meta property="og:site_name" content="七味和弦"><meta property="og:description" content="1. Activity"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="/img/og_image.png"><meta property="article:published_time" content="2018-01-17T18:02:16.233Z"><meta property="article:modified_time" content="2020-07-22T14:46:17.461Z"><meta property="article:author" content="七味和弦"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"jaminchanks.github.io.git/2018/01/18/Android/Android%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/"},"headline":"七味和弦","image":["/img/og_image.png"],"datePublished":"2018-01-17T18:02:16.233Z","dateModified":"2020-07-22T14:46:17.461Z","author":{"@type":"Person","name":"七味和弦"},"description":"1. Activity"}</script><link rel="canonical" href="jaminchanks.github.io.git/2018/01/18/Android/Android%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/"><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/androidstudio.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/favicon.svg" alt="七味和弦" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">主页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about">关于</a></div><div class="navbar-end"><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><time class="level-item" dateTime="2018-01-17T18:02:16.233Z" title="2018-01-17T18:02:16.233Z">2018-01-18</time><span class="level-item"><a class="link-muted" href="/categories/Android/">Android</a></span><span class="level-item">41 分钟 读完 (大约 6176 个字)</span></div></div><h1 class="title is-3 is-size-4-mobile">Android复习笔记</h1><div class="content"><h1 id="1-Activity"><a href="#1-Activity" class="headerlink" title="1. Activity"></a>1. Activity</h1><a id="more"></a>
 <h4 id="1-Activity的四种状态"><a href="#1-Activity的四种状态" class="headerlink" title="1. Activity的四种状态"></a>1. Activity的四种状态</h4><ul>
 <li>running</li>
 <li>pauseed</li>
@@ -336,7 +109,7 @@
 <li>静态注册：注册后一直运行，尽管Activity、进程、App被杀死还是可以接收到广播</li>
 <li>动态注册：跟随Activity的生命周期</li>
 </ul>
-<h4 id="4-Broadcast-Receiver实现机制-《android开发艺术探索》有具体说明"><a href="#4-Broadcast-Receiver实现机制-《android开发艺术探索》有具体说明" class="headerlink" title="4. Broadcast Receiver实现机制  《android开发艺术探索》有具体说明 "></a>4. Broadcast Receiver实现机制  <font color="red" size="2">《android开发艺术探索》有具体说明 </font></h4><ul>
+<h4 id="4-Broadcast-Receiver实现机制-《android开发艺术探索》有具体说明"><a href="#4-Broadcast-Receiver实现机制-《android开发艺术探索》有具体说明" class="headerlink" title="4. Broadcast Receiver实现机制  《android开发艺术探索》有具体说明 "></a>4. Broadcast Receiver实现机制  <font color=red size=2>《android开发艺术探索》有具体说明 </font></h4><ul>
 <li>自定义广播类继承BroadcastReceiver，复写onReceiver()</li>
 <li>通过Binder机制向AMS进行注册广播</li>
 <li>广播发送者通过Binder机制向AMS发送广播</li>
@@ -353,7 +126,7 @@
 <h1 id="4-WebView"><a href="#4-WebView" class="headerlink" title="4. WebView"></a>4. WebView</h1><h4 id="1-WebView安全漏洞"><a href="#1-WebView安全漏洞" class="headerlink" title="1. WebView安全漏洞"></a>1. WebView安全漏洞</h4><ul>
 <li>API16之前存在远程代码执行安全漏洞，该漏洞源于程序没有正确限制使用WebView.addJavascriptInterface方法，远程攻击者可通过使用Java反射机制利用该漏洞执行任意Java对象的方法。在Android4.2以上的，google作了修正，通过在Java的远程方法上面声明一个@JavascriptInterface。</li>
 </ul>
-<h4 id="2-WebView销毁步骤"><a href="#2-WebView销毁步骤" class="headerlink" title="2. WebView销毁步骤 *"></a>2. WebView销毁步骤 <font color="red">*</font></h4><ul>
+<h4 id="2-WebView销毁步骤"><a href="#2-WebView销毁步骤" class="headerlink" title="2. WebView销毁步骤 *"></a>2. WebView销毁步骤 <font color=red >*</font></h4><ul>
 <li>WebView在其他容器上时（如：LinearLayout），当销毁Activity时，需要在onDestroy()中先移除容器上的WebView，然后再将WebView.destroy()，这样就不会导致内存泄漏。</li>
 </ul>
 <h4 id="3-WebView的jsbridge"><a href="#3-WebView的jsbridge" class="headerlink" title="3. WebView的jsbridge"></a>3. WebView的jsbridge</h4><ul>
@@ -368,14 +141,13 @@
 <h4 id="6-WebView硬件加速"><a href="#6-WebView硬件加速" class="headerlink" title="6. WebView硬件加速"></a>6. WebView硬件加速</h4><ul>
 <li>Android3.0引入硬件加速，默认会开启，WebView在硬件加速的情况下滑动更加平滑，性能更加好，但是会出现白块或者页面闪烁的副作用，建议WebView暂时关闭硬件加速</li>
 </ul>
-<h4 id="7-WebView内存泄漏"><a href="#7-WebView内存泄漏" class="headerlink" title="7. WebView内存泄漏 *"></a>7. WebView内存泄漏 <font color="red">*</font></h4><p>由于WebView是依附于Activity的，Activity的生命周期和WebView启动的线程的生命周期是不一致的，这会导致WebView一直持有对这个Activity的引用而无法释放，解决方案如下:</p>
+<h4 id="7-WebView内存泄漏"><a href="#7-WebView内存泄漏" class="headerlink" title="7. WebView内存泄漏 *"></a>7. WebView内存泄漏 <font color=red >*</font></h4><p>由于WebView是依附于Activity的，Activity的生命周期和WebView启动的线程的生命周期是不一致的，这会导致WebView一直持有对这个Activity的引用而无法释放，解决方案如下:</p>
 <ul>
-<li>独立进程，简单暴力，不过可能涉及到进程间通信（推荐）。<font color="grey">(在Webview所在的Activity的xml声明中指定 android:process=”:xxx”， 但是这里要注意跨进程通信的问题)</font></li>
+<li>独立进程，简单暴力，不过可能涉及到进程间通信（推荐）。<br><font color=grey>(在Webview所在的Activity的xml声明中指定 android:process=”:xxx”， 但是这里要注意跨进程通信的问题)</font></li>
 <li>动态添加WebView，对传入WebView中使用的Context使用弱引用。</li>
 </ul>
 <hr>
-<h1 id="5-Binder"><a href="#5-Binder" class="headerlink" title="5. Binder"></a>5. Binder</h1><font color="grey"> 通过Parcelable而实现的跨进程间通信方式 </font>
-
+<h1 id="5-Binder"><a href="#5-Binder" class="headerlink" title="5. Binder"></a>5. Binder</h1><p><font color="grey"> 通过Parcelable而实现的跨进程间通信方式 </font></p>
 <h4 id="1-Linux内核的基本知识"><a href="#1-Linux内核的基本知识" class="headerlink" title="1. Linux内核的基本知识"></a>1. Linux内核的基本知识</h4><ul>
 <li>进程隔离/虚拟地址空间：进程间是不可以共享数据的，相当于被隔离，每个进程被分配到不同的虚拟地址中</li>
 <li>系统调用：Linux内核对应用有访问权限，用户只能在应用层通过系统调用，调用内核的某些程序</li>
@@ -401,7 +173,7 @@
 </ul>
 <h4 id="3-Handler工作原理"><a href="#3-Handler工作原理" class="headerlink" title="3. Handler工作原理"></a>3. Handler工作原理</h4><ul>
 <li>Android进阶——Android消息机制之Looper、Handler、MessageQueen</li>
-<li><a href="http://blog.csdn.net/qq_30379689/article/details/53394061" target="_blank" rel="external">http://blog.csdn.net/qq_30379689/article/details/53394061</a></li>
+<li><a href="http://blog.csdn.net/qq_30379689/article/details/53394061">http://blog.csdn.net/qq_30379689/article/details/53394061</a></li>
 </ul>
 <h4 id="4-Handler引起的内存泄漏"><a href="#4-Handler引起的内存泄漏" class="headerlink" title="4. Handler引起的内存泄漏"></a>4. Handler引起的内存泄漏</h4><ul>
 <li>原因：非静态内部类持有外部类的匿名引用，导致Activity无法释放</li>
@@ -447,10 +219,9 @@
 <li>在onHandlerIntent()中执行耗时操作</li>
 </ul>
 <hr>
-<h1 id="10-视图工作机制面试题"><a href="#10-视图工作机制面试题" class="headerlink" title="10. 视图工作机制面试题"></a>10. 视图工作机制面试题</h1><font color="red">《Android开发艺术探索》第三章</font>
-
-<h4 id="1-Android进阶——Android视图工作机制之measure、layout、draw"><a href="#1-Android进阶——Android视图工作机制之measure、layout、draw" class="headerlink" title="1. Android进阶——Android视图工作机制之measure、layout、draw"></a>1. Android进阶——Android视图工作机制之measure、layout、draw</h4><p><a href="http://blog.csdn.net/qq_30379689/article/details/54588736" target="_blank" rel="external">http://blog.csdn.net/qq_30379689/article/details/54588736</a></p>
-<h4 id="2-Android事件分发机制之dispatchTouchEvent、onInterceptTouchEvent、onTouchEvent"><a href="#2-Android事件分发机制之dispatchTouchEvent、onInterceptTouchEvent、onTouchEvent" class="headerlink" title="2. Android事件分发机制之dispatchTouchEvent、onInterceptTouchEvent、onTouchEvent"></a>2. Android事件分发机制之dispatchTouchEvent、onInterceptTouchEvent、onTouchEvent</h4><p><a href="http://blog.csdn.net/qq_30379689/article/details/53967177" target="_blank" rel="external">http://blog.csdn.net/qq_30379689/article/details/53967177</a></p>
+<h1 id="10-视图工作机制面试题"><a href="#10-视图工作机制面试题" class="headerlink" title="10. 视图工作机制面试题"></a>10. 视图工作机制面试题</h1><p><font color="red">《Android开发艺术探索》第三章</font></p>
+<h4 id="1-Android进阶——Android视图工作机制之measure、layout、draw"><a href="#1-Android进阶——Android视图工作机制之measure、layout、draw" class="headerlink" title="1. Android进阶——Android视图工作机制之measure、layout、draw"></a>1. Android进阶——Android视图工作机制之measure、layout、draw</h4><p><a href="http://blog.csdn.net/qq_30379689/article/details/54588736">http://blog.csdn.net/qq_30379689/article/details/54588736</a></p>
+<h4 id="2-Android事件分发机制之dispatchTouchEvent、onInterceptTouchEvent、onTouchEvent"><a href="#2-Android事件分发机制之dispatchTouchEvent、onInterceptTouchEvent、onTouchEvent" class="headerlink" title="2. Android事件分发机制之dispatchTouchEvent、onInterceptTouchEvent、onTouchEvent"></a>2. Android事件分发机制之dispatchTouchEvent、onInterceptTouchEvent、onTouchEvent</h4><p><a href="http://blog.csdn.net/qq_30379689/article/details/53967177">http://blog.csdn.net/qq_30379689/article/details/53967177</a></p>
 <h4 id="3-Android视图工作机制中的重绘"><a href="#3-Android视图工作机制中的重绘" class="headerlink" title="3. Android视图工作机制中的重绘"></a>3. Android视图工作机制中的重绘</h4><p>(1) invalidate()和requestLayout()  </p>
 <ul>
 <li>invalidate()和requestLayout()，常用于View重绘和更新，其主要区别如下</li>
@@ -673,280 +444,38 @@
 <li>利用JobScheduler机制拉活</li>
 <li>利用账号同步机制拉活</li>
 </ul>
-<p><a href="http://mp.weixin.qq.com/s/qTdzS_TkiyvreG0FaXHJYw" target="_blank" rel="external">原文链接</a></p>
+<p><a href="http://mp.weixin.qq.com/s/qTdzS_TkiyvreG0FaXHJYw">原文链接</a></p>
+</div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2018/01/18/OpenGL/GLSL%E5%9F%BA%E7%A1%80/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">GLSL基础</span></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div id="lv-container" data-id="city" data-uid="MTAyMC8zMzg3NC8xMDQyNw=="><script>(function(d, s) {
+            var j, e = d.getElementsByTagName(s)[0];
 
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
+            if (typeof LivereTower === 'function') { return; }
 
+            j = d.createElement(s);
+            j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+            j.async = true;
 
-
-</div>
-
-    <a data-url="jaminchanks.github.io.git/2018/01/18/Android/Android复习笔记/" data-id="ckcryfbxv0005ret3ua3iv7as" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
+            e.parentNode.insertBefore(j, e);
+        })(document, 'script');</script><noscript>Please activate JavaScript for write a comment in LiveRe</noscript></div></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="/img/avatar.png" alt="七味和弦"></figure><p class="title is-size-4 is-block line-height-inherit">七味和弦</p><p class="is-size-6 is-block">这家伙不懒，但什么都没留下。</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>GuangZhou China</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">17</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">7</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">0</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/jaminchanks" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/jaminchanks"><i class="fab fa-github"></i></a></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile is-marginless" href="/categories/Android/"><span class="level-start"><span class="level-item">Android</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/Android-OpenGL/"><span class="level-start"><span class="level-item">Android OpenGL</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/Git/"><span class="level-start"><span class="level-item">Git</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/Java/"><span class="level-start"><span class="level-item">Java</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/Kotlin/"><span class="level-start"><span class="level-item">Kotlin</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/Others/"><span class="level-start"><span class="level-item">Others</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/Read/"><span class="level-start"><span class="level-item">Read</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></div></div></div><div class="card widget"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content size-small"><p><time dateTime="2018-05-31T15:24:25.980Z">2018-05-31</time></p><p class="title is-6"><a class="link-muted" href="/2018/05/31/Git/git_%E7%AC%94%E8%AE%B01/">Git 深入学习笔记</a></p><p class="is-uppercase"><a class="link-muted" href="/categories/Git/">Git</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2018-05-21T15:44:51.291Z">2018-05-21</time></p><p class="title is-6"><a class="link-muted" href="/2018/05/21/Java/Java%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86/">Java不高级特性:动态代理</a></p><p class="is-uppercase"><a class="link-muted" href="/categories/Java/">Java</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2018-05-12T07:12:08.120Z">2018-05-12</time></p><p class="title is-6"><a class="link-muted" href="/2018/05/12/Kotlin/Koltin%E7%9A%84byLazy%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/">从原理分析和区分lateinit var、by lazy</a></p><p class="is-uppercase"><a class="link-muted" href="/categories/Kotlin/">Kotlin</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2018-04-30T03:31:28.526Z">2018-04-30</time></p><p class="title is-6"><a class="link-muted" href="/2018/04/30/Java/%E5%A0%86%E8%BF%98%E6%98%AF%E6%A0%88/">Java对象内存分配，堆还是栈? 这是个问题</a></p><p class="is-uppercase"><a class="link-muted" href="/categories/Java/">Java</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2018-04-24T14:58:14.464Z">2018-04-24</time></p><p class="title is-6"><a class="link-muted" href="/2018/04/24/Read/%E7%AE%97%E6%B3%95%E7%9A%84%E5%AE%9E%E9%99%85%E7%94%A8%E5%A4%84/">数据结构复习笔记(待补充)</a></p><p class="is-uppercase"><a class="link-muted" href="/categories/Read/">Read</a></p></div></article></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile is-marginless" href="/archives/2018/05/"><span class="level-start"><span class="level-item">五月 2018</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2018/04/"><span class="level-start"><span class="level-item">四月 2018</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2018/03/"><span class="level-start"><span class="level-item">三月 2018</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2018/02/"><span class="level-start"><span class="level-item">二月 2018</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2018/01/"><span class="level-start"><span class="level-item">一月 2018</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li></ul></div></div></div><!--!--></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/favicon.svg" alt="七味和弦" height="28"></a><p class="size-small"><span>&copy; 2020 七味和弦</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+            site: {
+                url: 'jaminchanks.github.io.git',
+                external_link: {"enable":true,"exclude":[]}
+            },
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
                 }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
             }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="jaminchanks.github.io.git/2018/01/18/Android/Android复习笔记/#comments" class="article-comment-link">评论</a>
-    
-
-        </footer>
-    </div>
-    
-        
-<nav id="article-nav">
-    
-        <a href="/2018/01/18/OpenGL/GLSL基础/" id="article-nav-newer" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">上一篇</strong>
-            <div class="article-nav-title">
-                
-                    GLSL基础
-                
-            </div>
-        </a>
-    
-    
-</nav>
-
-
-    
-</article>
-
-
-    
-    
-        <section id="comments">
-    <div id="lv-container" data-id="city" data-uid=MTAyMC8zMzg3NC8xMDQyNw==></div>
-</section>
-    
-
-</section>
-            
-                
-<aside id="sidebar">
-   
-        
-    <div class="widget-wrap">
-        <h3 class="widget-title">最新文章</h3>
-        <div class="widget">
-            <ul id="recent-post" class="no-thumbnail">
-                
-                    <li>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/06/28/Git/git_我可以反悔吗/" class="title"></a></p>
-                            <p class="item-date"><time datetime="2018-06-28T13:57:36.094Z" itemprop="datePublished">2018-06-28</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Git/">Git</a></p>
-                            <p class="item-title"><a href="/2018/05/31/Git/git_笔记1/" class="title">Git 深入学习笔记</a></p>
-                            <p class="item-date"><time datetime="2018-05-31T15:24:25.980Z" itemprop="datePublished">2018-05-31</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Java/">Java</a></p>
-                            <p class="item-title"><a href="/2018/05/21/Java/Java动态代理/" class="title">Java不高级特性:动态代理</a></p>
-                            <p class="item-date"><time datetime="2018-05-21T15:44:51.291Z" itemprop="datePublished">2018-05-21</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Kotlin/">Kotlin</a></p>
-                            <p class="item-title"><a href="/2018/05/12/Kotlin/Koltin的byLazy实现原理/" class="title">从原理分析和区分lateinit var、by lazy</a></p>
-                            <p class="item-date"><time datetime="2018-05-12T07:12:08.120Z" itemprop="datePublished">2018-05-12</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Java/">Java</a></p>
-                            <p class="item-title"><a href="/2018/04/30/Java/堆还是栈/" class="title">Java对象内存分配，堆还是栈? 这是个问题</a></p>
-                            <p class="item-date"><time datetime="2018-04-30T03:31:28.526Z" itemprop="datePublished">2018-04-30</time></p>
-                        </div>
-                    </li>
-                
-            </ul>
-        </div>
-    </div>
-
-    
-        
-    <div class="widget-wrap">
-        <h3 class="widget-title">分类</h3>
-        <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Android-OpenGL/">Android OpenGL</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Kotlin/">Kotlin</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Others/">Others</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Read/">Read</a><span class="category-list-count">1</span></li></ul>
-        </div>
-    </div>
-
-    
-        
-    <div class="widget-wrap">
-        <h3 class="widget-title">归档</h3>
-        <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">6</span></li></ul>
-        </div>
-    </div>
-
-    
-        
-    
-    <div id="toTop" class="fa fa-angle-up"></div>
-</aside>
-
-            
-        </div>
-        <footer id="footer">
-    <div class="outer">
-        <div id="footer-info" class="inner">
-            &copy; 2020 七味和弦<br>
-            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
-        </div>
-    </div>
-
-<!-- Baidu Analytics -->
-<script>
-	var _hmt = _hmt || [];
-	(function() {
-  		var hm = document.createElement("script");
-  		hm.src = "https://hm.baidu.com/hm.js?d9bf4984532d263b0e54cbff6129d0fc";
-  		var s = document.getElementsByTagName("script")[0]; 
-  		s.parentNode.insertBefore(hm, s);
-	})();
-</script>
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-113625597-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-113625597-1');
-</script>
-
-</footer>
-
-        
-    
-    
-    <!-- 来必力City版安装代码 -->
-    <script type="text/javascript">
-     (function(d, s) {
-         var j, e = d.getElementsByTagName(s)[0];
-
-         if (typeof LivereTower === 'function') { return; }
-
-         j = d.createElement(s);
-         j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-         j.async = true;
-
-         e.parentNode.insertBefore(j, e);
-     })(document, 'script');
-    </script>
-  <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
-  <!-- City版安装代码已完成 -->
-
-
-
-
-
-    
-        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
-    
-    
-        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
-    
-    
-
-
-
-<!-- Custom Scripts -->
-<script src="/js/main.js"></script>
-
-    </div>
-</body>
-</html>
+        };</script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":145,"height":315},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body></html>
